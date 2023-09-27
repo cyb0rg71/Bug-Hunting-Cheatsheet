@@ -38,6 +38,8 @@ sqlite_version()
 
 (SELECT group_concat(tbl_name) FROM sqlite_master)
 
+(SELECT sql FROM sqlite_master WHERE name ='[table name here]') >> To retrieve data from one table.
+
 (SELECT sql FROM sqlite_master) >> Useful to retrieve all table and column in a single payload.
 
 (SELECT group_concat([column name here]) from [table name here])
