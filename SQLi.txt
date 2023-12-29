@@ -1,3 +1,8 @@
+#Parameter
+
+or sleep(5)
+
+
 #Cookie testing
 
 1. ' and 1=1-- - >> Conditional response
