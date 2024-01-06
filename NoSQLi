@@ -1,0 +1,4 @@
+#MongoDB
+
+{"$regex":""} >> For username
+{"$ne":""} >> For password
