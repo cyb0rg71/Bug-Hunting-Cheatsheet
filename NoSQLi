@@ -2,3 +2,8 @@
 
 {"$regex":""} >> For username
 {"$ne":""} >> For password
+
+#MongoDB Data Retrieving
+
+' && this.password.length < 50%00 >> For extracting password length
+' && this.password[0] == 'a'%00 >> For extracting password
