@@ -19,6 +19,8 @@
 
 Object.keys(this)[0].match('^.{0}.*') >> To identify data size. Ex: Password
 Object.keys(this)[0].match('^.{0}0.*') >> To fetch the data
+this.forgotpwd.match('^.{0}.*') >> To fetch specific keyvalue data size.
+this.forgotpwd.match('^.{0}0.*') >> To fetch specific keyvalue.
 
 1st 0 means key number
 2nd 0 means data size
