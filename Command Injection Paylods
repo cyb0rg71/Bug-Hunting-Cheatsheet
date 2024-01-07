@@ -1,0 +1,7 @@
+ls
+;ls
+;ls;
+sleep 5
+;sleep 5
+;sleep 5;
+|| sleep 5
