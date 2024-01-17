@@ -1,7 +1,9 @@
-#Simple Case
+## Simple Case
+```
+& whoami #
 ;ls
 ;ls;
-
+```
 #Blind injection
 
 asd||sleep 5|| >> Middle of two parameter.
