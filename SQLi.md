@@ -6,6 +6,7 @@
 1' or 'abc'='abc'-- -
 1') or 1=1-- -
 
+
 ## Parameter Testing For Time Blind
 ```sql
 
