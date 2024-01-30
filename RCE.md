@@ -18,3 +18,20 @@ After:
 Content-Type: application/x-httpd-php
 ```
 
+## Obfuscating File Extensions
+```
+.php
+.php3
+.php4
+.php5
+.pHp
+.shtml
+.php.jpg
+.php.png
+%2Ephp
+.php;.jpg
+.php;.png  
+.php%00.jpg
+.php%00.png
+.p.phphp
+```
