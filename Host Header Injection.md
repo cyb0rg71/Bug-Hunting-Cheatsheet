@@ -37,10 +37,12 @@ Host: vulnerable-website.com
 ```
 #### Inject host override headers
 ```txt
-X-Host
-X-Forwarded-Server
-X-HTTP-Host-Override
-Forwarded
+X-Host:
+X-Original-URL:
+X-Forwarded-Server:
+X-HTTP-Host-Override:
+Forwarded:
+X-Forwarded-For:
 ```
 ## Accessing restricted functionality or Routing Based SSRF
 #### It is common for websites to not restrict access to certain functionality for internal users only or host private sites in same server. Try to access it by localhost or brute-forcing.
