@@ -1,15 +1,17 @@
 ### SSRF
 This vulnerability helps attacker to send request to back-end systems. 
 If vulnerable >> 500 Internal server error
+### Tips
+Try with port number, path.
 ## Commom method (api parameter)
 ```txt
 http://localhost/
 http://127.0.0.1/
 ```
 ## Blind Method
-#### Just place burpcollaborator server in host header
+#### Just place burpcollaborator server in referer header
 ```txt
-Host: burpcollaborator.net
+Referer: http://burpcollaborator.net
 ```
 #### Shellshock exploitation via SSRF
 ```txt
