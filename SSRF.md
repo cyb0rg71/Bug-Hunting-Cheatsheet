@@ -1,4 +1,7 @@
-## Commom method
+### SSRF
+This vulnerability helps attacker to send request to back-end systems. 
+If vulnerable >> 500 Internal server error
+## Commom method (api parameter)
 ```txt
 http://localhost/
 http://127.0.0.1/
