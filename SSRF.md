@@ -35,9 +35,10 @@ http://spoofed.burpcollaborator.net
 ```
 #### You can use the # character to indicate a URL fragment. For example:
 ```txt
-    https://evil-host#expected-host
-    https://burpcollaborator.net#google.com
+    https://evil-host#@expected-host
+    https://burpcollaborator.net#@google.com
 ```
+Double URL-encode # to %2523.
 #### You can leverage the DNS naming hierarchy to place required input into a fully-qualified DNS name that you control. For example:
 ```txt
     https://expected-host.evil-host
