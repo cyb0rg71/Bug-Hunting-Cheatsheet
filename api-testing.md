@@ -28,5 +28,10 @@ name=attacker&name=victim
     PHP parses the last parameter only. This would result in a user search for carlos.
     ASP.NET combines both parameters. This would result in a user search for peter,carlos, which might result in an Invalid username error message.
     Node.js / express parses the first parameter only. This would result in a user search for peter, giving an unchanged result.
-
+### Testing for server-side parameter pollution in REST paths
+A RESTful API may place parameter names and values in the URL path, rather than the query string. An attacker may be able to manipulate server-side URL path parameters to exploit the API. To test for this vulnerability, add path traversal sequences to modify parameters and observe how the application responds.
+```
+name=carlos/../../../../../ >> To navigate the api definition.
+name=../../../../openapi.json%23 >> Add or bruteforce some common API definition filenames to the URL path.
+```
 
