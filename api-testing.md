@@ -12,7 +12,7 @@ You can use an URL-encoded & character to attempt to add a second parameter to t
 ```
 &x=y
 ```
-If the response is unchanged this may indicate that the parameter was successfully injected but ignored by the application.
+If the response is unchanged this may indicate that the parameter was successfully injected but ignored by the application. To build up a more complete picture, you'll need to test further. 
 #### Injecting valid parameters
 If you're able to modify the query string, you can then attempt to add a second valid parameter to the server-side request. If you've identified the email parameter, you could add it to the query string as follows: 
 ```
