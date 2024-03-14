@@ -3,6 +3,12 @@
     Fuzzing
     Burp Scanner
     Changing http methods
+#### Mass Assignment
+Mass assignment typically involves setting multiple attributes of an object in a single call. For instance, in a web application, a user might submit a form that includes fields for various attributes of a user profile, such as name, email, and role.
+
+If the application doesn't properly validate or sanitize the incoming data, an attacker could potentially manipulate the input to include additional attributes or modify existing ones. This could lead to unauthorized changes to the data model or allow an attacker to escalate privileges within the application.
+
+For example, consider a web application that allows users to update their profile information. If the application is vulnerable to mass assignment, an attacker might be able to include a "isAdmin" field in the form submission and set it to "true", thereby gaining administrative privileges.
 When fuzzing, use wordlists based on common API naming conventions and industry terms. 
 # Testing Server-side parameter pollution 
 To test for server-side parameter pollution in the query string, place query syntax characters like #, &, and = in your input and observe how the application responds.
