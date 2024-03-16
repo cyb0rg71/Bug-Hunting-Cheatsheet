@@ -1,13 +1,11 @@
 ### CL.TE 
-Step: 
-    1. Copy 2 GET request.
-    2. Change request method GET to POST in first request.
-    3. Add following things in first request.
-    ```txt
-    Content-Length: 10
-    Transfer-Encoding: chunked
+Copy 2 GET request. Change request method GET to POST in first request. Add following things in first request.
+```txt
+Content-Length: 15
+Transfer-Encoding: chunked
 
-    0
+0
 
-    G
-    ```
+HACKED
+```
+Now send both request one by one and see error message in second request response. 
