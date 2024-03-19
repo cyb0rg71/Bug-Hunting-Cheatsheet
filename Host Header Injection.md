@@ -25,10 +25,17 @@ Host: vulnerable-website.com
 Host: google.com
 ```
 #### Supply an absolute URL
+##### Normal case
 ```txt
 GET https://vulnerable-website.com/ HTTP/1.1
 Host: google.com
 ```
+##### SSRF via flawed request parsing
+```txt
+GET https://0ada009a03fb929382cd2e7000e600be.web-security-academy.net HTTP/2
+Host: ybdifpxyiesrimyyvm2e9wxgy74yssgh.oastify.com
+```
+In this case, now try bruteforcing ip address.
 #### Add line wrapping
 ```txt
 GET /example HTTP/1.1
