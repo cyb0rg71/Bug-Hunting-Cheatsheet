@@ -20,7 +20,7 @@ https://insecure-website.com/myaccount?id=123
 ```
 This approach is insecure because a user can modify the value and access functionality they're not authorized to, such as administrative functions.
 
-In some applications, the exploitable parameter does not have a predictable value. For example, instead of an incrementing number, an application might use globally unique identifiers (GUIDs) to identify users. This may prevent an attacker from guessing or predicting another user's identifier. However, the GUIDs belonging to other users might be disclosed elsewhere in the application where users are referenced, such as user messages or reviews.
+In some applications, the exploitable parameter does not have a predictable value. For example, instead of an incrementing number, an application might use globally unique identifiers (GUIDs) to identify users. This may prevent an attacker from guessing or predicting another user's identifier. However, the GUIDs belonging to other users might be disclosed (Information Discloser) elsewhere in the application where users are referenced, such as user messages or reviews.
 
 ### Broken access control resulting from platform misconfiguration (Url and Method based)
 Some applications enforce access controls at the platform layer. they do this by restricting access to specific URLs and HTTP methods based on the user's role. Some application frameworks support various non-standard HTTP headers that can be used to override the URL in the original request, such as X-Original-URL and X-Rewrite-URL.
