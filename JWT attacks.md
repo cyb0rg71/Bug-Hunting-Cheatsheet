@@ -25,3 +25,11 @@ jku (JSON Web Key Set URL) - Provides a URL from which servers can fetch a set o
 
 kid (Key ID) - Provides an ID that servers can use to identify the correct key in cases where there are multiple keys to choose from. Depending on the format of the key, this may have a matching kid parameter.
 ```
+#### Injecting self-signed JWTs via the jwk parameter
+Ideally, servers should only use a limited whitelist of public keys to verify JWT signatures. However, misconfigured servers sometimes use any key that's embedded in the ```jwk parameter```. You can exploit this behavior by signing a modified JWT using your own RSA private key ```kid```, then embedding the matching public key in the ```jwk header```.
+```
+1. Send to Repeater.
+2. Go to JSON Web Token tab to change payload info.
+3. Go to JWT Editor to generate new RSA key kid.
+4. Go to JSON Web Token tab >> select Attack >> select Embedded JWK >> press OK to add new generated kid.
+5. Now send HTTP request.
