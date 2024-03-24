@@ -76,35 +76,24 @@ Example
  ```
 Generate a suitable signing key
 
-    In Burp, load the JWT Editor extension from the BApp store.
-
-    In the lab, log in to your own account and send the post-login GET /my-account request to Burp Repeater.
-
-    In Burp Repeater, change the path to /admin and send the request. Observe that the admin panel is only accessible when logged in as the administrator user.
-
-    Go to the JWT Editor Keys tab in Burp's main tab bar.
-
-    Click New Symmetric Key.
-
-    In the dialog, click Generate to generate a new key in JWK format. Note that you don't need to select a key size as this will automatically be updated later.
-
-    Replace the generated value for the k property with a Base64-encoded null byte (AA==). Note that this is just a workaround because the JWT Editor extension won't allow you to sign tokens using an empty string.
-
-    Click OK to save the key.
+1. Send to Repeater.
+2. Go to JSON Web Token tab to change payload info.
+3. Go to JWT Editor to generate New Symmetric Key.
+4. Replace the generated value for the k property with a Base64-encoded null byte (AA==). Note that this is just a workaround because the JWT Editor extension won't allow you to sign tokens using an empty string.
+5. Click OK to save the key.
 
 Modify and sign the JWT
 
-    Go back to the GET /admin request in Burp Repeater and switch to the extension-generated JSON Web Token message editor tab.
-
-    In the header of the JWT, change the value of the kid parameter to a path traversal sequence pointing to the /dev/null file:
+1. In the header of the JWT, change the value of the kid parameter to a path traversal sequence pointing to the /dev/null file:
     ../../../../../../../dev/null
+2. In the JWT payload, change the value of the sub claim to administrator/victim.
+3. At the bottom of the tab, click Sign, then select the symmetric key that you generated in the previous section.
+4. Make sure that the Don't modify header option is selected, then click OK. The modified token is now signed using a null byte as the secret key.
 
-    In the JWT payload, change the value of the sub claim to administrator.
-
-    At the bottom of the tab, click Sign, then select the symmetric key that you generated in the previous section.
-
-    Make sure that the Don't modify header option is selected, then click OK. The modified token is now signed using a null byte as the secret key.
 If this not work, try this >> https://youtu.be/hpQfxY8X4tI?si=oO-PYFtNsJ0GR8mk
+1. Follow previous steps.
+2. In header add this two additional parameter "typ": "JWT","K": "AA==" (without encoding AA==)
+3. Replace the generated value for the k property without encoding AA==.
 ```
 
 
