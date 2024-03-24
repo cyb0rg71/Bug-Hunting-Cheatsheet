@@ -52,16 +52,10 @@ or,
 {
     "keys": [
     {
-    "p": "9NWaOlD0WI9Ar5o1uTI9MLQ20LkaCej_Hh8sFkWPtYwzPin4YPgFWCL-YhRUELlqLr5sC1irK_D03WI_isk294jxhCFOy3kRWC07NQjLS1A71UVAaftoCybmpQiINvN5ZKnoGRQessKILTBc4qAZ_MOZfxkqFXHRfkIDSAxTCrc",
     "kty": "RSA",
-    "q": "10b7QrJOLGFtcIvTwuWeGekt-VhJOfU-zFX3Tn2sOT0VMJoFtPAD4p4EyNbUEW1ih-kjeCA7xfAvZS67cN_y-sj0gbOQ7ikA0p6P4Te0-5FYmewpywIYJnWMy1QEI9NdF6YJ-rdLez9QysvL8NnLYmQQ1iI1NQuOq3K0oXwN-70",
-    "d": "AZ6PTjIMVFAeYF5hkygJzet3FxhM7xRo5K9BA5vkL5l4XgLvBB0EjUORFKf2obFmskEfyK5HQIu0BAJecFtPaOYSlCHwG5q_iDT6TlSUQTvXKv9VQ7WRULRFuI3mvh9bYJORcF9Gahdb9xhk5IUz-To6xIgi8kbB0R1Ou1lTjONnppl2x1mxkEJhoqkumrKqZ2RhW0tOS4H6JXwfvH_dUcEJjAnMGmt3Gbi9VzNH7yvIHvFJ1nqCMH0nfKlPW6lmc6xeBopt9fFF9cFnuCGwRgbXO8Xl8AUKQkzCouLAPjhVmPNFiX8AYamFwNJGRnT9rGmDV3ZCI8N2RLVWgStsJQ",
-    "e": "AQAB",
     "kid": "d487d8ca-98db-4a06-be52-f7f1cb12a6f1",
-    "qi": "xLTBO5hWy8u7B1H3Ab3CjD_UgYfQSkBBoLeFeT6iTUklGU1DvZnURW3B0qOSS7RUZo7_PmV-vDmMuvOnVS0xCs-kujCQYx5LhOYbe2kKtL1GNcGaDCpF-Dc4R4yC8x_RJtQst4axiTMtDBIuH9bEGrkwF-IhXdoHOHcN9ljc7Cs",
-    "dp": "2_2-ad3p4FU_s0mmMjUBJG0Zv-xCiFsSOPebfpucaG2Ecbv2kPLqomo3FtvbOXfRABVcMcnHbGFDNFUecU8hk8Q59xaSnWO4gPmLdLjlKlP6n0Rtf41FzJd0sR98fZvCHQBKK5aXitoe0DPfkkZ3c1Yx6zEqTkCKE5-vISLpzvs",
-    "dq": "eubMNYSkOpQYrcM2TzNV8ob8Nzke_Ra1FmURvl7i_v6PZWLZVTYdkbgTFTIIejaPpPYFyOPmHBgGhuaKHmPMTT6C0LVaTY1dKeFaVQK_sUuGYMHCDmMQtIwxqDc78dQOdpzVX6xbTG6WSmDU-pjskyx7rDR1WeZSOjFPTE4NkaU",
-    "n": "zeNHPF2_klxmfQ_ENEz1d5MPufzt3bUOFJ2hLho4QhPGCuzF2XHi9Xi12UjPPfAD3LmcHBVOkahBDT8Xi00_ANWBAjSY20Z9-OyP-zuAxMZXcpKTt5LT7VB6T8z2y0NkQ7X2xmvjsXMPId3oJi7aiYxXi4OkdpA8YAhZ9gVeKJ5W3tcNIfRkXVkYm3AkLpR7N0IcXsFalzNDGHCE-EBCg1RKbayDG7R5HTtRecnz26L_ibPTB1wi21w3m-dBV1Mp1iWQFWBgcjtavE7e4WMvJk69xTyNsk9LFfKkt1LclFzPUPybEJYldSWee7AaAgQEY2RKYkPFTgUm1VLFtBtWGw"
+    "...": "...",
+    "n": "zeNHPF2_klxmfQ_ENEz1d5MPufzt3bUOFJ2hLho4QhPGCuzF2XHi9Xi12UjPPfAD3LmcHBVOkahBDT8Xi00_ANWBAjSY20Z9-OyP-zuAxMZXcpKTt5LT7VB6T8z2y0NkQ7X2xmvjsXMPId3oJi7aiYxXi4OkdpA8YAhZ9gVeKJ5W3tcNIfRkXVkYm3AkLpR7N0IcXsFalzNDGHCE"
 }
     ]
 }
@@ -72,7 +66,7 @@ Example
 7. Now press >> sign in JSON Web Token tab >> Don't modify header >> send request
 ```
 #### Injecting self-signed JWTs via the kid parameter
- Servers may use several cryptographic keys for signing different kinds of data, not just JWTs. For this reason, the header of a JWT may contain a kid (Key ID) parameter, which helps the server identify which key to use when verifying the signature. Verification keys are often stored as a JWK Set. In this case, the server may simply look for the JWK with the same kid as the token. However, the JWS specification doesn't define a concrete structure for this ID - it's just an arbitrary string of the developer's choosing. For example, they might use the kid parameter to point to a particular entry in a database, or even the name of a file. If this parameter is also vulnerable to ```directory traversal```, an attacker could potentially force the server to use an arbitrary file from its filesystem as the verification key.  This is especially dangerous if the server also supports JWTs signed using a symmetric algorithm. In this case, an attacker could potentially point the kid parameter to a predictable, static file, then sign the JWT using a secret that matches the contents of this file. You could theoretically do this with any file, but one of the simplest methods is to use ```/dev/null```, which is present on most Linux systems. As this is an empty file, reading it returns an empty string. Therefore, signing the token with a empty string will result in a valid signature. If the server stores its verification keys in a database, the kid header parameter is also a potential vector for ```SQL injection``` attacks.
+Servers may use several cryptographic keys for signing different kinds of data, not just JWTs. For this reason, the header of a JWT may contain a ```kid``` (Key ID) parameter, which helps the server identify which key to use when verifying the signature. Verification keys are often stored as a JWK Set. In this case, the server may simply look for the JWK with the same kid as the token. However, the JWS specification doesn't define a concrete structure for this ID - it's just an arbitrary string of the developer's choosing. For example, they might use the kid parameter to point to a particular entry in a database, or even the name of a file. If this parameter is also vulnerable to ```directory traversal```, an attacker could potentially force the server to use an arbitrary file from its filesystem as the verification key.  This is especially dangerous if the server also supports JWTs signed using a ```symmetric algorithm```. In this case, an attacker could potentially point the kid parameter to a predictable, static file, then sign the JWT using a secret that matches the contents of this file. You could theoretically do this with any file, but one of the simplest methods is to use ```/dev/null```, which is present on most Linux systems. As this is an empty file, reading it returns an empty string. Therefore, signing the token with a empty string will result in a valid signature. If the server stores its verification keys in a database, the kid header parameter is also a potential vector for ```SQL injection``` attacks.
  ```
 Generate a suitable signing key
 
