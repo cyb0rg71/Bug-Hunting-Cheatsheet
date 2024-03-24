@@ -71,6 +71,41 @@ Example
 "jku": "https:exploit.server/.well-known/jwks.json"
 7. Now press >> sign in JSON Web Token tab >> Don't modify header >> send request
 ```
+#### Injecting self-signed JWTs via the kid parameter
+ Servers may use several cryptographic keys for signing different kinds of data, not just JWTs. For this reason, the header of a JWT may contain a kid (Key ID) parameter, which helps the server identify which key to use when verifying the signature. Verification keys are often stored as a JWK Set. In this case, the server may simply look for the JWK with the same kid as the token. However, the JWS specification doesn't define a concrete structure for this ID - it's just an arbitrary string of the developer's choosing. For example, they might use the kid parameter to point to a particular entry in a database, or even the name of a file. If this parameter is also vulnerable to ```directory traversal```, an attacker could potentially force the server to use an arbitrary file from its filesystem as the verification key.  This is especially dangerous if the server also supports JWTs signed using a symmetric algorithm. In this case, an attacker could potentially point the kid parameter to a predictable, static file, then sign the JWT using a secret that matches the contents of this file. You could theoretically do this with any file, but one of the simplest methods is to use ```/dev/null```, which is present on most Linux systems. As this is an empty file, reading it returns an empty string. Therefore, signing the token with a empty string will result in a valid signature. If the server stores its verification keys in a database, the kid header parameter is also a potential vector for ```SQL injection``` attacks.
+ ```
+Generate a suitable signing key
+
+    In Burp, load the JWT Editor extension from the BApp store.
+
+    In the lab, log in to your own account and send the post-login GET /my-account request to Burp Repeater.
+
+    In Burp Repeater, change the path to /admin and send the request. Observe that the admin panel is only accessible when logged in as the administrator user.
+
+    Go to the JWT Editor Keys tab in Burp's main tab bar.
+
+    Click New Symmetric Key.
+
+    In the dialog, click Generate to generate a new key in JWK format. Note that you don't need to select a key size as this will automatically be updated later.
+
+    Replace the generated value for the k property with a Base64-encoded null byte (AA==). Note that this is just a workaround because the JWT Editor extension won't allow you to sign tokens using an empty string.
+
+    Click OK to save the key.
+
+Modify and sign the JWT
+
+    Go back to the GET /admin request in Burp Repeater and switch to the extension-generated JSON Web Token message editor tab.
+
+    In the header of the JWT, change the value of the kid parameter to a path traversal sequence pointing to the /dev/null file:
+    ../../../../../../../dev/null
+
+    In the JWT payload, change the value of the sub claim to administrator.
+
+    At the bottom of the tab, click Sign, then select the symmetric key that you generated in the previous section.
+
+    Make sure that the Don't modify header option is selected, then click OK. The modified token is now signed using a null byte as the secret key.
+If this not work, try this >> https://youtu.be/hpQfxY8X4tI?si=oO-PYFtNsJ0GR8mk
+```
 
 
 
