@@ -29,7 +29,7 @@ Ideally, servers should only use a limited whitelist of public keys to verify JW
 ```
 1. Send to Repeater.
 2. Go to JSON Web Token tab to change payload info.
-3. Go to JWT Editor to generate new RSA key kid.
+3. Go to JWT Editor to generate new RSA key.
 4. Go to JSON Web Token tab >> select Attack >> select Embedded JWK >> press OK to add new generated kid.
 5. Now send HTTP request.
 ```
@@ -82,6 +82,7 @@ Modify and sign the JWT
 2. In the JWT payload, change the value of the sub claim to administrator/victim.
 3. At the bottom of the tab, click Sign, then select the symmetric key that you generated in the previous section.
 4. Make sure that the Don't modify header option is selected, then click OK. The modified token is now signed using a null byte as the secret key.
+5. Now send request.
 
 If this not work, try this >> https://youtu.be/hpQfxY8X4tI?si=oO-PYFtNsJ0GR8mk
 1. Follow previous steps.
