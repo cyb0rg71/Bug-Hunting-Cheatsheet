@@ -89,6 +89,32 @@ If this not work, try this >> https://youtu.be/hpQfxY8X4tI?si=oO-PYFtNsJ0GR8mk
 2. In header add this two additional parameter "typ": "JWT","K": "AA==" (without encoding AA==)
 3. Replace the generated value for the k property without encoding AA==.
 ```
+### Performing an algorithm confusion attack
+Algorithm confusion vulnerabilities typically arise due to flawed implementation of JWT libraries. Although the actual verification process differs depending on the algorithm used, many libraries provide a single, algorithm-agnostic method for verifying signatures. These methods rely on the ```alg``` parameter in the token's header to determine the type of verification they should perform. If the server receives a token signed using a symmetric algorithm like HS256, the library's generic ```verify()``` method will treat the public key as an HMAC secret. This means that an attacker could sign the token using HS256 and the public key, and the server will use the same public key to verify the signature.
+```
+1. Obtain the server's public key from jwks.json or any other path.
+2. With the extension loaded, in Burp's main tab bar, go to the JWT Editor Keys tab.
+3. Click New RSA Key. In the dialog, paste the JWK that you obtained earlier, without {"keys":[]}.
+4. Select the PEM radio button and copy the resulting PEM key.
+5. Go to the Decoder tab and Base64-encode the PEM.
+6. Go back to the JWT Editor Keys tab and click New Symmetric Key.
+7. In the dialog, click Generate to generate a new key in JWK format.
+8. Replace the generated value for the "k" parameter with a Base64-encoded PEM key that you just copied and save the key.
+9. Make alg header is set to HS256.
+10. Modify suitable details in payload and send the HTTP request.
+```
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
