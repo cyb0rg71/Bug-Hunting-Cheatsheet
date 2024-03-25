@@ -90,10 +90,11 @@ If this not work, try this >> https://youtu.be/hpQfxY8X4tI?si=oO-PYFtNsJ0GR8mk
 3. Replace the generated value for the k property without encoding AA==.
 ```
 ### Algorithm confusion
-#### Performing an algorithm confusion attack via exposed key
 Algorithm confusion vulnerabilities typically arise due to flawed implementation of JWT libraries. Although the actual verification process differs depending on the algorithm used, many libraries provide a single, algorithm-agnostic method for verifying signatures. These methods rely on the ```alg``` parameter in the token's header to determine the type of verification they should perform. If the server receives a token signed using a symmetric algorithm like HS256, the library's generic ```verify()``` method will treat the public key as an HMAC secret. This means that an attacker could sign the token using HS256 and the public key, and the server will use the same public key to verify the signature.
+#### Performing an algorithm confusion attack via exposed key
+ An algorithm confusion attack generally involves the following high-level steps:
 ```
-1. Obtain the server's public key from jwks.json or any other path.
+1. Obtain the server's exposed public key from jwks.json or any other path.
 2. With the extension loaded, in Burp's main tab bar, go to the JWT Editor Keys tab.
 3. Click New RSA Key. In the dialog, paste the JWK that you obtained earlier, without {"keys":[]}.
 4. Select the PEM radio button and copy the resulting PEM key.
@@ -101,11 +102,21 @@ Algorithm confusion vulnerabilities typically arise due to flawed implementation
 6. Go back to the JWT Editor Keys tab and click New Symmetric Key.
 7. In the dialog, click Generate to generate a new key in JWK format.
 8. Replace the generated value for the "k" parameter with a Base64-encoded PEM key that you just copied and save the key.
-9. Make alg header is set to HS256.
+9. Make alg header is set to HS256 and sign the key with saved key.
 10. Modify suitable details in payload and send the HTTP request.
 ```
-
-
+#### Deriving public keys from existing tokens (Without exposed keys)
+```
+1. Log in to the account and copy session cookie value from browser.
+2. Log out and do step 1 again to copy another session cookie.
+3. Now run this command sudo docker run --rm -it portswigger/sig2n <cookie value1> <cookie value2>
+4. You can see, the result generated 2 tempered JWT.
+5. Copy 2 tempered JWT one by one and paste it to cookie value in browser and refresh page to see which value throw you to login page.
+6. Select and copy the base64 encoded value of tempered JWT, which didn't throw you to login page.
+7. Now generate a New Symmetric Key from JWT Editor and replace the generated value for the "k" parameter with a Base64-encoded PEM key that you just copied and save the key.
+8. Make alg header is set to HS256 and sign the key with saved key.
+9. Modify suitable details in payload and send the HTTP request.
+```
 
 
 
