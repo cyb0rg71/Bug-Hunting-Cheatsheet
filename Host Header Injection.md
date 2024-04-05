@@ -46,6 +46,7 @@ In this case, now try bruteforcing ip address.
 ```txt
 X-Host:
 X-Original-URL:
+X-Forwarded-Host:
 X-Forwarded-Server:
 X-HTTP-Host-Override:
 Forwarded:
