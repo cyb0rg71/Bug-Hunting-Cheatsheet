@@ -1,6 +1,39 @@
 ### SSRF
 This vulnerability helps attacker to send request to back-end systems. 
 If vulnerable >> 500 Internal server error
+### Common SSRF Endpoints
+```
+dest=
+path=
+window=
+next=
+site=
+reference=
+data=
+load=
+html=
+validate=
+page=
+return=
+callback=
+domain=
+feed=
+view=
+dir=
+request-baskets=
+dict=
+pdf=
+file=
+imageuri=
+url=
+key=
+.json=
+oauth=
+redirect=
+api=
+dashboard=
+config.=
+```
 ### Tips
 Try with port number, path.
 ## Commom method (api parameter)
