@@ -1,6 +1,5 @@
 ### SSRF
-This vulnerability helps attacker to send request to back-end systems. 
-If vulnerable >> 500 Internal server error
+This vulnerability helps attacker to send request to back-end systems. To learn >> https://www.hackerone.com/application-security/how-server-side-request-forgery-ssrf
 ### Common SSRF Endpoints
 ```
 dest=
