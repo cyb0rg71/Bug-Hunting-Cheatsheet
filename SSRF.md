@@ -35,7 +35,8 @@ dashboard=
 config.=
 ```
 ### Tips
-Try with port number, path.
+1. Try with port number, path.
+2. File uploads: instead of uploading a file, try sending a URL and see if it downloads the content of the URL. Example: https://hackerone.com/reports/713
 ## Commom method (api parameter)
 ```txt
 http://localhost/
