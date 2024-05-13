@@ -36,6 +36,15 @@ config.=
 ### Tips
 1. Try with port number, path.
 2. File uploads: instead of uploading a file, try sending a URL and see if it downloads the content of the URL. Example: https://hackerone.com/reports/713
+3. If you do want to look for internal services, here’s a list of private IPv4 networks that you could scan for services:
+
+    10.0.0.0/8
+
+    127.0.0.1/32
+
+    172.16.0.0/12
+
+    192.168.0.0/16
 ## Commom method (api parameter)
 ```txt
 http://localhost/
