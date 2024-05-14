@@ -1,5 +1,5 @@
 ## All Vulnerability Payloads
-```
+```sh
 # SSRF
 http://localhost/
 http://127.0.0.1/
