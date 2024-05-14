@@ -1,5 +1,5 @@
 ## All Vulnerability Payloads
-```sh
+```
 # SQLi
 '+or+1=1--+-
 +or+'1'='1'--+-
