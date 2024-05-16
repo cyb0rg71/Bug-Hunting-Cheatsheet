@@ -10,3 +10,11 @@ The data stream wrapper is another example of PHP's wrapper functionality. The `
 data:text/plain,<?php%20phpinfo();%20?>
 ```
 This Payload could cause PHP code execution, displaying the PHP configuration details.
+#### PHP Session Files
+PHP session files can also be used in an LFI attack, leading to Remote Code Execution, particularly if an attacker can manipulate the session data. In a typical web application, session data is stored in files on the server. If an attacker can inject malicious code into these session files, and if the application includes these files through an LFI vulnerability, this can lead to code execution.
+##### Exploitation
+An attacker could exploit this vulnerability by injecting a PHP code into their session variable by using ```<?php echo phpinfo(); ?>``` in the page parameter.
+```
+<?php echo phpinfo(); ?>
+```
+This code is then saved in the session file on the server. Subsequently, the attacker can use the LFI vulnerability to include this session file. Since session IDs are hashed, the ID can be found in the cookies section of your browser. Accessing the Path ```/var/lib/php/sessions/sess_[sessionID]``` will execute the injected PHP code in the session file. Note that you have to replace ```[sessionID]``` with the value from your PHPSESSID cookie.
