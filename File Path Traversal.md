@@ -1,4 +1,10 @@
 # Path Traversal Cheat Sheet
+
+#### Common Paths to read
+```txt
+/etc/passwd
+/var/log/apache2/access.log
+```
 ___
 #### Common Method
 ```txt
