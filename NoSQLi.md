@@ -1,7 +1,7 @@
 # Boolean difference between SQLi && NoSQLi
-  ```or``` >> ```||```
-  ```and``` >> ```&&```
-  ```-- -``` >> ```%00``` 
+  1. ```or``` >> ```||```
+  2. ```and``` >> ```&&```
+  3. ```-- -``` >> ```%00``` 
 # Detecting NoSQLi Vulnerability
 ```
 '
