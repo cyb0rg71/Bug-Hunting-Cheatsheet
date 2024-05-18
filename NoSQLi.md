@@ -1,4 +1,4 @@
-# Boolean difference between SQLi && NoSQLi
+# Boolean operator difference between SQLi && NoSQLi
   1. ```or``` >> ```||```
   2. ```and``` >> ```&&```
   3. ```-- -``` >> ```%00``` 
