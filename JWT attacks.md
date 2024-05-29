@@ -59,7 +59,7 @@ or,
     ]
 }
 5. Change kid to new RSA key kid.
-6. Now add a new header parameter jku and paste exploit server url.
+6. Now add a new header parameter jku (Don't forget to add a comma before adding jku parameter in json) and paste exploit server url.
 Example
 "jku": "https:exploit.server/.well-known/jwks.json"
 7. Now press >> sign in JSON Web Token tab >> Don't modify header >> send request
