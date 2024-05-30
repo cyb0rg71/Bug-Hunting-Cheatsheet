@@ -1,3 +1,8 @@
+## Important paths that reveal servers public/private key
+```
+/jwks.json
+/.well-known/jwks.json
+```
 ## JWT
 JSON web tokens (JWTs) are a standard format for sending cryptographically signed JSON data between systems. They're commonly used in authentication, session management, and access control mechanisms. This means that if an attacker can successfully modify a JWT, they may be able to escalate their own privileges or impersonate other users. Note: JWT format ```header.payload.signature```.
 
