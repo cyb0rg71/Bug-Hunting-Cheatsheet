@@ -52,6 +52,7 @@ X-HTTP-Host-Override:
 Forwarded:
 X-Forwarded-For:
 ```
+Note: In Burp Suite, you can use the Param Miner extension's "Guess headers" function to automatically probe for supported headers using its extensive built-in wordlist.
 ## Connection state attacks
 #### For performance reasons, many websites reuse connections for multiple request/response cycles with the same client. In this case, you can potentially bypass this validation by sending an innocent-looking initial request then following up with your malicious one down the same connection. 
 
