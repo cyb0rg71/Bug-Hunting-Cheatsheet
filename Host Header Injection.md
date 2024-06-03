@@ -44,9 +44,9 @@ Host: ybdifpxyiesrimyyvm2e9wxgy74yssgh.oastify.com
 In this case, now try bruteforcing ip address.
 #### Inject host override headers
 ```txt
+X-Forwarded-Host:
 X-Host:
 X-Original-URL:
-X-Forwarded-Host:
 X-Forwarded-Server:
 X-HTTP-Host-Override:
 Forwarded:
