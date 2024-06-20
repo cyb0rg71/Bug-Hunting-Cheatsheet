@@ -11,6 +11,8 @@ ___
 "
 ')
 ")
+' sleep(5)
+'; sleep(5)
 ```
 
 ## SQL injection with load file and into outfile
