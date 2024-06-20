@@ -5,6 +5,13 @@ ___
 
 https://portswigger.net/web-security/sql-injection/cheat-sheet
 ___
+## Initial Testing
+```
+'
+"
+')
+")
+```
 
 ## SQL injection with load file and into outfile
 ```
