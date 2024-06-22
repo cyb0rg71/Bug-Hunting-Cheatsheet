@@ -1,5 +1,5 @@
 ### Testing Alert
-```
+```js
 <script>alert(1337)</script>
 <svg/ onload=alert(1337)//
 <Svg/OnLoad=(confirm)(1337)<!--
