@@ -14,6 +14,7 @@
 " autofocus="alert(1337)
 "onmouseover="alert(1)
 <a href="javascript:alert('XSS')">Click me</a>
+<img src=https://i.imgflip.com/8uo0t9.jpg>
 ```
 ### Reflected XSS into attribute with angle brackets HTML-encoded
 Inject ```<xss123>'"``` and see if the angle ```<>``` brackets are encoded with ```&lt;``` and ```&gt;```.
