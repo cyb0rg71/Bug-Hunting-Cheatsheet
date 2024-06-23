@@ -1,9 +1,10 @@
 ## SQLi Payloads
 ___
 
-### External Links
+### External Links for SQLi Techniques
 
 https://portswigger.net/web-security/sql-injection/cheat-sheet
+https://tryhackme.com/r/room/advancedsqlinjection
 ___
 ## Initial Testing
 ```
