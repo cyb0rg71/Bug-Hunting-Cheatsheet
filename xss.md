@@ -48,6 +48,7 @@ xss';alert(1);'xss
 Finally the code will look like this after response.
 ![Screenshot from 2024-06-23 19-29-18](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/5387641e-5ee7-4dca-89a3-e1253a426bc5)
 # Reflected XSS into HTML context with most tags and attributes blocked
+If tags are blocked by WAF, try this wordlist to detect an unblocked tag via burp intruder.
 [xss-tags.txt](https://github.com/user-attachments/files/15944758/xss-tags.txt)
 #### For cookie grabbing.
 ```js
