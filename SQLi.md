@@ -14,6 +14,7 @@ ___
 ")
 ' sleep(5)
 '; sleep(5)
+1'%0A||%0A1=1%0A--'-
 ```
 
 ## SQL injection with load file and into outfile
