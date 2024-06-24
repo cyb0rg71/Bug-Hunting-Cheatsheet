@@ -1,3 +1,8 @@
+### For html Injection
+```
+<h1>cyborg71</h1>
+"><h1>cyborg71</h1>
+```
 # Testing Alert
 ```js
 <script>alert(1337)</script>
