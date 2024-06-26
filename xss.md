@@ -1,5 +1,7 @@
 #### External source of payloads
 https://github.com/payloadbox/xss-payload-list
+##### For filter bypass
+https://github.com/terjanq/Tiny-XSS-Payloads
 ### For html Injection
 ```
 <h1>cyborg71</h1>
