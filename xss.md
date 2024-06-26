@@ -2,6 +2,8 @@
 https://github.com/payloadbox/xss-payload-list
 ##### For filter bypass
 https://github.com/terjanq/Tiny-XSS-Payloads
+##### XSS Filter Evasion Cheat Sheet
+https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html
 ### For html Injection
 ```
 <h1>cyborg71</h1>
