@@ -51,5 +51,7 @@ ___
 %2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fpasswd%00
 %2e%2e%2f%2f%2e%2e%2f%2f%2e%2e%2f%2fetc%2e%2e%2fpasswd%00
 ```
-## To learn
+### External Cheat Sheet
+https://github.com/JahTheTrueGod/Directory-Traversal-Cheat-Sheet
+### To learn
 https://tryhackme.com/r/room/filepathtraversal
