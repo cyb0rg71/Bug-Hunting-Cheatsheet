@@ -1,5 +1,8 @@
 # Contents
 * [Angle brackets HTML-encoded bypass](#Angle-brackets-HTML-encoded-bypass)
+* [Tags and Attribute Block Bypass](#Tags-and-Attribute-Block-Bypass)
+* [Reflected XSS with some SVG markup allowed](#Reflected-XSS-with-some-SVG-markup-allowed)
+* [Reflected XSS in canonical link tag](#Reflected-XSS-in-canonical-link-tag)
 
 #### External source of payloads
 https://github.com/payloadbox/xss-payload-list
