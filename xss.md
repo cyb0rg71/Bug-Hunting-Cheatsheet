@@ -84,7 +84,8 @@ In this situation, you close the script tag inject your payload.
 ```
 </script><img src=x onerror=alert(1337)>
 ```
-
+And then the final code will look like this after response.
+![Screenshot from 2024-07-01 04-37-54](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/8221e31d-5597-464b-8ed2-2b4d32368b9d)
 ## Tags and Attribute Block Bypass
 ### Reflected XSS into HTML context with most tags and attributes blocked
 https://portswigger.net/web-security/cross-site-scripting/contexts/lab-html-context-with-most-tags-and-attributes-blocked. Bruteforce for getting allowed tags.
