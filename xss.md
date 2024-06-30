@@ -89,7 +89,7 @@ https://portswigger.net/web-security/cross-site-scripting/contexts/lab-html-cont
 "><svg><animatetransform onbegin='alert(1337)'></animatetransform></svg>
 ```
 ## Reflected XSS in canonical link tag
-Make your custom parameter in a url path such as https://a.com/?```whoami=cyborg71```.
+Make your custom parameter in a url path such as httpx://a.com/?```whoami=cyborg71```.
 ![Screenshot from 2024-07-01 03-55-35](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/67df34d4-e22f-49cf-a1f0-786a9113b316)
 After this, If we get a canonical link in page source, then there might be a xss vulnerability exists. In this case try this payloads.
 ```
