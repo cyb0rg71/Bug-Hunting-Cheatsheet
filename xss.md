@@ -1,3 +1,6 @@
+# Contents
+* [Angle brackets HTML-encoded bypass](#Angle-brackets-HTML-encoded-bypass)
+
 #### External source of payloads
 https://github.com/payloadbox/xss-payload-list
 ##### For filter bypass
