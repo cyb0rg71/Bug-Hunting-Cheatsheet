@@ -1,9 +1,11 @@
 # Contents
 * [For html Injection](#For-html-Injection)
 * [Angle brackets HTML-encoded bypass](#Angle-brackets-HTML-encoded-bypass)
+* [Reflected XSS into a JavaScript string with single quote and backslash escaped](#Reflected-XSS-into-a-JavaScript-string-with-single-quote-and-backslash-escaped)
 * [Tags and Attribute Block Bypass](#Tags-and-Attribute-Block-Bypass)
 * [Reflected XSS with some SVG markup allowed](#Reflected-XSS-with-some-SVG-markup-allowed)
 * [Reflected XSS in canonical link tag](#Reflected-XSS-in-canonical-link-tag)
+
 
 #### External source of payloads
 https://github.com/payloadbox/xss-payload-list
@@ -78,6 +80,7 @@ xss';alert(1);'xss
 ```
 Finally the code will look like this after response.
 ![Screenshot from 2024-06-23 19-29-18](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/5387641e-5ee7-4dca-89a3-e1253a426bc5) <br>
+#### Reflected XSS into a JavaScript string with single quote and backslash escaped
 In some scenarios the payload might not work because of single quote and backslash escape.
 ![Screenshot from 2024-07-01 04-27-49](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/af236bde-554a-45f9-8e61-77f4409e5ef4) <br>
 In this situation, you close the script tag inject your payload.
