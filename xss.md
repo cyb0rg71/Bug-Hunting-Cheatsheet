@@ -2,6 +2,7 @@
 * [For html Injection](#For-html-Injection)
 * [Angle brackets HTML-encoded bypass](#Angle-brackets-HTML-encoded-bypass)
 * [Reflected XSS into a JavaScript string with single quote and backslash escaped](#Reflected-XSS-into-a-JavaScript-string-with-single-quote-and-backslash-escaped)
+* [Reflected XSS into a JavaScript string with angle brackets and double quotes HTML-encoded and single quotes escaped](#Reflected-XSS-into-a-JavaScript-string-with-angle-brackets-and-double-quotes-HTML-encoded-and-single-quotes-escaped)
 * [Tags and Attribute Block Bypass](#Tags-and-Attribute-Block-Bypass)
 * [Reflected XSS with some SVG markup allowed](#Reflected-XSS-with-some-SVG-markup-allowed)
 * [Reflected XSS in canonical link tag](#Reflected-XSS-in-canonical-link-tag)
@@ -89,6 +90,14 @@ In this situation, you close the script tag inject your payload.
 ```
 And then the final code will look like this after response.
 ![Screenshot from 2024-07-01 04-37-54](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/8221e31d-5597-464b-8ed2-2b4d32368b9d)
+#### Reflected XSS into a JavaScript string with angle brackets and double quotes HTML-encoded and single quotes escaped
+![Screenshot from 2024-07-01 21-47-37](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/320694fa-5d32-468d-bab3-62bc18829582)<br>
+In this case you can try this payload
+```
+\';alert(1337)//
+```
+And the final code will look like this.
+![Screenshot from 2024-07-01 21-50-00](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/3c75b4b8-173c-4bf7-8c3b-bc87dbc90386)
 ## Tags and Attribute Block Bypass
 ### Reflected XSS into HTML context with most tags and attributes blocked
 https://portswigger.net/web-security/cross-site-scripting/contexts/lab-html-context-with-most-tags-and-attributes-blocked. Bruteforce for getting allowed tags.
