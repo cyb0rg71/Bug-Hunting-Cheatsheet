@@ -91,6 +91,7 @@ In this situation, you close the script tag inject your payload.
 And then the final code will look like this after response.
 ![Screenshot from 2024-07-01 04-37-54](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/8221e31d-5597-464b-8ed2-2b4d32368b9d)
 #### Reflected XSS into a JavaScript string with angle brackets and double quotes HTML-encoded and single quotes escaped
+Sometimes previous method might not work because of angle brackets and double quotes HTML-encoded and single quotes escaped.
 ![Screenshot from 2024-07-01 21-47-37](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/320694fa-5d32-468d-bab3-62bc18829582)<br>
 In this case you can try this payload
 ```
