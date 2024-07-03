@@ -1,5 +1,5 @@
 # Contents
-* [Testing Allert](#Testing-Alert)
+* [Testing Alert](#Testing-Alert)
 * [For html Injection](#For-html-Injection)
 * [Angle brackets HTML-encoded bypass](#Angle-brackets-HTML-encoded-bypass)
 * [Reflected XSS into a JavaScript string with single quote and backslash escaped](#Reflected-XSS-into-a-JavaScript-string-with-single-quote-and-backslash-escaped)
