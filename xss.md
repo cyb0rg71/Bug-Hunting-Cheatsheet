@@ -114,6 +114,7 @@ Sometimes previous method might not work because of angle brackets and double qu
 In this case you can try this payload
 ```
 \';alert(1337)//
+\'-alert(1)//
 ```
 And the final code will look like this.
 <br>![Screenshot from 2024-07-01 21-50-00](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/3c75b4b8-173c-4bf7-8c3b-bc87dbc90386)
