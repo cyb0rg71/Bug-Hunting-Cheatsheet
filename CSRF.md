@@ -6,9 +6,9 @@ For a CSRF attack to be possible, three key conditions must be in place:
 ```
 ### Testing CSRF Token.
 ```
-1. Remove CSRF token and see if application accepts it.
+1. Remove CSRF parameter/token and see if application accepts it.
 2. Change request method POST to GET.
-3. See if user token is tied to user session. [ To test it, use another user's token in your token ]
+3. Exchange csrf token with another user.
 ```
 ### Testing CSRF token and CSRF Cookies.
 ____
