@@ -56,6 +56,10 @@ To exploit this CSRF token+cookie mechanism, we need to perform 2 things.
 </html>
 ```
 ### SameSite Lax Bypass
+Key Note:
+```
+Set-Cookie: session=bciZoELY2ukJUUOj1zJ7wcAGdYXtvq3C; Secure; HttpOnly; SameSite=Strict
+```
 ```
 1. Change method POST to GET.
 2. Via cookie refresh
