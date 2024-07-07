@@ -33,7 +33,8 @@ To exploit this CSRF token+cookie mechanism, we need to perform 2 things.
 ```
 1. Remove Refere Header and see if it works.
 2. Check which portion of referrer header is the application validating.
-Ex >> Referer: https://hacked.com/?academy.net
+Ex >> Referer:  https://attacker.com/?vulnerable-web.net
+                http://vulnerable-website.com.attacker-website.com/csrf-attack
 ```
 #### Exploit for case 1
 ```html
