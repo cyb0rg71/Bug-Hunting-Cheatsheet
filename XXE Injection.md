@@ -1,4 +1,7 @@
 # XXE Payloads
+
+### External source for learning and exploiting
+https://youtu.be/gjm6VHZa_8s?si=kYbaFjUQXSRGJ5HZ
 ## Note
 
 Keep in mind that XML is just a data transfer format. Make sure you also test any XML-based functionality for other vulnerabilities like XSS and SQL injection. You may need to encode your payload using XML escape sequences to avoid breaking the syntax, but you may also be able to use this to obfuscate your attack in order to bypass weak defences.
