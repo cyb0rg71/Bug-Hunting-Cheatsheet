@@ -1,4 +1,4 @@
-* [Hidden XXE attack surface via exploiting XInclude to retrieve files](#Hidden-Attack-Surface)
+* [Hidden XXE attack surface via exploiting XInclude to retrieve files](#Hidden-XXE-attack-surface-via-exploiting-XInclude-to-retrieve-files)
 # XXE Payloads
 
 ### External source for learning and exploiting
