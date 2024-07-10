@@ -5,7 +5,8 @@
 # Detecting NoSQLi Vulnerability
 ```
 '
-\' >> Escape Sequence: This will return 200 response. Similiar as -- - in sql injection.
+\'
+'+%26%26+1%3d%3d1%00
 '%22%60%7b%0d%0a%3b%24Foo%7d%0d%0a%24Foo%20%5cxYZ%00
 '\"`{\r%3b$Foo}\n$Foo+\\xYZ\u0000
 ```
