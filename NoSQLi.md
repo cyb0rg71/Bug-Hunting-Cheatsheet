@@ -43,7 +43,8 @@ For URL-based inputs, you can insert query operators via URL parameters. For exa
 {"$ne":"Invalid"} >> For password
 {"$in":["admin","administrator","superadmin"]} >> For bruteforce
 ```
-![Screenshot from 2024-05-15 02-30-58](https://github.com/user-attachments/assets/e5d1920b-a7e4-445e-8ece-f249a8462d10)<br>
+![Screenshot from 2024-07-12 03-55-31](https://github.com/user-attachments/assets/18902009-c2d8-4162-b5d8-7ebb221fd49e)
+<br>
 Note: We need to input atleast one valid credential to make a valid query.
 <br>
 If this doesn't work, you can try the following:
