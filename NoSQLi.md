@@ -44,7 +44,7 @@ For URL-based inputs, you can insert query operators via URL parameters. For exa
     Inject query operators in the JSON.
 # MongoDB Login Bypass
 ```
-{"$regex":""} >> For username
+{"$regex":"wien.*"} >> For username
 {"$ne":"Invalid"} >> For password
 {"$in":["admin","administrator","superadmin"]} >> For bruteforce
 ```
