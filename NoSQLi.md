@@ -43,6 +43,9 @@ For URL-based inputs, you can insert query operators via URL parameters. For exa
 {"$ne":"Invalid"} >> For password
 {"$in":["admin","administrator","superadmin"]} >> For bruteforce
 ```
+![Screenshot from 2024-05-15 02-30-58](https://github.com/user-attachments/assets/e5d1920b-a7e4-445e-8ece-f249a8462d10)<br>
+Note: We need to input atleast one valid credential to make a valid query.
+<br>
 If this doesn't work, you can try the following:
 
     1. Convert the request method from GET to POST.
