@@ -38,10 +38,10 @@ In JSON messages, you can insert query operators as nested objects. For example,
 
 For URL-based inputs, you can insert query operators via URL parameters. For example, username=wiener becomes ```username[$ne]=invalid```. If this doesn't work, you can try the following:
 
-    Convert the request method from GET to POST.
-    Change the Content-Type header to application/json.
-    Add JSON to the message body.
-    Inject query operators in the JSON.
+    1. Convert the request method from GET to POST.
+    2. Change the Content-Type header to application/json.
+    3. Add JSON to the message body.
+    4. Inject query operators in the JSON.
 # MongoDB Login Bypass
 ```
 {"$regex":"wien.*"} >> For username
