@@ -44,6 +44,7 @@ For URL-based inputs, you can insert query operators via URL parameters. For exa
 {"$in":["admin","administrator","superadmin"]} >> For bruteforce
 ```
 If this doesn't work, you can try the following:
+
     1. Convert the request method from GET to POST.
     2. Change the Content-Type header to application/json.
     3. Add JSON to the message body.
