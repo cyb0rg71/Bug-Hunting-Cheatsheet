@@ -1,4 +1,31 @@
-## SQLi Payloads
+# SQL Injection Payloads
+
+## Index
+1. [Initial Testing](#initial-testing)
+2. [SQL Injection with `LOAD_FILE` and `INTO OUTFILE`](#sql-injection-with-load_file-and-into-outfile)
+3. [Exceptional Payloads](#exceptional-payloads)
+4. [Data Retrieval](#data-retrieval)
+5. [Determining SQL Injection Vulnerability & Login Bypass](#determining-sqli-vulnerability--login-bypass)
+6. [Parameter Testing for Time-Based Blind SQL Injection](#parameter-testing-for-time-based-blind-sql-injection)
+7. [Cookie Testing](#cookie-testing)
+8. [Determining Column Numbers](#determining-column-numbers)
+9. [To Find a Column Containing Strings](#to-find-a-column-containing-strings)
+10. [To Fetch Database Version](#to-fetch-database-version)
+11. [To Identify Vulnerable Columns](#to-identify-vulnerable-columns)
+12. [String Concatenation](#string-concatenation)
+13. [SQLite Database Info Retrieving](#sqlite-database-info-retrieving)
+14. [Oracle Database Info Retrieving](#oracle-database-info-retrieving)
+15. [PostgreSQL Database Info Retrieving](#postgresql-database-info-retrieving)
+16. [MySQL Database Info Retrieving](#mysql-database-info-retrieving)
+17. [Blind-Based Boolean SQL Injection with Conditional Responses (Visible Message)](#blind-based-boolean-sql-injection-with-conditional-responses-visible-message)
+18. [Blind SQL Injection with Conditional Errors (No Visible Message)](#blind-sql-injection-with-conditional-errors-no-visible-message)
+19. [Blind SQL Injection with Conditional Errors to Determine Table, Other Info Exist or Not](#blind-sql-injection-with-conditional-errors-to-determine-table-other-info-exist-or-not)
+20. [Blind SQL Injection with Time Delays](#blind-sql-injection-with-time-delays)
+21. [Blind SQL Injection with Time Delays and Information Retrieval](#blind-sql-injection-with-time-delays-and-information-retrieval)
+22. [Visible Error-Based SQL Injection](#visible-error-based-sql-injection)
+23. [HTTP Header Based SQL Injection](#http-header-based-sql-injection)
+24. [Inception Based SQL Injection](#inception-based-sql-injection)
+25. [Wordlist](#wordlist)
 ___
 
 ### External Links for SQLi Techniques
