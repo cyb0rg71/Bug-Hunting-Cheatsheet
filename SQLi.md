@@ -5,7 +5,7 @@
 2. [SQL Injection with `LOAD_FILE` and `INTO OUTFILE`](#SQL-injection-with-load-file-and-into-outfile)
 3. [Exceptional Payloads](#exceptional)
 4. [Data Retrieval](#data-retrieval)
-5. [Determining SQL Injection Vulnerability & Login Bypass](#Determinig-SQLi-Vulnerablity-&-Login-Bypass)
+5. [Determining SQL Injection Vulnerability & Login Bypass](#determinig-sqli-vulnerablity-&-login-bypass)
 6. [Parameter Testing for Time-Based Blind SQL Injection](#parameter-testing-for-time-based-blind-sql-injection)
 7. [Cookie Testing](#cookie-testing)
 8. [Determining Column Numbers](#determining-column-numbers)
