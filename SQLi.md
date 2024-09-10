@@ -27,8 +27,8 @@
 23. [Out of band interaction](#out-of-band-interaction)
 24. [SQL Injection with LOAD_FILE and INTO OUTFILE](#sql-injection-with-load_file-and-into-outfile)
 25. [Exceptional Payloads](#exceptional-payloads)
-26. [Wordlist](#wordlist)
-27. [XML based filter bypass via XML encoding](#XML-based-filter-bypass-via-XML-encoding)
+26. [XML based filter bypass via XML encoding](#XML-based-filter-bypass-via-XML-encoding)
+27. [Wordlist](#wordlist)
 ___
 
 ### External Links for SQLi Techniques
