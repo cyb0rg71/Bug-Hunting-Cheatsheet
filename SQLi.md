@@ -1,7 +1,6 @@
 # SQL Injection Payloads
 
 ## Index
-## Index
 
 1. [Initial Testing](#initial-testing)
 2. [Determining SQLi Vulnerability & Login Bypass](#determining-sqli-vulnerability--login-bypass)
