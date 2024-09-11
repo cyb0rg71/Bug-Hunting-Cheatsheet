@@ -1,4 +1,11 @@
 # OS Command Injection Payloads
+
+  - [Wordlist](#wordlist)
+  - [Simple Case](#simple-case)
+  - [Blind Injection](#blind-injection)
+  - [Blind Injection with Output Redirection](#blind-injection-with-output-redirection)
+  - [Out of Band](#out-of-band)
+  - [ChatGPT Payload](#chatgpt-payload)
 ___
 ## Wordlist
 ```sh
