@@ -1,5 +1,4 @@
 # Path Traversal Cheat Sheet
-
 [Common Paths to Read](#common-paths-to-read)
 [Common Method](#common-method)
 [Bypassing Defence Mechanism](#bypassing-defence-mechanism)
@@ -10,7 +9,6 @@
 [Wordlist](#wordlist)
 [External Cheat Sheet](#external-cheat-sheet)
 [To Learn](#to-learn)
-
 ### Common Paths to read
 ```txt
 /etc/passwd
