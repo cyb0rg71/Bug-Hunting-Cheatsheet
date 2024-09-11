@@ -1,5 +1,16 @@
 # Path Traversal Cheat Sheet
 
+  [Common Paths to Read](#common-paths-to-read)
+  [Common Method](#common-method)
+  [Bypassing Defence Mechanism](#bypassing-defence-mechanism)
+  [File Extension with Null Byte Bypass](#file-extension-with-null-byte-bypass)
+  [Linux Path Traversal Payloads](#linux-path-traversal-payloads)
+  [Windows Path Traversal Payloads](#windows-path-traversal-payloads)
+  [URL Encoded Variants](#url-encoded-variants)
+  [Wordlist](#wordlist)
+  [External Cheat Sheet](#external-cheat-sheet)
+  [To Learn](#to-learn)
+
 ### Common Paths to read
 ```txt
 /etc/passwd
