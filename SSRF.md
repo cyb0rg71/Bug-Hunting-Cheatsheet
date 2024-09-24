@@ -1,6 +1,27 @@
-### SSRF
+## Index:
+
+1. [SSRF Vulnerability Overview](#ssrf)
+2. [Common SSRF Endpoints](#common-ssrf-endpoints)
+3. [Tips](#tips)
+   - [Port and Path Exploitation](#port-and-path-exploitation)
+   - [File Uploads](#file-uploads)
+   - [Internal Private IPv4 Networks](#internal-private-ipv4-networks)
+4. [Common Method (API Parameter)](#common-method-api-parameter)
+5. [Blind Method](#blind-method)
+   - [Using Burp Collaborator in Referer Header](#using-burp-collaborator-in-referer-header)
+   - [Shellshock Exploitation via SSRF](#shellshock-exploitation-via-ssrf)
+6. [Bypassing Common SSRF Defenses](#bypassing-common-ssrf-defenses)
+   - [SSRF with Blacklist-Based Input Filters](#ssrf-with-blacklist-based-input-filters)
+   - [SSRF with Whitelist-Based Input Filters](#ssrf-with-whitelist-based-input-filters)
+     - [Embedding Credentials in a URL](#embedding-credentials-in-a-url)
+     - [Using URL Fragment for Bypass](#using-url-fragment-for-bypass)
+     - [DNS Naming Hierarchy Bypass](#dns-naming-hierarchy-bypass)
+   - [Bypassing SSRF Filters via Open Redirection](#bypassing-ssrf-filters-via-open-redirection)
+
+## SSRF
 This vulnerability helps attacker to send request to back-end systems. To learn >> https://www.hackerone.com/application-security/how-server-side-request-forgery-ssrf
-### Common SSRF Endpoints
+
+## Common SSRF Endpoints
 ```
 dest=
 path=
