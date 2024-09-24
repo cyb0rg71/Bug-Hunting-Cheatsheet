@@ -66,7 +66,7 @@ config.=
     172.16.0.0/12
 
     192.168.0.0/16
-## Commom method api parameter
+## Common method api parameter
 ```txt
 http://localhost/
 http://127.0.0.1/
