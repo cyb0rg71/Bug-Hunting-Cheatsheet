@@ -6,7 +6,7 @@
    - [Port and Path Exploitation](#port-and-path-exploitation)
    - [File Uploads](#file-uploads)
    - [Internal Private IPv4 Networks](#internal-private-ipv4-networks)
-4. [Common Method (API Parameter)](#common-method-(api-parameter))
+4. [Common Method (API Parameter)](#common-method-api-parameter)
 5. [Blind Method](#blind-method)
    - [Using Burp Collaborator in Referer Header](#using-burp-collaborator-in-referer-header)
    - [Shellshock Exploitation via SSRF](#shellshock-exploitation-via-ssrf)
@@ -66,7 +66,7 @@ config.=
     172.16.0.0/12
 
     192.168.0.0/16
-## Commom method (api parameter)
+## Commom method api parameter
 ```txt
 http://localhost/
 http://127.0.0.1/
