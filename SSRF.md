@@ -54,19 +54,23 @@ api=
 dashboard=
 config.=
 ```
-### Tips
+## Tips
+
+### Port and Path Exploitation
 1. Try with port number, path.
+
+### File Uploads
 2. File uploads: instead of uploading a file, try sending a URL and see if it downloads the content of the URL. Example: https://hackerone.com/reports/713
+
+### Internal Private IPv4 Networks
 3. If you do want to look for internal services, here’s a list of private IPv4 networks that you could scan for services:
 
-    10.0.0.0/8
+    - 10.0.0.0/8
+    - 127.0.0.1/32
+    - 172.16.0.0/12
+    - 192.168.0.0/16
 
-    127.0.0.1/32
-
-    172.16.0.0/12
-
-    192.168.0.0/16
-## Common method api parameter
+## Common Method (API Parameter)
 ```txt
 http://localhost/
 http://127.0.0.1/
