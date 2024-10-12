@@ -10,7 +10,7 @@
   - [Out of Band](#out-of-band)
   - [ChatGPT Payload](#chatgpt-payload)
 ___
-# Summary
+# Description
 
 To exploit an OS command injection vulnerability, an attacker must find a place where the application accepts user input and then inject a malicious payload that executes arbitrary commands on the server. This usually involves crafting an HTTP request where the payload is placed in an input field that the server processes with a system command.
 
