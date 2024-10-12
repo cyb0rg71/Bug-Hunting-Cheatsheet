@@ -19,7 +19,7 @@
      - [DNS Naming Hierarchy Bypass](#dns-naming-hierarchy-bypass)
    - [Bypassing SSRF Filters via Open Redirection](#bypassing-ssrf-filters-via-open-redirection)
 
-#Description
+# Description
 
 To exploit a Server-Side Request Forgery (SSRF) vulnerability, attackers craft an HTTP request where a user-controlled input is used to manipulate server-side requests. This usually involves placing the payload in input fields that the application uses to make requests on behalf of the user.
 
