@@ -2,7 +2,7 @@
 
 # OS Command Injection Payloads
 
-  - [Summary](#summary)
+  - [Description](#description)
   - [Wordlist](#wordlist)
   - [Simple Case](#simple-case)
   - [Blind Injection](#blind-injection)
