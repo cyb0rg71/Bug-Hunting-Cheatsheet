@@ -132,11 +132,13 @@ X-Forwarded-For:
 Note: In Burp Suite, you can use the Param Miner extension's "Guess headers" function to automatically probe for supported headers using its extensive built-in wordlist.
 ## Connection state attacks
 #### For performance reasons, many websites reuse connections for multiple request/response cycles with the same client. In this case, you can potentially bypass this validation by sending an innocent-looking initial request then following up with your malicious one down the same connection. 
-
+```
 Step 1 >> Duplicate a request.
 Step 2 >> Change the Connection header to keep-alive in 1st request.
 Step 3 >> Change the request method GET to POST in 2nd request.
 Step 4 >> Mention the administrator path and change the host to local ip in 2nd request.
+Step 5 >> Using the drop-down menu next to the Send button, change the send mode to Send group in sequence (single connection) and send both request together.
+```
 ```txt
 POST /admin HTTP/1.1
 Host: 192.168.0.1 
