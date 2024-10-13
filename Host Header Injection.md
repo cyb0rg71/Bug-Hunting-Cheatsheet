@@ -1,3 +1,80 @@
+**Host Header Injection** is a web security vulnerability that occurs when an application improperly trusts the value of the "Host" header in an HTTP request. If an attacker can manipulate this header and the server processes or uses it without validation, the attacker may exploit it for various attacks, such as web cache poisoning, server-side request forgery (SSRF), password reset poisoning, or bypassing access control mechanisms.
+
+### How Does Host Header Injection Occur?
+
+1. **Improper Trust in the Host Header**:
+   - When a web server or application uses the "Host" header value for important operations (such as building links, redirecting users, or generating URLs) without validating or verifying it, the attacker can manipulate the header to inject malicious values.
+
+2. **Misconfigured Web Servers**:
+   - Some web servers do not verify the "Host" header value properly, allowing the attacker to supply a different "Host" header in the HTTP request, which is then used by the server in an unsafe manner.
+
+3. **Usage of the Host Header in Application Logic**:
+   - If the application uses the "Host" header to construct absolute URLs for links, redirects, or resource loading, an attacker can exploit this to alter the behavior of the application.
+
+### Where to Put a Host Header Injection Payload?
+
+A Host Header Injection payload is placed directly in the "Host" header of an HTTP request. The attacker modifies the value of the header to exploit the vulnerability. Here are some example scenarios:
+
+### 1. Example of a Basic Host Header Injection
+
+If an application generates absolute links based on the "Host" header, you can manipulate the header value to control the generated links.
+
+**Example HTTP Request:**
+```
+GET / HTTP/1.1
+Host: evil.com
+```
+If the server uses the "Host" header to build links like `http://original-website.com/page`, it may now generate `http://evil.com/page`, potentially allowing the attacker to perform phishing attacks.
+
+### 2. Web Cache Poisoning Using Host Header Injection
+
+If the application is cached based on the "Host" header, an attacker can manipulate the cache to store a malicious response.
+
+**Example HTTP Request:**
+```
+GET / HTTP/1.1
+Host: evil.com
+X-Forwarded-Host: vulnerable-website.com
+```
+Here, the attacker manipulates the "Host" header to `evil.com`, while the actual content belongs to the original website. If this response gets cached, future visitors may see the attacker's content.
+
+### 3. Password Reset Poisoning via Host Header Injection
+
+When an application sends password reset links based on the "Host" header, an attacker can manipulate the header to send a reset link pointing to their controlled domain.
+
+**Example HTTP Request:**
+```
+POST /reset-password HTTP/1.1
+Host: evil.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 32
+
+email=user@victim.com
+```
+In this case, the password reset link may be generated using `evil.com`, making the victim click on a malicious link controlled by the attacker.
+
+### 4. Exploiting Host Header Injection for SSRF
+
+Host Header Injection can be combined with SSRF if the server uses the "Host" header to perform server-side requests.
+
+**Example HTTP Request:**
+```
+GET /internal-api HTTP/1.1
+Host: 127.0.0.1
+```
+Here, the server might use the "Host" header to make requests internally, allowing the attacker to access internal resources.
+
+### Preventing Host Header Injection
+
+- **Validate the "Host" Header**:
+  - Only allow expected and trusted hostnames, rejecting requests with unrecognized or manipulated hostnames.
+
+- **Use Server Configurations to Restrict Valid Hostnames**:
+  - Configure the web server (e.g., Apache, Nginx) to accept only valid "Host" headers that match the application's domain.
+
+- **Avoid Using the "Host" Header for Security Decisions**:
+  - Do not rely on the "Host" header for authentication, access
+
 # What can we do via Host Header injection?
 ```txt
     1. Password Reset Poisoning
