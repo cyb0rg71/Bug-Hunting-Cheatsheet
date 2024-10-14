@@ -98,19 +98,9 @@ template.process(dataModel, out);
 ```
 It could output `49` instead of `${7*7}`.
 
-### Preventing SSTI Vulnerabilities
-
-To protect against SSTI:
-1. **Do Not Trust User Input**: Avoid rendering user-supplied data directly in templates.
-2. **Use Context-Aware Escaping**: Properly escape user input in templates.
-3. **Disable Dangerous Template Engine Features**: Limit the capabilities of the template engine (e.g., disable code execution).
-4. **Use Template Sandboxing**: Restrict the scope of what templates can do by using features like Jinja2's `SandboxedEnvironment`.
-
 SSTI vulnerabilities can lead to severe consequences, such as remote code execution or unauthorized access to sensitive data, making secure template handling crucial for web applications.
 
-# SSTI Payloads
-___
-## For Detection
+# SSTI Payloads For Detection
 ```html
 {{7*7}}
 ${7*7}
