@@ -102,6 +102,7 @@ SSTI vulnerabilities can lead to severe consequences, such as remote code execut
 
 # SSTI Payloads For Detection
 ```html
+${{<%[%'"}}%\
 {{7*7}}
 ${7*7}
 <%= 7*7 %>
