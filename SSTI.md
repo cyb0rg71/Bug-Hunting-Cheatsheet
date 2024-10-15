@@ -113,7 +113,7 @@ engine.render("Hello {{" + greeting + "}}", data)
 
 - **Output:**
    ```
-   Hello Carlos
+   Hello Cyborg71
    ```
 
 To test for SSTI, try injecting additional template syntax:
@@ -124,7 +124,7 @@ To test for SSTI, try injecting additional template syntax:
 
 If the server-side template engine renders the input correctly, potentially including the arbitrary HTML, like:
 ```
-Hello Carlos<tag>
+Hello Cyborg71<tag>
 ```
 It indicates that the application is vulnerable to SSTI because the template syntax allowed breaking out of the original expression.
 
