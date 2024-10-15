@@ -99,6 +99,34 @@ template.process(dataModel, out);
 It could output `49` instead of `${7*7}`.
 
 SSTI vulnerabilities can lead to severe consequences, such as remote code execution or unauthorized access to sensitive data, making secure template handling crucial for web applications.
+### Breaking Out of Expressions
+
+In more complex cases, the vulnerability might not be evident from a simple mathematical operation. For example, if user input is placed within a template expression, like so:
+```python
+greeting = getQueryParameter('greeting')
+engine.render("Hello {{" + greeting + "}}", data)
+```
+- **In this example, the request URL might be:**
+   ```
+   http://vulnerable-website.com/?greeting=data.username
+   ```
+
+- **Output:**
+   ```
+   Hello Carlos
+   ```
+
+To test for SSTI, try injecting additional template syntax:
+- **Injection Example:**
+   ```
+   http://vulnerable-website.com/?greeting=data.username}}<tag>
+   ```
+
+If the server-side template engine renders the input correctly, potentially including the arbitrary HTML, like:
+```
+Hello Carlos<tag>
+```
+It indicates that the application is vulnerable to SSTI because the template syntax allowed breaking out of the original expression.
 
 # SSTI Payloads For Detection
 ```html
