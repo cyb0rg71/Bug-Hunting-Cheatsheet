@@ -13,9 +13,6 @@
    - 3.4 [Connection State Attacks](#connection-state-attacks)
    - 3.5 [SSRF via a Malformed Request Line](#ssrf-via-a-malformed-request-line)
    - 3.6 [Check for Flawed Validation](#check-for-flawed-validation)
-7. [Tools for Testing Host Header Injection](#tools-for-testing-host-header-injection)
-   - 7.1 [Burp Suite's Param Miner](#burp-suites-param-miner)
-8. [Conclusion](#conclusion)
 
 ## Introduction
 **Host Header Injection** is a web security vulnerability that occurs when an application improperly trusts the value of the "Host" header in an HTTP request. If an attacker can manipulate this header and the server processes or uses it without validation, the attacker may exploit it for various attacks, such as web cache poisoning, server-side request forgery (SSRF), password reset poisoning, or bypassing access control mechanisms.
