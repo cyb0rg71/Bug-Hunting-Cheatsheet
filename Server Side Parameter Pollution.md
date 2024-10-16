@@ -84,13 +84,14 @@ If the server uses the second `action` parameter, the attacker might gain edit p
 
 ### Scenario 4: Truncating query strings
 
-You can use a URL-encoded # character to attempt to truncate the server-side request. To help you interpret the response, you could also add a string after the # character.
+You can use a URL-encoded & or # character to attempt to truncate the server-side request. To help you interpret the response, you could also add a string after the # character.
 
 **Original Request**
 ```
-GET /userSearch?name=peter%23foo&back=/home
+GET /userSearch?name=peter&back=/home
 ```
 **Manipulated Request:**
 ```
 GET /users/search?name=peter#foo&publicProfile=true
+GET /users/search?name=peter&foo&publicProfile=true
 ```
