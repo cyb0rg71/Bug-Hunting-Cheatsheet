@@ -30,6 +30,7 @@
    - 7.1 [Burp Suite's Param Miner](#burp-suites-param-miner)
 8. [Conclusion](#conclusion)
 
+## Introduction
 **Host Header Injection** is a web security vulnerability that occurs when an application improperly trusts the value of the "Host" header in an HTTP request. If an attacker can manipulate this header and the server processes or uses it without validation, the attacker may exploit it for various attacks, such as web cache poisoning, server-side request forgery (SSRF), password reset poisoning, or bypassing access control mechanisms.
 
 ### How Does Host Header Injection Occur?
