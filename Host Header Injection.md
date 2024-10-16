@@ -50,7 +50,7 @@ Host: evil.com
 ```
 If the server uses the "Host" header to build links like `http://original-website.com/page`, it may now generate `http://evil.com/page`, potentially allowing the attacker to perform phishing attacks.
 
-### 2. Web Cache Poisoning Using Host Header Injection
+### Web Cache Poisoning Using Host Header Injection
 
 If the application is cached based on the "Host" header, an attacker can manipulate the cache to store a malicious response.
 
@@ -62,7 +62,7 @@ X-Forwarded-Host: vulnerable-website.com
 ```
 Here, the attacker manipulates the "Host" header to `evil.com`, while the actual content belongs to the original website. If this response gets cached, future visitors may see the attacker's content.
 
-### 3. Password Reset Poisoning via Host Header Injection
+### Password Reset Poisoning via Host Header Injection
 
 When an application sends password reset links based on the "Host" header, an attacker can manipulate the header to send a reset link pointing to their controlled domain.
 
@@ -77,7 +77,7 @@ email=user@victim.com
 ```
 In this case, the password reset link may be generated using `evil.com`, making the victim click on a malicious link controlled by the attacker.
 
-### 4. Exploiting Host Header Injection for SSRF
+### Exploiting Host Header Injection for SSRF
 
 Host Header Injection can be combined with SSRF if the server uses the "Host" header to perform server-side requests.
 
