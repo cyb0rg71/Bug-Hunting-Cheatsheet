@@ -84,12 +84,7 @@ Host: 127.0.0.1
 ```
 Here, the server might use the "Host" header to make requests internally, allowing the attacker to access internal resources.
 
-# What can we do via Host Header injection?
-```txt
-    1. Password Reset Poisoning
-    2. Routing Based SSRF
-```
-# How to test?
+# How to Test for Host Header Injection?
 ___
 ## Supply an arbitrary Host header. If vulnerable, this will generate 200 OK response or 504 server gateway error.
 ```txt
