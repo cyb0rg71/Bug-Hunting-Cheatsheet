@@ -1,9 +1,6 @@
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [How Does Host Header Injection Occur?](#how-does-host-header-injection-occur)
-   - 2.1 [Improper Trust in the Host Header](#improper-trust-in-the-host-header)
-   - 2.2 [Misconfigured Web Servers](#misconfigured-web-servers)
-   - 2.3 [Usage of the Host Header in Application Logic](#usage-of-the-host-header-in-application-logic)
 3. [Where to Put a Host Header Injection Payload?](#where-to-put-a-host-header-injection-payload)
 4. [Examples of Host Header Injection Attacks](#examples-of-host-header-injection-attacks)
    - 4.1 [Basic Host Header Injection](#basic-host-header-injection)
