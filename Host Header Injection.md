@@ -141,8 +141,8 @@ Host: 192.168.0.1
 ```txt
 GET @private-intranet/example HTTP/1.1
 ```
-## Check for flawed validation (Check portswigger for more)
-#### Instead of receiving an "Invalid Host header" response, you might find that your request is blocked as a result of some kind of security measure. If this happen, try to use port or non numeric staff in port. (You can use this method for password reset link hijacking via dangling markup) 
+## Check for flawed validation
+Instead of receiving an "Invalid Host header" response, you might find that your request is blocked as a result of some kind of security measure. If this happen, try to use port or non numeric staff in port. (You can use this method for password reset link hijacking via dangling markup) (Check portswigger for more)
 ```txt
 GET /example HTTP/1.1
 Host: vulnerable-website.com:bad-stuff-here
