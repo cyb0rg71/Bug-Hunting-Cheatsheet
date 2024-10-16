@@ -1,7 +1,6 @@
 ## Table of Contents
 1. [Introduction](#introduction)
-2. [How Does Host Header Injection Occur?](#how-does-host-header-injection-occur)
-3. [Where to Put a Host Header Injection Payload?](#where-to-put-a-host-header-injection-payload)
+2. [Where to Put a Host Header Injection Payload?](#where-to-put-a-host-header-injection-payload)
 5. [How to Test for Host Header Injection?](#how-to-test-for-host-header-injection)
    - 5.1 [Supply an Arbitrary Host Header](#supply-an-arbitrary-host-header)
    - 5.2 [Accessing Restricted Functionality or Routing-Based SSRF](#accessing-restricted-functionality-or-routing-based-ssrf)
@@ -20,17 +19,6 @@
 
 ## Introduction
 **Host Header Injection** is a web security vulnerability that occurs when an application improperly trusts the value of the "Host" header in an HTTP request. If an attacker can manipulate this header and the server processes or uses it without validation, the attacker may exploit it for various attacks, such as web cache poisoning, server-side request forgery (SSRF), password reset poisoning, or bypassing access control mechanisms.
-
-### How Does Host Header Injection Occur?
-
-1. **Improper Trust in the Host Header**:
-   - When a web server or application uses the "Host" header value for important operations (such as building links, redirecting users, or generating URLs) without validating or verifying it, the attacker can manipulate the header to inject malicious values.
-
-2. **Misconfigured Web Servers**:
-   - Some web servers do not verify the "Host" header value properly, allowing the attacker to supply a different "Host" header in the HTTP request, which is then used by the server in an unsafe manner.
-
-3. **Usage of the Host Header in Application Logic**:
-   - If the application uses the "Host" header to construct absolute URLs for links, redirects, or resource loading, an attacker can exploit this to alter the behavior of the application.
 
 ### Where to Put a Host Header Injection Payload?
 
