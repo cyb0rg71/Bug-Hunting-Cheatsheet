@@ -14,10 +14,6 @@
    - 5.5 [Connection State Attacks](#connection-state-attacks)
    - 5.6 [SSRF via a Malformed Request Line](#ssrf-via-a-malformed-request-line)
    - 5.7 [Check for Flawed Validation](#check-for-flawed-validation)
-6. [Preventing Host Header Injection](#preventing-host-header-injection)
-   - 6.1 [Validate the Host Header](#validate-the-host-header)
-   - 6.2 [Use Server Configurations to Restrict Valid Hostnames](#use-server-configurations-to-restrict-valid-hostnames)
-   - 6.3 [Avoid Using the Host Header for Security Decisions](#avoid-using-the-host-header-for-security-decisions)
 7. [Tools for Testing Host Header Injection](#tools-for-testing-host-header-injection)
    - 7.1 [Burp Suite's Param Miner](#burp-suites-param-miner)
 8. [Conclusion](#conclusion)
@@ -87,17 +83,6 @@ GET /internal-api HTTP/1.1
 Host: 127.0.0.1
 ```
 Here, the server might use the "Host" header to make requests internally, allowing the attacker to access internal resources.
-
-### Preventing Host Header Injection
-
-- **Validate the "Host" Header**:
-  - Only allow expected and trusted hostnames, rejecting requests with unrecognized or manipulated hostnames.
-
-- **Use Server Configurations to Restrict Valid Hostnames**:
-  - Configure the web server (e.g., Apache, Nginx) to accept only valid "Host" headers that match the application's domain.
-
-- **Avoid Using the "Host" Header for Security Decisions**:
-  - Do not rely on the "Host" header for authentication, access
 
 # What can we do via Host Header injection?
 ```txt
