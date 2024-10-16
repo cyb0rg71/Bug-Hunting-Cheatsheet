@@ -2,9 +2,9 @@
 1. [Introduction](#introduction)
 2. [Where to Put a Host Header Injection Payload?](#where-to-put-a-host-header-injection-payload)
 5. [How to Test for Host Header Injection?](#how-to-test-for-host-header-injection)
-   - 5.1 [Supply an Arbitrary Host Header](#supply-an-arbitrary-host-header)
-   - 5.2 [Accessing Restricted Functionality or Routing-Based SSRF](#accessing-restricted-functionality-or-routing-based-ssrf)
-   - 5.3 [Send Ambiguous Requests](#send-ambiguous-requests)
+   - 3.1 [Supply an Arbitrary Host Header](#supply-an-arbitrary-host-header)
+   - 3.2 [Accessing Restricted Functionality or Routing-Based SSRF](#accessing-restricted-functionality-or-routing-based-ssrf)
+   - 3.3 [Send Ambiguous Requests](#send-ambiguous-requests)
       - 5.3.1 [Inject Duplicate Host Headers](#inject-duplicate-host-headers)
       - 5.3.2 [Add Line Wrapping](#add-line-wrapping)
       - 5.3.3 [Supply an Absolute URL](#supply-an-absolute-url)
@@ -74,7 +74,8 @@ Here, the server might use the "Host" header to make requests internally, allowi
 
 # How to Test for Host Header Injection?
 ___
-## Supply an arbitrary Host header. If vulnerable, this will generate 200 OK response or 504 server gateway error.
+## Supply an arbitrary Host header
+If vulnerable, this will generate 200 OK response or 504 server gateway error.
 ```txt
 GET /example HTTP/1.1
 Host: google.com
