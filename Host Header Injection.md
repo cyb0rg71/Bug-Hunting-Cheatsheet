@@ -2,7 +2,6 @@
 1. [Introduction](#introduction)
 2. [How Does Host Header Injection Occur?](#how-does-host-header-injection-occur)
 3. [Where to Put a Host Header Injection Payload?](#where-to-put-a-host-header-injection-payload)
-4. [Examples of Host Header Injection Attacks](#examples-of-host-header-injection-attacks)
 5. [How to Test for Host Header Injection?](#how-to-test-for-host-header-injection)
    - 5.1 [Supply an Arbitrary Host Header](#supply-an-arbitrary-host-header)
    - 5.2 [Accessing Restricted Functionality or Routing-Based SSRF](#accessing-restricted-functionality-or-routing-based-ssrf)
@@ -41,8 +40,7 @@
 
 A Host Header Injection payload is placed directly in the "Host" header of an HTTP request. The attacker modifies the value of the header to exploit the vulnerability. Here are some example scenarios:
 
-### Examples of Host Header Injection Attacks
-
+### Normal Case
 If an application generates absolute links based on the "Host" header, you can manipulate the header value to control the generated links.
 
 **Example HTTP Request:**
