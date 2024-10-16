@@ -45,7 +45,7 @@
 
 A Host Header Injection payload is placed directly in the "Host" header of an HTTP request. The attacker modifies the value of the header to exploit the vulnerability. Here are some example scenarios:
 
-### 1. Examples of Host Header Injection Attacks
+### Examples of Host Header Injection Attacks
 
 If an application generates absolute links based on the "Host" header, you can manipulate the header value to control the generated links.
 
