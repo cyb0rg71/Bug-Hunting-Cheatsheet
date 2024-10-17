@@ -116,6 +116,7 @@ PATCH /users/7312/update
 {name="peter","access_level":"administrator"}
 ```
 This may result in the user peter being given administrator access.<br>
+<br>
 ***Consider a similar example, but where the client-side user input is in JSON data. When you edit your name, your browser makes the following request:***
 ```
 POST /myaccount
