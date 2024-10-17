@@ -115,7 +115,7 @@ If the user input is added to the server-side JSON data without adequate validat
 PATCH /users/7312/update
 {name="peter","access_level":"administrator"}
 ```
-This may result in the user peter being given administrator access.
+This may result in the user peter being given administrator access.<br>
 ***Consider a similar example, but where the client-side user input is in JSON data. When you edit your name, your browser makes the following request:***
 ```
 POST /myaccount
