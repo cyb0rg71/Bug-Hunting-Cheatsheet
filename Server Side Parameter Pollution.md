@@ -94,3 +94,25 @@ GET /userSearch?name=peter&back=/home
 ```
 GET /users/search?name=peter#&publicProfile=true
 ```
+### Scenario 5: Structured Data Formats
+Consider an application that enables users to edit their profile, then applies their changes with a request to a server-side API. When you edit your name, your browser makes the following request:
+```
+POST /myaccount
+name=peter
+```
+This results in the following server-side request:
+```
+PATCH /users/7312/update
+{"name":"peter"}
+```
+
+You can attempt to add the access_level parameter to the request as follows:
+POST /myaccount
+```name=peter","access_level":"administrator```
+
+If the user input is added to the server-side JSON data without adequate validation or sanitization, this results in the following server-side request:
+```
+PATCH /users/7312/update
+{name="peter","access_level":"administrator"}
+```
+This may result in the user peter being given administrator access.
