@@ -116,3 +116,24 @@ PATCH /users/7312/update
 {name="peter","access_level":"administrator"}
 ```
 This may result in the user peter being given administrator access.
+***Consider a similar example, but where the client-side user input is in JSON data. When you edit your name, your browser makes the following request:***
+```
+POST /myaccount
+{"name": "peter"}
+```
+This results in the following server-side request:
+```
+PATCH /users/7312/update
+{"name":"peter"}
+```
+You can attempt to add the access_level parameter to the request as follows:
+```
+POST /myaccount
+{"name": "peter\",\"access_level\":\"administrator"}
+```
+If the user input is decoded, then added to the server-side JSON data without adequate encoding, this results in the following server-side request:
+```
+PATCH /users/7312/update
+{"name":"peter","access_level":"administrator"}
+```
+Again, this may result in the user peter being given administrator access.
