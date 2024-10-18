@@ -110,15 +110,56 @@ Host: ybdifpxyiesrimyyvm2e9wxgy74yssgh.oastify.com
 ```
 In this case, now try bruteforcing ip address.
 #### Inject host override headers
-```txt
-X-Forwarded-Host:
-X-Host:
-X-Original-URL:
-X-Forwarded-Server:
-X-HTTP-Host-Override:
-Forwarded:
-X-Forwarded-For:
-```
+Here are examples for each of the headers, showing how they might be used in practice:
+
+1. **X-Forwarded-Host**:  
+   *Example:*  
+   ```
+   X-Forwarded-Host: example.com
+   ```  
+   *Use Case:* A reverse proxy passes the original `Host` value from the client (e.g., `example.com`) to the backend server.
+
+2. **X-Host**:  
+   *Example:*  
+   ```
+   X-Host: internal-service.local
+   ```  
+   *Use Case:* A proxy sets this header to specify an internal service hostname (e.g., `internal-service.local`) for routing purposes.
+
+3. **X-Original-URL**:  
+   *Example:*  
+   ```
+   X-Original-URL: /original-path/resource
+   ```  
+   *Use Case:* A reverse proxy rewrites the URL, but passes along the original URL (`/original-path/resource`) to the backend for logging or debugging.
+
+4. **X-Forwarded-Server**:  
+   *Example:*  
+   ```
+   X-Forwarded-Server: proxy-1.local
+   ```  
+   *Use Case:* In a multi-proxy environment, this header shows that the request was processed by `proxy-1.local` before reaching the backend.
+
+5. **X-HTTP-Host-Override**:  
+   *Example:*  
+   ```
+   X-HTTP-Host-Override: app.example.com
+   ```  
+   *Use Case:* A request routed through a proxy needs to override the default host with `app.example.com` for special internal API routing.
+
+6. **Forwarded**:  
+   *Example:*  
+   ```
+   Forwarded: for=192.0.2.43; proto=https; by=proxy-2.local
+   ```  
+   *Use Case:* Indicates that the request was originally sent by a client with IP `192.0.2.43` over HTTPS, and handled by `proxy-2.local`.
+
+7. **X-Forwarded-For**:  
+   *Example:*  
+   ```
+   X-Forwarded-For: 203.0.113.195, 198.51.100.17
+   ```  
+   *Use Case:* A request was forwarded through two proxies. The originating client IP is `203.0.113.195`, and the second proxy that forwarded the request has IP `198.51.100.17`.
 Note: In Burp Suite, you can use the Param Miner extension's "Guess headers" function to automatically probe for supported headers using its extensive built-in wordlist.
 ## Connection state attacks
 #### For performance reasons, many websites reuse connections for multiple request/response cycles with the same client. In this case, you can potentially bypass this validation by sending an innocent-looking initial request then following up with your malicious one down the same connection. 
