@@ -147,6 +147,7 @@ Finally the code will look like this after response.
 In some scenarios the payload might not work because of single quote and backslash escape.
 ![Screenshot from 2024-07-01 04-27-49](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/af236bde-554a-45f9-8e61-77f4409e5ef4) <br>
 In this situation, you close the script tag inject your payload.
+
 ```
 </script><img src=x onerror=alert(1337)>
 ```
