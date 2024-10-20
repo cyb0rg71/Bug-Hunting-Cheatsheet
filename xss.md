@@ -115,6 +115,7 @@ https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.ht
 ```
 ## Angle brackets HTML-encoded bypass
 **Reflected XSS into HTML attribute with angle brackets HTML-encoded**
+<br>
 Inject ```<xss123>'"``` and see if the angle ```<>``` brackets are encoded with ```&lt;``` and ```&gt;```.
   ![Screenshot from 2024-06-12 22-48-00](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/4bb3d36b-cef6-49ae-ab0d-a4c6ad9c8553)<br>
 If this is the case, you should inject this payloads. 
@@ -125,7 +126,9 @@ If this is the case, you should inject this payloads.
 " onmouseover="alert(1)
 ```
 ![Screenshot from 2024-06-22 22-10-29](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/5f0c53d6-0489-483d-a82d-373456ee9233)
+<br>
 **Reflected XSS into a JavaScript string with angle brackets HTML encoded**
+<br>
 Inject ```<xss123>'"``` and see if your payload encoded in a javascript code.<br>
 ![Screenshot from 2024-06-13 00-19-30](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/9180969c-2299-4adf-9c4a-a05e97629938)<br>
 In this case you should try this payload to braek the code to inject maliciuos payload.
