@@ -171,7 +171,9 @@ Check this Portswigger lab for details: https://portswigger.net/web-security/cro
 ```
 "><body onresize=alert(1337)>
 ```
+<br>
 **Reflected XSS into HTML context with all tags blocked except custom ones**
+<br>
 ***Key Note***
 ```tabindex="1"```, ```id="a1"```, ```#a1```
 ```
