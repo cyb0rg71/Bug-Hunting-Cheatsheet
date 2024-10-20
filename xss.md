@@ -143,6 +143,7 @@ Finally the code will look like this after response.
 <br>
 <br>
 ## Reflected XSS into a JavaScript string with single quote and backslash escaped
+<br>
 In some scenarios the payload might not work because of single quote and backslash escape.
 ![Screenshot from 2024-07-01 04-27-49](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/af236bde-554a-45f9-8e61-77f4409e5ef4) <br>
 In this situation, you close the script tag inject your payload.
@@ -152,7 +153,9 @@ In this situation, you close the script tag inject your payload.
 And then the final code will look like this after response.
 ![Screenshot from 2024-07-01 04-37-54](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/8221e31d-5597-464b-8ed2-2b4d32368b9d)
 <br>
+
 **Reflected XSS into a JavaScript string with angle brackets and double quotes HTML-encoded and single quotes escaped**
+
 <br>
 Sometimes previous method might not work because of angle brackets and double quotes HTML-encoded and single quotes escaped.
 ![Screenshot from 2024-07-01 21-47-37](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/320694fa-5d32-468d-bab3-62bc18829582)<br>
@@ -165,7 +168,9 @@ And the final code will look like this.
 <br>
 ![Screenshot from 2024-07-01 21-50-00](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/3c75b4b8-173c-4bf7-8c3b-bc87dbc90386)
 ## Tags and Attribute Block Bypass
-## Reflected XSS into HTML context with most tags and attributes blocked
+<br>
+
+**Reflected XSS into HTML context with most tags and attributes blocked**
 <br>
 Bruteforce for getting allowed tags.
 <br>
@@ -176,6 +181,7 @@ Bruteforce for getting allowed tags.
 <br>
   
 **Reflected XSS into HTML context with all tags blocked except custom ones**
+
 <br>
 Key Note
 ```tabindex="1"```, ```id="a1"```, ```#a1```
@@ -189,6 +195,7 @@ Key Note
 "><svg><animatetransform onbegin='alert(1337)'></animatetransform></svg>
 ```
 ## Reflected XSS in canonical link tag
+  
 Make your custom parameter in a url path such as httpx://a.com/?```whoami=cyborg71```.
 ![Screenshot from 2024-07-01 03-55-35](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/67df34d4-e22f-49cf-a1f0-786a9113b316)<br>
 After this, If we get a canonical link in page source, then there might be a xss vulnerability exists. In this case try this payloads.
