@@ -63,17 +63,6 @@ y%0D%0A%0D%0A%3Cimg+src%3Dcopyparty+onerror%3Dalert(1337)%3E
 ```
 Here, ```%09``` represents the horizontal tab character and ```%0A``` represents the newline.
 <br>
-<br>
-![Screenshot from 2024-06-22 21-24-55](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/a4b3b27e-3e78-438e-90c1-38f3986f5a79)
-
-![Screenshot from 2024-06-22 21-30-13](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/cd6ea4c0-17df-448a-bc1a-caa4d293ee80)
-
-![Screenshot from 2024-06-22 21-34-37](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/2938507e-12e8-438d-ad7d-d1ec7d65a963)
-
-![Screenshot from 2024-06-22 21-36-45](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/06045884-2e15-4998-bfe6-057cf34dbe92)
-
-![Screenshot from 2024-06-22 21-38-04](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/925458b2-619b-4545-a675-81ee043cd00c)
-
 **External source of payloads**
 
 https://github.com/payloadbox/xss-payload-list
