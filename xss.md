@@ -152,6 +152,7 @@ In this situation, you close the script tag inject your payload.
 </script><img src=x onerror=alert(1337)>
 ```
 And then the final code will look like this after response.
+
 ![Screenshot from 2024-07-01 04-37-54](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/8221e31d-5597-464b-8ed2-2b4d32368b9d)
 <br>
 
@@ -198,6 +199,7 @@ Key Note
 ## Reflected XSS in canonical link tag
   
 Make your custom parameter in a url path such as httpx://a.com/?```whoami=cyborg71```.
+
 ![Screenshot from 2024-07-01 03-55-35](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/67df34d4-e22f-49cf-a1f0-786a9113b316)<br>
 After this, If we get a canonical link in page source, then there might be a xss vulnerability exists. In this case try this payloads.
 ```
