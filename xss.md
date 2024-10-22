@@ -160,7 +160,10 @@ And then the final code will look like this after response.
 
 <br>
 Sometimes previous method might not work because of angle brackets and double quotes HTML-encoded and single quotes escaped.
-![Screenshot from 2024-07-01 21-47-37](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/320694fa-5d32-468d-bab3-62bc18829582)<br>
+<br>
+
+![Screenshot from 2024-07-01 21-47-37](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/320694fa-5d32-468d-bab3-62bc18829582)
+<br>
 In this case you can try this payload
 ```
 \';alert(1337)//
@@ -168,6 +171,7 @@ In this case you can try this payload
 ```
 And the final code will look like this.
 <br>
+
 ![Screenshot from 2024-07-01 21-50-00](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/3c75b4b8-173c-4bf7-8c3b-bc87dbc90386)
 ## Tags and Attribute Block Bypass
 <br>
