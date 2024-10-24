@@ -1,7 +1,3 @@
-Here's the reviewed and formatted markdown code for your XSS testing payloads:
-
----
-
 ## Testing XSS
 
 **One Payload for Testing All Kinds of Scenarios**
