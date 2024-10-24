@@ -177,10 +177,14 @@ And the final code will look like this.
 <br>
 
 **Reflected XSS into HTML context with most tags and attributes blocked**
+
 <br>
+
 Bruteforce for getting allowed tags.
 <br>
+
 ***Check this Portswigger lab for details:*** https://portswigger.net/web-security/cross-site-scripting/contexts/lab-html-context-with-most-tags-and-attributes-blocked.
+
 ```
 "><body onresize=alert(1337)>
 ```
