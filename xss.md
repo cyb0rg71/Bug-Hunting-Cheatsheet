@@ -226,6 +226,11 @@ If the `whoami` parameter is reflected in the page source, try these payloads:
 ```javascript
 /?'accesskey='x'onclick='alert(1337)
 ```
+Now, use this keys to get reflection.
+
+    On Windows: ALT+SHIFT+X
+    On MacOS: CTRL+ALT+X
+    On Linux: Alt+X
 
 ---
 
