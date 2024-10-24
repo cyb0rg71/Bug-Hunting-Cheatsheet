@@ -1,3 +1,20 @@
+- [Testing XSS](#testing-xss)
+- [Testing XSS in Various Scenarios](#testing-xss-in-various-scenarios)
+- [HTML Injection](#html-injection)
+- [Angle Brackets HTML-Encoded Bypass](#angle-brackets-html-encoded-bypass)
+  - [Reflected XSS in HTML Attribute with Angle Brackets HTML-Encoded](#reflected-xss-in-html-attribute-with-angle-brackets-html-encoded)
+  - [Reflected XSS in a JavaScript String with Angle Brackets HTML-Encoded](#reflected-xss-in-a-javascript-string-with-angle-brackets-html-encoded)
+- [Reflected XSS with Single Quote and Backslash Escaped](#reflected-xss-with-single-quote-and-backslash-escaped)
+- [Reflected XSS with Angle Brackets and Double Quotes HTML-Encoded](#reflected-xss-with-angle-brackets-and-double-quotes-html-encoded)
+- [Tags and Attribute Block Bypass](#tags-and-attribute-block-bypass)
+  - [Reflected XSS into HTML Context with Most Tags and Attributes Blocked](#reflected-xss-into-html-context-with-most-tags-and-attributes-blocked)
+  - [Reflected XSS into HTML Context with Custom Tags](#reflected-xss-into-html-context-with-custom-tags)
+- [Reflected XSS with Some SVG Markup Allowed](#reflected-xss-with-some-svg-markup-allowed)
+- [Reflected XSS in Canonical Link Tag](#reflected-xss-in-canonical-link-tag)
+- [Payloads for Stealing Cookies](#payloads-for-stealing-cookies)
+- [Payloads for Stealing Credentials](#payloads-for-stealing-credentials)
+- [XSS with Filter Evasion](#xss-with-filter-evasion)
+
 ## Testing XSS
 
 **One Payload for Testing All Kinds of Scenarios**
