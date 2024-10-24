@@ -233,7 +233,8 @@ Now, use this keys to get reflection.
     On MacOS: CTRL+ALT+X
     On Linux: Alt+X
 
-**Note**
+**Note:**
+<br>
 ```<link>``` tag doesn't render in the page. So, you must need to provide a```accessKey``` in the payload to execute the payload.  
 
 ---
