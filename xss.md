@@ -5,7 +5,7 @@
   - [Reflected XSS in HTML Attribute with Angle Brackets HTML-Encoded](#reflected-xss-in-html-attribute-with-angle-brackets-html-encoded)
   - [Reflected XSS in a JavaScript String with Angle Brackets HTML-Encoded](#reflected-xss-in-a-javascript-string-with-angle-brackets-html-encoded)
 - [Reflected XSS with Single Quote and Backslash Escaped](#reflected-xss-with-single-quote-and-backslash-escaped)
-- [Reflected XSS with Angle Brackets and Double Quotes HTML-Encoded](#reflected-xss-with-angle-brackets-and-double-quotes-html-encoded)
+- [Reflected XSS with Angle Brackets and Double Quotes HTML-Encoded and Single Quotes Escaped](#reflected-xss-with-angle-brackets-and-double-quotes-html-encoded-and-single-quotes-escaped)
 - [Tags and Attribute Block Bypass](#tags-and-attribute-block-bypass)
   - [Reflected XSS into HTML Context with Most Tags and Attributes Blocked](#reflected-xss-into-html-context-with-most-tags-and-attributes-blocked)
   - [Reflected XSS into HTML Context with Custom Tags](#reflected-xss-into-html-context-with-custom-tags)
@@ -167,7 +167,7 @@ Close the script tag and inject:
 
 ---
 
-## Reflected XSS with Angle Brackets and Double Quotes HTML-Encoded
+## Reflected XSS with Angle Brackets and Double Quotes HTML-Encoded and Single Quotes Escaped
 Payloads:
 ```javascript
 \';alert(1337)//
