@@ -41,6 +41,8 @@ Example command using `hashcat`:
 hashcat -a 0 -m 16500 eyJraWQiOiIyZTI4MDIyYy02NWQ3LTRjNTEtYjU3Ni1mYWY3Mjg4MzVhMTUiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJwb3J0c3dpZ2dlciIsImV4cCI6MTcxMTIyMDc5MSwic3ViIjoiYWRtaW5pc3RyYXRvciJ9.gteqm9hkHA6PdSv0pqbXBeUCON_8kwelR7Be1NI6WMs jwt.secrets.list
 ```
 
+[Wordlist of common secret keys](https://github.com/wallarm/jwt-secrets/blob/master/jwt.secrets.list)
+
 ## JWT Header Parameter Injections
 JWT headers, also known as JOSE headers, often contain several parameters of interest to attackers:
 
