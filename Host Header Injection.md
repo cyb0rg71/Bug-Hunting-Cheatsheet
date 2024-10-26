@@ -117,14 +117,14 @@ Here are examples for each of the headers, showing how they might be used in pra
    ```
    X-Forwarded-Host: example.com
    ```  
-   *Use Case:* Change the original host.
+   *Use Case:* Change the original host. You can use this for password reset poisoning.
 
 2. **X-Host**:  
    *Example:*  
    ```
    X-Host: internal-service.local
    ```  
-   *Use Case:* Change the original host. You can use this for password reset poisoning.
+   *Use Case:* 
 
 3. **X-Original-URL**:  
    *Example:*  
