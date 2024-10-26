@@ -117,7 +117,7 @@ Here are examples for each of the headers, showing how they might be used in pra
    ```
    X-Forwarded-Host: example.com
    ```  
-   *Use Case:* A reverse proxy passes the original `Host` value from the client (e.g., `example.com`) to the backend server.
+   *Use Case:* Change the original host.
 
 2. **X-Host**:  
    *Example:*  
