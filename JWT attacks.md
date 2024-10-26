@@ -100,9 +100,13 @@ If the server allows directory traversal in the `kid` parameter, an attacker can
 3. In the JSON Web Token tab, select Attack -> Sign with empty key.
 4. Send the request.
 
-**Alternative Approach**:
-1. Add `"typ": "JWT"` and `"K": "AA=="` in the header.
-2. Use a null byte (`AA==`) for the symmetric key.
+**Alternative Approach with Generating a empty Symmetric Key**:
+1. In the JWT header, set `kid` to `../../../../../../../dev/null`.
+2. Change the payload `sub` claim to the desired user.
+3. Generate new symmetric key in JWT editor.
+4. Replace `"K": "AA=="` and save the key. ```Use a null byte (AA==) for the symmetric key.```
+5. Sign the JWT with generated new symmetric key with ```Don't modify Header```.
+6. Send the request.
 
 ## Algorithm Confusion
 Algorithm confusion vulnerabilities occur when JWT libraries rely on the `alg` parameter to determine the verification method. An attacker can trick the server into using a different algorithm, such as HS256, treating the public key as an HMAC secret.
