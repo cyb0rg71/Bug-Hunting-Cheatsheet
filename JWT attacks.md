@@ -97,7 +97,7 @@ If the server allows directory traversal in the `kid` parameter, an attacker can
 **Steps**:
 1. In the JWT header, set `kid` to `../../../../../../../dev/null`.
 2. Change the payload `sub` claim to the desired user.
-3. Sign the token with an empty string as the secret key.
+3. In the JSON Web Token tab, select Attack -> Sign with empty key.
 4. Send the request.
 
 **Alternative Approach**:
