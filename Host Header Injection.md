@@ -124,7 +124,7 @@ Here are examples for each of the headers, showing how they might be used in pra
    ```
    X-Host: internal-service.local
    ```  
-   *Use Case:* A proxy sets this header to specify an internal service hostname (e.g., `internal-service.local`) for routing purposes.
+   *Use Case:* Change the original host. You can use this for password reset poisoning.
 
 3. **X-Original-URL**:  
    *Example:*  
