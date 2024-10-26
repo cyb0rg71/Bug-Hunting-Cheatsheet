@@ -58,7 +58,8 @@ Servers should ideally use a limited whitelist of public keys to verify JWT sign
 2. Go to the JSON Web Token tab to change the payload info.
 3. Generate a new RSA key in the JWT Editor.
 4. In the JSON Web Token tab, select Attack -> Embedded JWK and add the generated `kid`.
-5. Send the HTTP request.
+5. Sign the key.
+6. Send the HTTP request.
 
 ### Injecting Self-Signed JWTs via the `jku` Parameter
 Instead of embedding public keys using the `jwk` parameter, some servers accept the `jku` parameter, allowing attackers to reference a JWK Set URL. If the server fetches the key from this URL, you can bypass authentication using the `jku` header.
