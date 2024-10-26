@@ -82,12 +82,14 @@ Instead of embedding public keys using the `jwk` parameter, some servers accept 
        ]
    }
    ```
-5. Change `kid` to match your RSA key's `kid`.
-6. Add the `jku` parameter, pointing to your exploit server.
+5. Change `kid` and `n` to match your RSA key's `kid`, `n`.
+6. Add the `jku` parameter, pointing to your exploit server in header of Json Web Tokens in Burp.
    ```
    "jku": "https://exploit.server/.well-known/jwks.json"
    ```
-7. Sign the JWT and send the request.
+7. Sign the JWT with `Update/generate "alg", "typ" and "kid" parameters`.
+8. Send the request.
+9. If not works, try step `7` with `Don't modify header`.
 
 ### Injecting Self-Signed JWTs via the `kid` Parameter
 If the server allows directory traversal in the `kid` parameter, an attacker can force the server to use an arbitrary file, like `/dev/null`, as the verification key. If the server supports symmetric algorithms, the JWT can be signed using an empty string.
