@@ -132,10 +132,10 @@ Algorithm confusion vulnerabilities occur when JWT libraries rely on the `alg` p
 9. Send the request.
 
 ### Deriving Public Keys from Existing Tokens (Without Exposed Keys)
-1. Copy session cookie values from different login attempts.
+1. Copy session cookie values from two different login attempts.
 2. Run `sudo docker run --rm -it portswigger/sig2n <cookie1> <cookie2>`.
-3. Identify the valid tempered JWT.
-4. Create a new symmetric key with the identified JWT.
+3. Identify the valid tempered JWT by using it and see if the JWT keeps you logged in.
+4. Create a new symmetric key and paste the base64 verson of the identified tempered JWT in the `k` parameter.
 5. Set the `alg` header to `HS256` and sign the key.
 6. Modify the payload and send the request.
 
