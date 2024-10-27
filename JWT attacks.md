@@ -112,12 +112,15 @@ If the server allows directory traversal in the `kid` parameter, an attacker can
 Algorithm confusion vulnerabilities occur when JWT libraries rely on the `alg` parameter to determine the verification method. An attacker can trick the server into using a different algorithm, such as HS256, treating the public key as an HMAC secret.
 
 ### Performing an Algorithm Confusion Attack via Exposed Key
-1. Obtain the server's public key from `jwks.json`.
-2. In Burp, go to the JWT Editor Keys tab and create a new RSA key.
-3. Base64-encode the PEM key and create a new symmetric key in the JWT Editor.
-4. Replace the `"k"` parameter with the Base64-encoded PEM key.
-5. Set the `alg` header to `HS256` and sign the key.
-6. Modify the payload and send the request.
+
+**If the server exposes public key at `jwks.json` path, you can do this attack.**
+1. Copy the JWK object from inside the keys array.
+2. In Burp, go to the JWT Editor.
+3. Select create a new RSA key and paste the JWK object that you copied and select `PEM`.
+4. Copy and Base64-encode the PEM key and create a new symmetric key in the JWT Editor.
+5. Replace the `"k"` parameter with the Base64-encoded PEM key.
+6. Set the `alg` header to `HS256` and sign the key.
+7. Modify the payload and send the request.
 
 ### Deriving Public Keys from Existing Tokens (Without Exposed Keys)
 1. Copy session cookie values from different login attempts.
