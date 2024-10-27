@@ -124,11 +124,12 @@ Algorithm confusion vulnerabilities occur when JWT libraries rely on the `alg` p
 "n":"t2vWc1Vy8UpMF5TswF1xx4n2cOKil4VUqZL08eduWOQ5AkHJelK5wl6dAIuJqR8gkhciNH6wIFKw3uuSlWcREJ4eIrTYkS3x1RHPQFnTOrTpgbYFK9SDlc45PKMK5m5ZnKqMox4-U29NYemPMRiCnDZv8EmwTCfxuy17pRWEZfNH8PJaTpZFAfU2qvvWrf5YOPhpfg80Jvq52EUetpf3GdeMZP8NVkZNCvcIM0Q7eGKVnz6j1n_Ozc5DvYNVWUpv-MiCFIUyTXQKRaVsqg7qsDleY94BjRIqd6u0u48H5Bze1w3bI1m5mSwj3Sayj2H2F5bM-14x6nf2Nwkbq3T-6w"}
 ```
 3. In Burp, go to the JWT Editor.
-4. Select create a new RSA key and paste the JWK object that you copied and select `PEM`.
-5. Copy and Base64-encode the PEM key and create a new symmetric key in the JWT Editor.
+4. Select `create a new RSA key` and paste the JWK object that you copied and select is as a `PEM` format.
+5. Copy and encode the PEM key to Base64 and create a new symmetric key in the JWT Editor.
 6. Replace the `"k"` parameter with the Base64-encoded PEM key.
-7. Set the `alg` header to `HS256` and sign the key.
-8. Modify the payload and send the request.
+7. Set the `alg` header to `HS256`.
+8. Modify the payload and sign the key with symmetric key you created.
+9. Send the request.
 
 ### Deriving Public Keys from Existing Tokens (Without Exposed Keys)
 1. Copy session cookie values from different login attempts.
