@@ -124,6 +124,18 @@ y%0D%0A%0D%0A%3Cimg+src%3Dcopyparty+onerror%3Dalert(1337)%3E
 ```html
 <a href="https://google.com"></a>
 ```
+Sometimes applications decode url encoded inputs. So try to inject some payloads with url encoding and see if the application decode it into the plain text html code. You can try this method for xss also.
+<br>
+<br>
+**HTML Payload**
+```
+<h1>cyborg71</h1>
+```
+**URL Encoded HTML Payload**
+```
+%3c%68%31%3e%63%79%62%6f%72%67%37%31%3c%2f%68%31%3e
+```
+[Poc of Coinbase Comment](https://hackerone.com/reports/104543)
 
 ---
 
