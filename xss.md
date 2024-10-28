@@ -121,6 +121,7 @@ y%0D%0A%0D%0A%3Cimg+src%3Dcopyparty+onerror%3Dalert(1337)%3E
 **External Sources for Payloads**
 - [XSS Payload List](https://github.com/payloadbox/xss-payload-list)
 - [Tiny XSS Payloads for Filter Bypass](https://github.com/terjanq/Tiny-XSS-Payloads)
+- [For complex type of xss](https://html5sec.org/)
 
 ---
 
