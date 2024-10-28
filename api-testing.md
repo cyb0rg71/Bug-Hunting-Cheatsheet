@@ -79,10 +79,10 @@ An attacker could add the `"isAdmin": true` field, thereby escalating privileges
    name=attacker&name=originalUser
    ```
 - The server's behavior varies by technology:
-   - PHP: Uses the last parameter.
+   - PHP/Apache: Uses the last parameter.
    - ASP.NET: Concatenates the parameters.
-   - Node.js/Express: Uses the first parameter.
-
+   - Node.js/Express/Apache Tomcat: Uses the first parameter.
+     
 ### 3.3. Testing in REST Paths
 - Test RESTful APIs by manipulating URL path parameters.
 - Use path traversal sequences:
