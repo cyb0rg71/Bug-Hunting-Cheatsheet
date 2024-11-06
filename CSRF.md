@@ -48,11 +48,12 @@ When testing a CSRF token, follow these steps:
 
 ### Check if CSRF Token is Tied to the CSRF Cookie + Tied With User Session Cookie
 
+
 1.  Try to add the session cookie.
 
 <br>
 
-Note: You can collect csrf token by inspect element.
+**Note:** You can collect csrf token by inspect element.
 
 ---
 
