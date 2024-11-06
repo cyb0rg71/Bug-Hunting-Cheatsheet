@@ -4,7 +4,7 @@
 
 ## Index
 
-1. [Conditions for a CSRF Attack](#conditions-for-a-csrf-attack)
+1. [Conditions for a CSRF Attack](#Conditions-For-a-CSRF-Attack)
 2. [Testing CSRF Token](#testing-csrf-token)
 3. [Testing CSRF Token and CSRF Cookies](#testing-csrf-token-and-csrf-cookies)
    - [Check if CSRF Token is Tied to the CSRF Cookie](#check-if-csrf-token-is-tied-to-the-csrf-cookie)
