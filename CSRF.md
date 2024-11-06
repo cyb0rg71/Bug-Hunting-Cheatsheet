@@ -27,7 +27,7 @@ For a CSRF attack to be possible, three key conditions must be in place:
 
 ---
 
-## 2. Testing CSRF Token
+## Testing CSRF Token
 
 When testing a CSRF token, follow these steps:
 
@@ -37,9 +37,9 @@ When testing a CSRF token, follow these steps:
 
 ---
 
-## 3. Testing CSRF Token and CSRF Cookies
+## Testing CSRF Token and CSRF Cookies
 
-### 3.1 Check if CSRF Token is Tied to the CSRF Cookie
+### Check if CSRF Token is Tied to the CSRF Cookie
 
 1. **Submit an invalid CSRF token**: See if the application accepts it.
 2. **Submit a valid CSRF token from another user**: Check if the token is user-specific.
@@ -48,14 +48,14 @@ When testing a CSRF token, follow these steps:
 
 ---
 
-## 4. Exploitation Techniques
+## Exploitation Techniques
 
 To exploit a CSRF token + cookie mechanism, two actions are required:
 
 1. **Inject a CSRF cookie into the user's session** (via HTTP header injection)
 2. **Send a CSRF attack to the victim**
 
-### 4.1 HTML Exploit Example
+### HTML Exploit Example
 
 ```html
 <form action="https://YOUR-LAB-ID.web-security-academy.net/my-account/change-email">
@@ -66,7 +66,7 @@ To exploit a CSRF token + cookie mechanism, two actions are required:
 </script>
 ```
 
-### 4.2 Image-based CSRF Cookie Injection
+### Image-based CSRF Cookie Injection
 
 ```html
 <img src="https://0a5000e9036c9fa3820d15c300a500d4.web-security-academy.net/?search=asdasfa%0d%0aSet-Cookie:%20csrf=testing;%20SameSite=None" onerror="document.forms[0].submit()">
@@ -74,7 +74,7 @@ To exploit a CSRF token + cookie mechanism, two actions are required:
 
 ---
 
-## 5. Testing the Referer Header for CSRF Attack
+## Testing the Referer Header for CSRF Attack
 
 1. **Remove the Referer header**: See if the application still processes the request without it.
 2. **Validate which part of the Referer header is used**: Identify which part is validated by the application.
@@ -82,7 +82,7 @@ To exploit a CSRF token + cookie mechanism, two actions are required:
    - **Example 1**: `Referer: https://attacker.com/?vulnerable-web.net`
    - **Example 2**: `Referer: http://vulnerable-website.com.attacker-website.com/csrf-attack`
 
-### 5.1 Exploit for Referer Header Validation (Case 1)
+### Exploit for Referer Header Validation (Case 1)
 
 ```html
 <html>
@@ -105,7 +105,7 @@ To exploit a CSRF token + cookie mechanism, two actions are required:
 
 ---
 
-## 6. Bypassing SameSite Lax Policy
+## Bypassing SameSite Lax Policy
 
 Key Note:
 ```plaintext
