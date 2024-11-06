@@ -118,4 +118,3 @@ Set-Cookie: session=bciZoELY2ukJUUOj1zJ7wcAGdYXtvq3C; Secure; HttpOnly; SameSite
 2. **Via cookie refresh**: Simulate a refresh to force SameSite cookie behavior.
 
 --- 
-```
