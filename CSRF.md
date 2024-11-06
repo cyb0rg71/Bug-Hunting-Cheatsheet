@@ -46,7 +46,9 @@ When testing a CSRF token, follow these steps:
 3. **Submit a valid CSRF token and CSRF cookie from another user**: Test if both token and cookie are required to match.
 4. **Assign a random value to token + cookie**: In a duplicated token cookie, try setting the same random value to both.
 <br>
-**Note:** You can collect csrf token by inspect element.
+
+Note: You can collect csrf token by inspect element.
+
 ---
 
 ## Exploitation Techniques
