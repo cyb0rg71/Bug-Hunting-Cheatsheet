@@ -42,7 +42,7 @@ When testing a CSRF token, follow these steps:
 ### Check if CSRF Token is Tied to the CSRF Cookie
 
 1. **Submit an invalid CSRF token**: See if the application accepts it.
-2. **Submit a valid CSRF token from another user**: Check if the token is user-specific.
+2. **Submit a valid CSRF token from another user**: Check if the token is user-specific. **Note:** We can collect csrf token by inspect element.
 3. **Submit a valid CSRF token and CSRF cookie from another user**: Test if both token and cookie are required to match.
 4. **Assign a random value to token + cookie**: In a duplicated token cookie, try setting the same random value to both.
 
