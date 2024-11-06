@@ -17,7 +17,7 @@
 
 ---
 
-## 1. Conditions for a CSRF Attack
+## Conditions for a CSRF Attack
 
 For a CSRF attack to be possible, three key conditions must be in place:
 
