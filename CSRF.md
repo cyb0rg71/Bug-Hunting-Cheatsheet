@@ -6,7 +6,6 @@
 
 1. [Testing CSRF Token](#testing-csrf-token)
 2. [Testing CSRF Token and CSRF Cookies](#testing-csrf-token-and-csrf-cookies)
-   - [Check if CSRF Token is Tied to the CSRF Cookie](#check-if-csrf-token-is-tied-to-the-csrf-cookie)
 3. [Exploitation Techniques](#exploitation-techniques)
    - [HTML Exploit Example](#html-exploit-example)
    - [Image-based CSRF Cookie Injection](#image-based-csrf-cookie-injection)
