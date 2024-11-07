@@ -4,26 +4,15 @@
 
 ## Index
 
-1. [Conditions for a CSRF Attack](#Conditions-For-a-CSRF-Attack)
-2. [Testing CSRF Token](#testing-csrf-token)
-3. [Testing CSRF Token and CSRF Cookies](#testing-csrf-token-and-csrf-cookies)
+1. [Testing CSRF Token](#testing-csrf-token)
+2. [Testing CSRF Token and CSRF Cookies](#testing-csrf-token-and-csrf-cookies)
    - [Check if CSRF Token is Tied to the CSRF Cookie](#check-if-csrf-token-is-tied-to-the-csrf-cookie)
-4. [Exploitation Techniques](#exploitation-techniques)
+3. [Exploitation Techniques](#exploitation-techniques)
    - [HTML Exploit Example](#html-exploit-example)
    - [Image-based CSRF Cookie Injection](#image-based-csrf-cookie-injection)
 5. [Testing the Referer Header for CSRF Attack](#testing-the-referer-header-for-csrf-attack)
    - [Exploit for Referer Header Validation (Case 1)](#exploit-for-referer-header-validation-case-1)
 6. [Bypassing SameSite Lax Policy](#bypassing-samesite-lax-policy)
-
----
-
-## Conditions for a CSRF Attack
-
-For a CSRF attack to be possible, three key conditions must be in place:
-
-1. **A relevant action**  
-2. **Cookie-based session handling**  
-3. **No unpredictable request parameters**
 
 ---
 
