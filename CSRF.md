@@ -9,6 +9,7 @@
 3. [Exploitation Techniques](#exploitation-techniques)
    - [HTML Exploit Example](#html-exploit-example)
    - [Image-based CSRF Cookie Injection](#image-based-csrf-cookie-injection)
+   - [XSS Based CSRF Attack](#XSS-Based-CSRF-Attack)
 5. [Testing the Referer Header for CSRF Attack](#testing-the-referer-header-for-csrf-attack)
    - [Exploit for Referer Header Validation (Case 1)](#exploit-for-referer-header-validation-case-1)
 6. [Bypassing SameSite Policy](#bypassing-samesite-policy)
