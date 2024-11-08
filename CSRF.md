@@ -135,25 +135,7 @@ To exploit a CSRF token + cookie mechanism, two actions are required:
 
 ## Bypassing SameSite Policy
 
-### **Table**
-
-| Attribute         | Sent with Cross-Origin Requests? | Sent on Same-Site Requests? | Notes                                       |
-|-------------------|----------------------------------|-----------------------------|---------------------------------------------|
-| `Strict`          | No                              | Yes                         | Most secure, but may reduce usability.      |
-| `Lax`             | Limited (e.g., navigation GET)  | Yes                         | Good balance between usability and security.|
-| `None` (with `Secure`) | Yes                             | Yes                         | Necessary for third-party cookies.          |
-| No Attribute      | Limited (assumed `Lax`)         | Yes                         | Default behavior in most modern browsers.   |
-
----
-
 [Same site explanation](https://www.youtube.com/watch?v=aUF2QCEudPo&t=360s)
-
-<br>
-
-Key Note:
-```plaintext
-Set-Cookie: session=bciZoELY2ukJUUOj1zJ7wcAGdYXtvq3C; Secure; HttpOnly; SameSite=Strict
-```
 
 ### Lax Bypass Via Method Override
 
@@ -170,7 +152,17 @@ Set-Cookie: session=bciZoELY2ukJUUOj1zJ7wcAGdYXtvq3C; Secure; HttpOnly; SameSite
 ```
 
 --- 
-Key Note:
+### **Table**
+
+| Attribute         | Sent with Cross-Origin Requests? | Sent on Same-Site Requests? | Notes                                       |
+|-------------------|----------------------------------|-----------------------------|---------------------------------------------|
+| `Strict`          | No                              | Yes                         | Most secure, but may reduce usability.      |
+| `Lax`             | Limited (e.g., navigation GET)  | Yes                         | Good balance between usability and security.|
+| `None` (with `Secure`) | Yes                             | Yes                         | Necessary for third-party cookies.          |
+| No Attribute      | Limited (assumed `Lax`)         | Yes                         | Default behavior in most modern browsers.   |
+
+**Key Note:**
 ```plaintext
 Set-Cookie: session=bciZoELY2ukJUUOj1zJ7wcAGdYXtvq3C; Secure; HttpOnly; SameSite=Strict
 ```
+---
