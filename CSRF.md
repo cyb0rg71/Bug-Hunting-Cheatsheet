@@ -36,6 +36,8 @@ When testing a CSRF token, follow these steps:
 
 **If CSRF cookie Tied With User Session Cookie**
 
+[Portswigger Lab](https://portswigger.net/web-security/csrf/bypassing-token-validation/lab-token-tied-to-non-session-cookie)
+
 <br>
 
 **Note:** You can collect csrf token by inspect element.
