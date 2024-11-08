@@ -131,7 +131,7 @@ To exploit a CSRF token + cookie mechanism, two actions are required:
 
 ---
 
-## Bypassing SameSite Lax Policy
+## Bypassing SameSite Policy
 
 ### **Table**
 
