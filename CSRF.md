@@ -13,7 +13,7 @@
 5. [Testing the Referer Header for CSRF Attack](#testing-the-referer-header-for-csrf-attack)
    - [Exploit for Referer Header Validation (Case 1)](#exploit-for-referer-header-validation-case-1)
 6. [Bypassing SameSite Policy](#bypassing-samesite-policy)
-   -[Lax Bypass Via Method Override](#Lax-Bypass-Via-Method-Override)
+   - [Lax Bypass Via Method Override](#Lax-Bypass-Via-Method-Override)
 
 ---
 
