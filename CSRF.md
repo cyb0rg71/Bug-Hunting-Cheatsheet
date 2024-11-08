@@ -133,6 +133,10 @@ To exploit a CSRF token + cookie mechanism, two actions are required:
 
 ## Bypassing SameSite Lax Policy
 
+[Same site explanation](https://www.youtube.com/watch?v=aUF2QCEudPo&t=360s)
+
+<br>
+
 Key Note:
 ```plaintext
 Set-Cookie: session=bciZoELY2ukJUUOj1zJ7wcAGdYXtvq3C; Secure; HttpOnly; SameSite=Strict
