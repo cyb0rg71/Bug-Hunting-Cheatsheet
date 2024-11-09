@@ -111,7 +111,10 @@ To exploit a CSRF token + cookie mechanism, two actions are required:
    - **Example 1**: `Referer: https://attacker.com/?vulnerable-web.net`
    - **Example 2**: `Referer: http://vulnerable-website.com.attacker-website.com/csrf-attack`
 
-### Exploit for Referer Header Validation (Case 1)
+### Referer validation depends on header being present
+
+1. **Remove the Referer Header**
+2. **Add ```<meta name="referrer" content="no-referrer">``` between the ```head``` tag in you payload.
 
 ```html
 <html>
