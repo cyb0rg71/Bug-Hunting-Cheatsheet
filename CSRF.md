@@ -11,7 +11,7 @@
    - [Image-based CSRF Cookie Injection](#image-based-csrf-cookie-injection)
    - [XSS Based CSRF Attack](#XSS-Based-CSRF-Attack)
 5. [Testing the Referer Header for CSRF Attack](#testing-the-referer-header-for-csrf-attack)
-   - [Exploit for Referer Header Validation (Case 1)](#exploit-for-referer-header-validation-case-1)
+   - [Referer validation depends on header being present](#Referer-validation-depends-on-header-being-present)
 6. [Bypassing SameSite Policy](#bypassing-samesite-policy)
    - [Lax Bypass Via Method Override](#Lax-Bypass-Via-Method-Override)
    - [Strict Bypass Via Client Side Redirect](#Strict-Bypass-Via-Client-Side-Redirect)
@@ -114,7 +114,7 @@ To exploit a CSRF token + cookie mechanism, two actions are required:
 ### Referer validation depends on header being present
 
 1. **Remove the Referer Header**
-2. **Add ```<meta name="referrer" content="no-referrer">``` between the ```head``` tag in you payload.
+2. **Add ```<meta name="referrer" content="no-referrer">``` between the ```head``` tag in you payload**
 
 ```html
 <html>
