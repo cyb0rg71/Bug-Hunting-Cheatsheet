@@ -105,7 +105,7 @@ To exploit a CSRF token + cookie mechanism, two actions are required:
 
 ## Testing the Referer Header for CSRF Attack
 
-1. **Remove the Referer header**: See if the application still processes the request without it.
+1. **Remove the Referer header**: See if the application still processes the request without it. If the application process it, the site might be vulnerable.
 2. **Validate which part of the Referer header is used**: Identify which part is validated by the application.
 
    - **Example 1**: `Referer: https://attacker.com/?vulnerable-web.net`
