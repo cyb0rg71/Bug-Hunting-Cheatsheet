@@ -33,10 +33,11 @@ Access-Control-Allow-Credentials: true
 </html>
 ```
 2. Change Origin Header to null.
+```
 GET /sensitive-victim-data HTTP/1.1
 Host: vulnerable-website.com
 Origin: null
-
+```
 **Demo Payload For Basic Case**
 ```javascript
 <html>
