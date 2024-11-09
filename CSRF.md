@@ -14,6 +14,7 @@
    - [Exploit for Referer Header Validation (Case 1)](#exploit-for-referer-header-validation-case-1)
 6. [Bypassing SameSite Policy](#bypassing-samesite-policy)
    - [Lax Bypass Via Method Override](#Lax-Bypass-Via-Method-Override)
+   - [Strict Bypass Via Client Side Redirect](#Strict-Bypass-Via-Client-Side-Redirect)
 
 ---
 
@@ -152,7 +153,7 @@ To exploit a CSRF token + cookie mechanism, two actions are required:
 ```
 --- 
 
-### Strict Bypass Via Client-Side Redirect
+### Strict Bypass Via Client Side Redirect
 
 If there is a endpoint in website that redirecting to another page of website, you can use this process to bypass strict attribute.
 
@@ -161,7 +162,7 @@ If there is a endpoint in website that redirecting to another page of website, y
 3. **Now copy and paste the request that you changed from POST to GET in the redirection path**
 4. **If possible, you can also use the path traversal technique**
 
-**Example**: https://vulnblog.web/post/comment/confirmation?postId=../my-account. Here, ```postId``` parameter trying a rediction and we are trying to exlploit the change-email functionality in ```/my-account``` page.
+**Example**: ```https://vulnblog.web/post/comment/confirmation?postId=../my-account```. Here, ```postId``` parameter trying a redirection and we are trying to exlploit the change-email functionality in ```/my-account``` page.
 
 **Payload**
 ```javascript
