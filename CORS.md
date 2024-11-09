@@ -38,7 +38,7 @@ GET /sensitive-victim-data HTTP/1.1
 Host: vulnerable-website.com
 Origin: null
 ```
-**Demo Payload For Basic Case**
+**Demo Payload For Null Case**
 ```javascript
 <html>
     <body>
