@@ -34,3 +34,5 @@ During testing, it's crucial that you're able to identify cached responses. To d
         X-Cache: refresh - The cached content was outdated and needed to be refreshed or revalidated.
     The Cache-Control header may include a directive that indicates caching, like public with a max-age higher than 0. Note that this only suggests that the resource is cacheable.
 If you notice a big difference in response time for the same request, this may also indicate that the faster response is served from the cache.
+
+## Exploiting path mapping discrepancies
