@@ -7,7 +7,9 @@ Web cache deception is a vulnerability that enables an attacker to trick a web c
 Web cache deception attacks exploit how cache rules are applied, so it's important to know about some different types of rules, particularly those based on defined strings in the URL path of the request. For example:
 
     1. Static file extension rules - These rules match the file extension of the requested resource, for example .css for stylesheets or .js for JavaScript files.
+    
     2. Static directory rules - These rules match all URL paths that start with a specific prefix. These are often used to target specific directories that contain only static resources, for example /static or /assets.
+    
     3. File name rules - These rules match specific file names to target files that are universally required for web operations and change rarely, such as robots.txt and favicon.ico.
 
 ## Constructing a web cache deception attack
@@ -20,4 +22,15 @@ Constructing a basic web cache deception attack involves the following steps:
         Map URLs to resources.
         Process delimiter characters.
         Normalize paths.
+        
     3. Craft a malicious URL that uses the discrepancy to trick the cache into storing a dynamic response. When the victim accesses the URL, their response is stored in the cache. Using Burp, you can then send a request to the same URL to fetch the cached response containing the victim's data. Avoid doing this directly in the browser as some applications redirect users without a session or invalidate local data, which could hide a vulnerability.
+
+## Detecting cached responses
+
+During testing, it's crucial that you're able to identify cached responses. To do so, look at response headers and response times.
+
+        X-Cache: hit - The response was served from the cache.
+        X-Cache: miss - The cache did not contain a response for the request's key, so it was fetched from the origin server. In most cases, the response is then cached. To confirm this, send the request again to see whether the value updates to hit.
+        X-Cache: refresh - The cached content was outdated and needed to be refreshed or revalidated.
+    The Cache-Control header may include a directive that indicates caching, like public with a max-age higher than 0. Note that this only suggests that the resource is cacheable.
+If you notice a big difference in response time for the same request, this may also indicate that the faster response is served from the cache.
