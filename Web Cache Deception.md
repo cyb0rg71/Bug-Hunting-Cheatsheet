@@ -39,9 +39,13 @@ If you notice a big difference in response time for the same request, this may a
 
 ```
 1. If there is a ```/my-account``` path, check if the response has a ```x-cache:``` hedaer.
+
 2. If the there is no ```x-xache:``` header try to add a arbitrary path like ```/my-account/abc.js``` according to cache rule.
+
 3. If the response contain ```x-cache``` header and contains the same response, that means the web application is vulnearble to web cache deception attack.
+
 4. To confirm it, now access the ```/my-account/abc.js``` url path from incognito tab to verify that the path is cached in server and we can access this file without logging in the account.
+
 5. Now craft a malicious url and send the link to victim. Where victims confidential information will be stored in the cache and we will access it later.
 ```
 ```javascript
