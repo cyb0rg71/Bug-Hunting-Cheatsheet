@@ -4,23 +4,78 @@ Web cache deception is a vulnerability that enables an attacker to trick a web c
 
 ## Cache Keys
 
-Cache keys are the URL path and query parameters.
+Cache keys are the URL path and query parameters. If the incoming request's cache key matches that of a previous request, the cache considers them to be equivalent and serves a copy of the cached response.
 
 ## Cache Rules
 
 Web cache deception attacks exploit how cache rules are applied, so it's important to know about some different types of rules, particularly those based on defined strings in the URL path of the request. For example:
 
-**Static file extension rules**
+---
 
-These rules match the file extension of the requested resource, for example .css for stylesheets or .js for JavaScript files.
-    
-**Static directory rules**
+### **1. Exploiting Static File Extension Rules**
 
-These rules match all URL paths that start with a specific prefix. These are often used to target specific directories that contain only static resources, for example /static or /assets.
-    
-**File name rules**
+#### **Description**:
+Static file extension rules apply caching based on file extensions such as `.css`, `.js`, `.jpg`, etc. An attacker can craft URLs with static extensions to deceive the caching layer.
 
-These rules match specific file names to target files that are universally required for web operations and change rarely, such as robots.txt and favicon.ico.
+#### **Example**:
+- **Target URL**: `/profile/` (Dynamic and user-specific content).
+- **Exploited URL**: `/profile/.css` (Cache interprets it as static CSS content).
+
+#### **Steps**:
+1. Access `/profile/.css` while logged in as a user.
+2. The server processes `/profile/` and serves private profile data, but the cache stores the response assuming it is static CSS.
+3. Any subsequent request to `/profile/.css` will serve cached sensitive data to other users.
+
+---
+
+### **2. Exploiting Static Directory Rules**
+
+#### **Description**:
+Static directory rules match all URLs within specific directories (e.g., `/static/`, `/assets/`). If sensitive content is accessible via these paths, it may get improperly cached.
+
+#### **Example**:
+- **Target URL**: `/user/profile` (Sensitive dynamic content).
+- **Exploited URL**: `/static/user/profile` or `/assets/user/profile`.
+
+#### **Steps**:
+1. Append or prepend a static directory prefix, e.g., `/static/user/profile`.
+2. Send a request while authenticated. The server processes it normally, but the cache sees the URL as belonging to a static directory and caches the content.
+3. Access `/static/user/profile` without authentication and retrieve cached sensitive content.
+
+---
+
+### **3. Exploiting File Name Rules**
+
+#### **Description**:
+File name rules match specific files (e.g., `favicon.ico`, `robots.txt`) that are assumed to be universally static. Exploiting this trust can lead to cache poisoning.
+
+#### **Example**:
+- **Target URL**: `/user/profile` (Sensitive user-specific content).
+- **Exploited URL**: `/user/profile/robots.txt`.
+
+#### **Steps**:
+1. Request `/user/profile/robots.txt` while authenticated.
+2. The server processes `/user/profile` and serves sensitive content, but the cache stores it as a static file named `robots.txt`.
+3. Anyone accessing `/user/profile/robots.txt` retrieves the cached sensitive content.
+
+---
+
+### **Combined Exploits**
+
+Attackers often combine these techniques for broader impact:
+1. **File Extension + Static Directory**: `/static/user/profile.jpg`.
+2. **File Name + Directory**: `/assets/user/profile/favicon.ico`.
+
+---
+
+### **Real-World Example**
+
+- **Scenario**:
+  - An online banking application has a user-specific dashboard at `/dashboard/`.
+  - The cache rules include:
+    - Static extensions: `.css`, `.js`.
+    - Static directory: `/assets/`.
+    - File names: `favicon.ico`.
 
 ## Constructing a web cache deception attack
 
