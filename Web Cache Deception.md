@@ -109,7 +109,9 @@ Additionally, analyze `Cache-Control` headers for directives like `public` with 
 
 ---
 
-## **Exploiting Path Mapping Discrepancies**
+## Exploiting Static File Extension Rules
+
+### **Exploiting Path Mapping Discrepancies**
 
 ### **Steps**:
 1. Test for `X-Cache` headers on paths like `/my-account`.  
@@ -117,7 +119,15 @@ Additionally, analyze `Cache-Control` headers for directives like `public` with 
 3. If `X-Cache: hit` is present, confirm vulnerability by accessing the modified URL in incognito mode.  
 4. Craft a malicious URL to cache victim responses.  
 
----
+
+### **Exploiting Path delimiters Discrepancies**
+
+### **Steps**:
+1. Test for `X-Cache` headers on paths like `/my-account`.  
+2. Append file extensions (`.css`, `.js`) or static directory prefixes (`/static/`) to these paths.  
+3. If `X-Cache: hit` is present, confirm vulnerability by accessing the modified URL in incognito mode.  
+4. Craft a malicious URL to cache victim responses.
+
 
 ## **Sample Exploit Code**
 
@@ -127,7 +137,4 @@ Additionally, analyze `Cache-Control` headers for directives like `public` with 
     document.location = "https://vulnerable.web/my-account/wcd.js";
 </script>
 ```
-
---- 
-
-By understanding and testing these techniques responsibly, security professionals can identify and mitigate web cache deception vulnerabilities effectively.
+---
