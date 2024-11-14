@@ -1,35 +1,3 @@
-# Web Cache Deception Vulnerability
-
----
-
-## **Table of Contents**
-
-1. [Description](#description)  
-2. [Cache Keys](#cache-keys)  
-3. [Cache Rules](#cache-rules)  
-    - Exploiting Static File Extension Rules  
-    - Exploiting Static Directory Rules  
-    - Exploiting File Name Rules  
-4. [Real-World Example](#real-world-example)  
-5. [Constructing a Web Cache Deception Attack](#constructing-a-web-cache-deception-attack)  
-6. [Detecting Cached Responses](#detecting-cached-responses)  
-7. [Exploiting Path Mapping Discrepancies](#exploiting-path-mapping-discrepancies)  
-8. [Sample Exploit Code](#sample-exploit-code)  
-
----
-
-## **Description**
-
-Web cache deception is a vulnerability that enables attackers to manipulate web caching mechanisms into storing sensitive, dynamic content. It arises from discrepancies in how cache servers and origin servers handle URL paths. An attacker can lure a victim into requesting a malicious URL, causing sensitive content to be cached. The attacker later accesses this cache to retrieve unauthorized private information.
-
----
-
-## **Cache Keys**
-
-Cache keys are derived from the URL path and query parameters. If a request's cache key matches a previously cached request, the cache delivers the stored response. This functionality is what attackers exploit.
-
----
-
 ## **Cache Rules**
 
 Attackers exploit cache rules applied by web servers. Below are common rules that make websites vulnerable to web cache deception:
@@ -38,11 +6,27 @@ Attackers exploit cache rules applied by web servers. Below are common rules tha
 
 #### **Description**:
 Some caching mechanisms rely on file extensions like `.css`, `.js`, or `.jpg` to categorize content as static.
+###path mapping discrepancies
 
-#### **Steps**:
-1. Request sensitive dynamic content (e.g., `/profile/`) with an appended static file extension, such as `/profile/.css`.  
-2. The origin server processes `/profile/` and sends sensitive data, but the cache stores it as static content.  
-3. Access `/profile/.css` to retrieve cached sensitive information.
+**step**
+
+1. Add ```/wcd``` an arbitrary path after original path
+2. If the the response is same, now add an file extension like ```.js``` or ```.css```
+3. Now make an exploit using the crafted url
+
+### path delimiter discrepancies
+
+**step**
+
+1. Add a delimeter ```;``` after original path
+2. If the response is same, now add ```/wcd``` path with extension.
+3. Now make an exploit using the crafted url
+
+### path delimiter decoding discrepancies
+
+**step**
+
+1. Same as delimiter discrepancies but decode ```;``` into ```%3b```
 
 ---
 
