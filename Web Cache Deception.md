@@ -115,3 +115,22 @@ _
 
 ### **2. Exploiting Static Directory Rules**
 
+#### **Description**:
+
+It's common practice for web servers to store static resources in specific directories. Cache rules often target these directories by matching specific URL path prefixes, like /static, /assets, /scripts, or /images. These rules can also be vulnerable to web cache deception.
+
+#### normalization discrepancies by the origin server
+
+**step**
+
+1. ```/<static-directory-prefix>/..%2f<dynamic-path>```
+
+**Example:** /assets/..%2fprofile
+
+#### normalization discrepancies by the cache server
+
+**step**
+
+1. ```/<dynamic-path>%2f%2e%2e%2f<static-directory-prefix>```
+
+**Example:** /profile%2f%2e%2e%2fstatic
