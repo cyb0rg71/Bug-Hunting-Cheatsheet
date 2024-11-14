@@ -17,7 +17,7 @@ Attackers exploit cache rules applied by web servers. Below are common rules tha
 
 Some caching mechanisms rely on file extensions like `.css`, `.js`, or `.jpg` to categorize content as static.
 
-#### path mapping discrepancies
+#### Path Mapping Discrepancies
 
 **step**
 
