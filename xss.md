@@ -6,7 +6,7 @@
   - [Reflected XSS in a JavaScript String with Angle Brackets HTML-Encoded](#reflected-xss-in-a-javascript-string-with-angle-brackets-html-encoded)
 - [Reflected XSS Into a JavaScript String Where Single Quote Escaped With Backslash](#Reflected-XSS-into-a-JavaScript-string-where-Single-Quote-Escaped-With-Backslash)
 - [Reflected XSS with Angle Brackets and Double Quotes HTML-Encoded and Single Quotes Escaped](#reflected-xss-with-angle-brackets-and-double-quotes-html-encoded-and-single-quotes-escaped)
-- [Reflected XSS Into a Template Literal with Unicode Escaped](#Reflected-XSS-Into-a-Template-Literal-with-Unicode-Escaped)
+- [Reflected XSS Into a Backticks Template Literal with Unicode Escaped](#Reflected-XSS-Into-a-Backticks-Template-Literal-with-Unicode-Escaped)
 - [Tags and Attribute Block Bypass](#tags-and-attribute-block-bypass)
   - [Reflected XSS into HTML Context with Most Tags and Attributes Blocked](#reflected-xss-into-html-context-with-most-tags-and-attributes-blocked)
   - [Reflected XSS into HTML Context with Custom Tags](#reflected-xss-into-html-context-with-custom-tags)
@@ -212,7 +212,7 @@ Payloads:
 
 ---
 
-## Reflected XSS Into a Template Literal with Unicode Escaped
+## Reflected XSS Into a Backticks Template Literal with Unicode Escaped
 
 If the application use unicode escape and use backticks, you can use this payload.
 ```javascript
