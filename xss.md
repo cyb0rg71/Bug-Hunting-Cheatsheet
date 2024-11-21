@@ -4,7 +4,7 @@
 - [Angle Brackets HTML-Encoded Bypass](#angle-brackets-html-encoded-bypass)
   - [Reflected XSS in HTML Attribute with Angle Brackets HTML-Encoded](#reflected-xss-in-html-attribute-with-angle-brackets-html-encoded)
   - [Reflected XSS in a JavaScript String with Angle Brackets HTML-Encoded](#reflected-xss-in-a-javascript-string-with-angle-brackets-html-encoded)
-- [Reflected XSS where Single Quote Escaped With Backslash](#Reflected-XSS-where-Single-Quote-Escaped-With-Backslash)
+- [Reflected XSS Into a JavaScript String Where Single Quote Escaped With Backslash](#Reflected-XSS-into-a-JavaScript-string-where-Single-Quote-Escaped-With-Backslash)
 - [Reflected XSS with Angle Brackets and Double Quotes HTML-Encoded and Single Quotes Escaped](#reflected-xss-with-angle-brackets-and-double-quotes-html-encoded-and-single-quotes-escaped)
 - [Reflected XSS Into a Template Literal with Unicode Escaped](#Reflected-XSS-Into-a-Template-Literal-with-Unicode-Escaped)
 - [Tags and Attribute Block Bypass](#tags-and-attribute-block-bypass)
@@ -193,7 +193,7 @@ xss';alert(1);'xss
 
 ---
 
-## Reflected XSS where Single Quote Escaped With Backslash
+## Reflected XSS Into a JavaScript String Where Single Quote Escaped With Backslash
 Close the script tag and inject:
 ```javascript
 </script><img src=x onerror=alert(1337)>
