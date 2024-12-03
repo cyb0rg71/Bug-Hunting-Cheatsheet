@@ -187,7 +187,7 @@ xss';alert(1);'xss
 ```javascript
 someString'-alert(1)-'someString
 ```
-```
+```javascript
 someString"-alert(1)-"someString
 ```
 ```javascript
