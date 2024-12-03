@@ -47,3 +47,12 @@ Identify any unkeyed header using param miner and craft a attck.
 <br>
 <br>
 Poc: [Web cache poisoning with multiple headers](https://portswigger.net/web-security/web-cache-poisoning/exploiting-design-flaws/lab-web-cache-poisoning-with-multiple-headers)
+
+---
+
+### Targeted web cache poisoning using an unknown header
+
+Using ```Vary``` header in responce.
+<br>
+<br>
+Poc: [Targeted web cache poisoning using an unknown header](https://portswigger.net/web-security/web-cache-poisoning/exploiting-design-flaws/lab-web-cache-poisoning-targeted-using-an-unknown-header)
