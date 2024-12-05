@@ -43,7 +43,7 @@ Cookies are often used to dynamically generate content in a response. If the res
 
 ### Web cache poisoning with multiple headers
 
-Identify any unkeyed header using param miner and craft a attck.
+Identify any unkeyed header using param miner and craft a attack.
 <br>
 <br>
 Poc: [Web cache poisoning with multiple headers](https://portswigger.net/web-security/web-cache-poisoning/exploiting-design-flaws/lab-web-cache-poisoning-with-multiple-headers)
