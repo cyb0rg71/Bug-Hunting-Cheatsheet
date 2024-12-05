@@ -13,9 +13,9 @@ Additionally, check `Cache-Control` headers for caching directives like `public`
 
 ---
 
-## Exploiting cache design flaws
+# Exploiting cache design flaws
 
-### Using web cache poisoning to deliver an XSS attack
+## Using web cache poisoning to deliver an XSS attack
 
 Consider the following request and response:
 
@@ -43,7 +43,7 @@ Cache-Control: public
 
 If this response was cached, all users who accessed /en?region=uk would be served this XSS payload.
 
-### Web cache poisoning with an unkeyed header
+## Web cache poisoning with an unkeyed header
 
 Some websites use unkeyed headers to dynamically generate URLs for importing resources, such as externally hosted JavaScript files. In this case, if an attacker changes the value of the appropriate header to a domain that they control, they could potentially manipulate the URL to point to their own malicious JavaScript file instead. We can use ```X-Forwarded-Host:``` header for this.
 
@@ -56,7 +56,7 @@ Some websites use unkeyed headers to dynamically generate URLs for importing res
 ```
 The malicius link contain with js file will trigger on all users browser if the site is vulnerable to the Web Cache Poisoning.
 
-### Web cache poisoning with an unkeyed cookie
+## Web cache poisoning with an unkeyed cookie
 
 Cookies are often used to dynamically generate content in a response. If the response of the request is cached, then all subsequent users who tried to access the poisoned page will get the malicious content. 
 
@@ -67,12 +67,14 @@ Cookies are often used to dynamically generate content in a response. If the res
   3. If the cookie value reflected in response page, we can now place our malicious javascript code in it.
 ```
 
-### Web cache poisoning with multiple headers
+## Web cache poisoning with multiple headers
 
 Identify any unkeyed header using param miner and craft a attack.
 <br>
 <br>
 Poc: [Web cache poisoning with multiple headers](https://portswigger.net/web-security/web-cache-poisoning/exploiting-design-flaws/lab-web-cache-poisoning-with-multiple-headers)
+
+## Exploiting responses that expose too much information
 
 ### Targeted web cache poisoning using an unknown header
 
