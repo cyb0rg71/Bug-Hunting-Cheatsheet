@@ -45,7 +45,7 @@ If this response was cached, all users who accessed /en?region=uk would be serve
 
 ### Web cache poisoning with an unkeyed header
 
-Some websites use unkeyed headers to dynamically generate URLs for importing resources, such as externally hosted JavaScript files. In this case, if an attacker changes the value of the appropriate header to a domain that they control, they could potentially manipulate the URL to point to their own malicious JavaScript file instead. We can use ```X-Forwarded-For:``` header for this.
+Some websites use unkeyed headers to dynamically generate URLs for importing resources, such as externally hosted JavaScript files. In this case, if an attacker changes the value of the appropriate header to a domain that they control, they could potentially manipulate the URL to point to their own malicious JavaScript file instead. We can use ```X-Forwarded-Host:``` header for this.
 
 **Step**
 ```
