@@ -68,8 +68,11 @@ Cookies are often used to dynamically generate content in a response. If the res
 ```
   1. Add a cache buster parameter ?cb=1 in the request.
   2. Identify if any cookie value reflecting in the response.
-  3. If the cookie value reflected in response page, we can now place our malicious javascript code in it.
+  3. If the cookie value reflected in response page, we can now place our malicious javascript code in it or arbitrary string in it.
 ```
+<br>
+<br>
+**Note:** If the cookie header generated in http response, we should add the header in http request and sent a new request. 
 
 ## Web cache poisoning with multiple headers
 
