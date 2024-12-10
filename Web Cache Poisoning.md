@@ -118,7 +118,7 @@ Poc: [Targeted web cache poisoning using an unknown header](https://portswigger.
 
 ---
 
-## Exploiting cache key implementation flaws
+# Exploiting cache key implementation flaws
 
 ## Exploiting unkeyed port
 
