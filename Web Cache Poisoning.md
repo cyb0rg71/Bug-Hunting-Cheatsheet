@@ -89,8 +89,6 @@ X-Forwarded-Proto: http
 HTTP/1.1 301 moved permanently
 Location: https://innocent-site.com/random
 ```
-<br>
-<br>
 Poc: [Web cache poisoning with multiple headers](https://portswigger.net/web-security/web-cache-poisoning/exploiting-design-flaws/lab-web-cache-poisoning-with-multiple-headers)
 
 ## Exploiting responses that expose too much information
