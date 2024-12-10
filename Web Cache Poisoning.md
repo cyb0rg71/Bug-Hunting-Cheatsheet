@@ -101,7 +101,7 @@ X-Forwarded-Host: evil.com
 HTTP/1.1 301 moved permanently
 Location: https://evil.com
 ```
-If the website chache static javascript file, we can poison it with malicious ```js``` code.<br>
+If the website chaches static javascript file, we can poison it with malicious ```js``` code.<br>
 <br>
 Poc: [Web cache poisoning with multiple headers](https://portswigger.net/web-security/web-cache-poisoning/exploiting-design-flaws/lab-web-cache-poisoning-with-multiple-headers)
 
