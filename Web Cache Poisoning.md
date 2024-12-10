@@ -81,6 +81,7 @@ someString"-alert(1)-"someString
 Identify any unkeyed header using param miner and craft a attack.
 
 **Example:** Suppose there is a hidden ```X-Forwarded-Proto: http``` or ```X-Forwarded-Scheme: http```(This two header overrides the https with http) header that we have discovered manually or using param miner. If we add this header in a request, this will make 302 redirect to the main domain. If we add ```X-Forwarded-Host``` header in it and put our malicious domain, the site will redirected to our malicious domain.
+***Initial Request***
 ```txt
 GET /random HTTP/1.1
 Host: innocent-site.com
@@ -88,6 +89,16 @@ X-Forwarded-Proto: http
 
 HTTP/1.1 301 moved permanently
 Location: https://innocent-site.com/random
+```
+***Customized Request***
+```txt
+GET /random HTTP/1.1
+Host: innocent-site.com
+X-Forwarded-Proto: http
+X-Forwarded-Host: evil.com
+
+HTTP/1.1 301 moved permanently
+Location: https://evil.com
 ```
 Poc: [Web cache poisoning with multiple headers](https://portswigger.net/web-security/web-cache-poisoning/exploiting-design-flaws/lab-web-cache-poisoning-with-multiple-headers)
 
