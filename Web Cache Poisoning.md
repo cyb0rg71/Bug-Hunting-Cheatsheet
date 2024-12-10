@@ -70,8 +70,12 @@ Cookies are often used to dynamically generate content in a response. If the res
   2. Identify if any cookie value reflecting in the response.
   3. If the cookie value reflected in response page, we can now place our malicious javascript code in it or arbitrary string in it.
 ```
-**Note:** If the cookie header generated in http response, we should add the header in http request and sent a new request. 
-
+**Note:** If the cookie header generated in http response, we should add the header in http request and sent a new request.<br>
+<br>
+Use this payload if the value reflected in a javascript string
+```js
+someString"-alert(1)-"someString
+```
 ## Web cache poisoning with multiple headers
 
 Identify any unkeyed header using param miner and craft a attack.
