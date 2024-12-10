@@ -57,7 +57,9 @@ Some websites use unkeyed headers to dynamically generate URLs for importing res
   4. If the example.com reflected in response page, we can now place our malicious link in it.
 ```
 The malicius link contain with js file will trigger on all users browser if the site is vulnerable to the Web Cache Poisoning.
-
+<br>
+<br>
+**Note:** Remove cache buster before delivering final attack.
 ## Web cache poisoning with an unkeyed cookie
 
 Cookies are often used to dynamically generate content in a response. If the response of the request is cached, then all subsequent users who tried to access the poisoned page will get the malicious content. 
