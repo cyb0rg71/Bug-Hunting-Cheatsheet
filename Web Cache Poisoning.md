@@ -107,6 +107,8 @@ Poc: [Web cache poisoning with multiple headers](https://portswigger.net/web-sec
 
 ## Exploiting responses that expose too much information
 
+Sometimes websites make themselves more vulnerable to web cache poisoning by giving away too much information about themselves and their behavior.
+
 ### Targeted web cache poisoning using an unknown header
 
 ```Vary``` header is used for sending device or client specific content. Using ```Vary``` header in responce, in some cases we can craft an attack.
