@@ -15,7 +15,7 @@ Additionally, check `Cache-Control` headers for caching directives like `public`
 
 # Exploiting cache design flaws
 
-websites are vulnerable to web cache poisoning if they handle unkeyed input in an unsafe way and allow the subsequent HTTP responses to be cached.
+Websites are vulnerable to web cache poisoning if they handle unkeyed input in an unsafe way and allow the subsequent HTTP responses to be cached.
 
 ## Using web cache poisoning to deliver an XSS attack
 
@@ -52,7 +52,7 @@ Some websites use unkeyed headers to dynamically generate URLs for importing res
 **Step**
 ```
   1. Add a cache buster parameter ?cb=1 in the request.
-  2. Add X-forwarded-For header in request.
+  2. Add X-forwarded-Host header in request.
   3. Add a arbitrary domain (example.com) and send the request.
   4. If the example.com reflected in response page, we can now place our malicious link in it.
 ```
