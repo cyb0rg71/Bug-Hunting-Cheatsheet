@@ -15,6 +15,8 @@ Additionally, check `Cache-Control` headers for caching directives like `public`
 
 # Exploiting cache design flaws
 
+websites are vulnerable to web cache poisoning if they handle unkeyed input in an unsafe way and allow the subsequent HTTP responses to be cached.
+
 ## Using web cache poisoning to deliver an XSS attack
 
 Consider the following request and response:
