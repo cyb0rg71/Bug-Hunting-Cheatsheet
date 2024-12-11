@@ -116,6 +116,9 @@ Sometimes websites make themselves more vulnerable to web cache poisoning by giv
 <br>
 Poc: [Targeted web cache poisoning using an unknown header](https://portswigger.net/web-security/web-cache-poisoning/exploiting-design-flaws/lab-web-cache-poisoning-targeted-using-an-unknown-header)
 
+## Using web cache poisoning to exploit DOM-based vulnerabilities
+
+## Chaining web cache poisoning vulnerabilities
 ---
 
 # Exploiting cache key implementation flaws
