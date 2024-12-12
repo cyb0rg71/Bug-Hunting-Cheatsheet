@@ -3,6 +3,13 @@
 Add a cache buster parameter ```?cb=1``` in the request. Change the number in the parameter before new request, so that we don't get a cached response. 
 <br>
 <br>
+In some cases ```/?cb-+=1``` won't work. Fortunately, there are alternative ways of adding a cache buster, such as adding it to a keyed header that doesn't interfere with the application's behavior. Some typical examples include:
+```
+Accept-Encoding: gzip, deflate, cachebuster
+Accept: */*, text/cachebuster
+Cookie: cachebuster=1
+Origin: https://cachebuster.vulnerable-website.com
+```
 To confirm caching behavior, inspect response headers and time differences:
 
 - **`X-Cache: hit`** – Response served from the cache.  
@@ -156,3 +163,14 @@ Location: https://vulnerable-website.com:1337/en
 Cache-Status: hit
 ```
 As you can see, we have been served our cached response even though the Host header in the request does not specify a port. This might enable you to construct a denial-of-service attack by simply adding an arbitrary port to the request. All users who browsed to the home page would be redirected to a dud port, effectively taking down the home page until the cache expired. This kind of attack can be escalated further if the website allows you to specify a non-numeric port. You could use this to inject an XSS payload, for example.
+
+## Exploiting an unkeyed query string
+
+In some cases ```/?cb-+=1``` won't work. Fortunately, there are alternative ways of adding a cache buster, such as adding it to a keyed header that doesn't interfere with the application's behavior. Some typical examples include:
+```
+Accept-Encoding: gzip, deflate, cachebuster
+Accept: */*, text/cachebuster
+Cookie: cachebuster=1
+Origin: https://cachebuster.vulnerable-website.com
+```
+If any of this header makes cache ```miss```, we can use this header as a cache buster.
