@@ -3,12 +3,20 @@
 Add a cache buster parameter ```?cb=1``` in the request. Change the number in the parameter before new request, so that we don't get a cached response. 
 <br>
 <br>
-In some cases ```/?cb-+=1``` won't work. Fortunately, there are alternative ways of adding a cache buster, such as adding it to a keyed header that doesn't interfere with the application's behavior. Some typical examples include:
+***Note:*** In some cases ```/?cb=1``` won't work. Fortunately, there are alternative ways of adding a cache buster, such as adding it to a keyed header that doesn't interfere with the application's behavior. Some typical examples include:
 ```
 Accept-Encoding: gzip, deflate, cachebuster
 Accept: */*, text/cachebuster
 Cookie: cachebuster=1
 Origin: https://cachebuster.vulnerable-website.com
+```
+Another approach is to see whether there are any discrepancies between how the cache and the back-end normalize the path of the request.
+The following entries might all be cached separately but treated as equivalent to ```GET /``` on the back-end:
+```
+Apache: GET //
+Nginx: GET /%2F
+PHP: GET /index.php/xyz
+.NET GET /(A(xyz)/
 ```
 To confirm caching behavior, inspect response headers and time differences:
 
@@ -19,6 +27,36 @@ To confirm caching behavior, inspect response headers and time differences:
 Additionally, check `Cache-Control` headers for caching directives like `public` with a non-zero `max-age`.
 
 ---
+
+# Explanation of Keyed and Unkeyed
+
+***Keyed (Secure):***
+
+In Keyed scenario, if an attacker request the path given below,<br>
+**Attackers Request:**
+```
+GET /profile?cb=xss HTTP/1.1
+```
+the attackers payload will not be cached under the ```/profile```.<br>
+**Victims Request**
+```
+GET /profile HTTP/1.1
+```
+So, victims request will not get the attackers cached response.
+
+***Unkeyed (Vulnerable):***
+
+In Unkeyed scenario, if an attacker request the path given below,<br>
+**Attackers Request:**
+```
+GET /profile?cb=xss HTTP/1.1
+```
+the attackers payload will be cached under the ```/profile```.<br>
+**Victims Request**
+```
+GET /profile HTTP/1.1
+```
+So, victims request will get the attackers cached response.
 
 # Exploiting cache design flaws
 
@@ -166,11 +204,4 @@ As you can see, we have been served our cached response even though the Host hea
 
 ## Exploiting an unkeyed query string
 
-In some cases ```/?cb-+=1``` won't work. Fortunately, there are alternative ways of adding a cache buster, such as adding it to a keyed header that doesn't interfere with the application's behavior. Some typical examples include:
-```
-Accept-Encoding: gzip, deflate, cachebuster
-Accept: */*, text/cachebuster
-Cookie: cachebuster=1
-Origin: https://cachebuster.vulnerable-website.com
-```
-If any of this header makes cache ```miss```, we can use this header as a cache buster.
+
