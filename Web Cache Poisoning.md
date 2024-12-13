@@ -208,4 +208,7 @@ As you can see, we have been served our cached response even though the Host hea
 
 ## Exploiting an unkeyed query string
 
-
+Add an arbitrary parameter that breaks out of the reflected string and injects an XSS payload.
+```
+GET /?evil='/><script>alert(1)</script>
+```
