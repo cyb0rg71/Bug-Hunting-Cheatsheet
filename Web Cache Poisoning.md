@@ -33,11 +33,13 @@ Additionally, check `Cache-Control` headers for caching directives like `public`
 ***Keyed (Secure):***
 
 In Keyed scenario, if an attacker request the path given below,<br>
+<br>
 **Attackers Request:**
 ```
 GET /profile?cb=xss HTTP/1.1
 ```
 the attackers payload will not be cached under the ```/profile```.<br>
+<br>
 **Victims Request**
 ```
 GET /profile HTTP/1.1
