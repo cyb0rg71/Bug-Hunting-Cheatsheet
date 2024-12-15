@@ -216,3 +216,5 @@ Add an arbitrary parameter that breaks out of the reflected string and injects a
 ```
 GET /?evil='/><script>alert(1)</script>
 ```
+
+**Note:** Use Param Miner for guessing Header or Parameters.
