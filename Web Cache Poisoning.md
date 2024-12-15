@@ -10,6 +10,10 @@ Accept: */*, text/cachebuster
 Cookie: cachebuster=1
 Origin: https://cachebuster.vulnerable-website.com
 ```
+<br>
+
+***Note:*** Also we can use Param Miner for guessing header or query parameter for it.
+
 Another approach is to see whether there are any discrepancies between how the cache and the back-end normalize the path of the request.
 The following entries might all be cached separately but treated as equivalent to ```GET /``` on the back-end:
 ```
