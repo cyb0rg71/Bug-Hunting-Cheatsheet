@@ -1,4 +1,5 @@
-## **Detecting Cached Responses**
+<br>
+<br>## **Detecting Cached Responses**
 
 Add a cache buster parameter ```?cb=1``` in the request. Change the number in the parameter before new request, so that we don't get a cached response. 
 <br>
@@ -212,9 +213,18 @@ As you can see, we have been served our cached response even though the Host hea
 
 ## Exploiting an unkeyed query string
 
-Add an arbitrary parameter that breaks out of the reflected string and injects an XSS payload.
+Add an arbitrary parameter that breaks out of the reflected string and inject an XSS payload.
+**Example:**
 ```
 GET /?evil='/><script>alert(1)</script>
 ```
 
 **Note:** Use Param Miner for guessing Header or Parameters.
+
+## Exploiting an unkeyed query parameter
+
+Identify a query paramter manually or using Param Miner and inject an XSS payload.
+**Example:**
+```
+GET /?custom='/><script>alert(1)</script>
+```
