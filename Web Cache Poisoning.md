@@ -1,5 +1,4 @@
-<br>
-<br>## **Detecting Cached Responses**
+## **Detecting Cached Responses**
 
 Add a cache buster parameter ```?cb=1``` in the request. Change the number in the parameter before new request, so that we don't get a cached response. 
 <br>
