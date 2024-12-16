@@ -316,4 +316,4 @@ Some CSS files reflect user input (query parameters) into their content dynamica
    ```
 If this CSS is imported into other pages, it can potentially execute **malicious actions globally**.
 
-<h1 style="color: red;">Test</h1>
+<h1 style="color: red;">This is a Red Header</h1>
