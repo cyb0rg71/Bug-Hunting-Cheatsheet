@@ -239,8 +239,6 @@ The cache excludes `excluded_param` from the cache key but processes `example` a
 
 ### Exploiting parameter parsing quirks
 
-**Cache Parameter Cloaking** exploits parsing discrepancies between caches and servers to inject payloads into application logic. 
-
 1. **Query String Parsing Quirks**: If a cache treats every `?` or other delimiter differently than the server, parameters may be excluded from the cache key but still processed by the server. For example:  
    ```
    GET /?example=123?excluded_param=bad-stuff
@@ -256,3 +254,5 @@ The cache excludes `excluded_param` from the cache key but processes `example` a
 3. **Exploiting Gadgets**: Using this method, you can inject and execute malicious payloads, such as overriding callback functions in JSONP requests to execute arbitrary JavaScript.
 
 This allows for cache poisoning or XSS by taking advantage of parsing inconsistencies.
+
+Poc: [Parameter cloaking](https://www.youtube.com/watch?v=vdb_9HACpkM)
