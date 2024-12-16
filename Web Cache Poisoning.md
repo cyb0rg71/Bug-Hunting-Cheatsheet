@@ -261,6 +261,7 @@ Poc: [Parameter cloaking](https://www.youtube.com/watch?v=vdb_9HACpkM)
 
 In some cases, the HTTP method may not be keyed. This might allow you to poison the cache with a POST request containing a malicious payload in the body. Your payload would then even be served in response to users' GET requests.
 <br>
+<br>
 **Request:**
 ```
 GET /js/geolocate.js?callback=setCountryCookie HTTP/2
@@ -279,5 +280,4 @@ X-Cache: hit
 
 alert(1)({"country":"United Kingdom"});
 ```
-
 In this case, the cache key would be based on the request line, but the server-side value of the parameter would be taken from the body.
