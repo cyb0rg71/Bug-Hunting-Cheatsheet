@@ -223,7 +223,7 @@ GET /?evil='/><script>alert(1)</script>
 
 ## Exploiting an unkeyed query parameter
 
-Identify a query paramter manually or using Param Miner and inject an XSS payload.
+Identify a query paramter manually or using Param Miner and inject an XSS payload.<br>
 **Example:**
 ```
 GET /?custom='/><script>alert(1)</script>
