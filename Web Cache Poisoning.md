@@ -316,8 +316,6 @@ Some CSS files reflect user input (query parameters) into their content dynamica
    ```
 If this CSS is imported into other pages, it can potentially execute **malicious actions globally**.
 
-<h1 style="color: red;">This is a Red Header</h1>
-
 ## Normalized cache keys
 
 Details+Lab: [URL normalization](https://portswigger.net/web-security/web-cache-poisoning/exploiting-implementation-flaws#normalized-cache-keys)
