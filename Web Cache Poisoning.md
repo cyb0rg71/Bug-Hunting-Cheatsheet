@@ -227,3 +227,32 @@ Identify a query paramter manually or using Param Miner and inject an XSS payloa
 ```
 GET /?custom='/><script>alert(1)</script>
 ```
+## Exploiting with Cache Parameter Cloaking
+
+This is actually Sever Side Parameter Pollution. So, we would use the methodology of SSPP for exploiting this type of vulnerability. For example, Cache parameter cloaking occurs when a discrepancy exists between how the cache and server parse query parameters. If the cache treats every `?` as a new parameter delimiter, while the server only recognizes the first `?`, an attacker can inject payloads cloaked in excluded parameters. For example:
+
+```
+GET /?example=123?excluded_param=bad-stuff-here
+```
+
+The cache excludes `excluded_param` from the cache key but processes `example` as `123`. However, the server treats the entire string after the first `?` (`123?excluded_param=bad-stuff-here`) as the value of `example`. This mismatch can lead to successful payload injection without altering the cache key.
+
+### Exploiting parameter parsing quirks
+
+**Cache Parameter Cloaking** exploits parsing discrepancies between caches and servers to inject payloads into application logic. 
+
+1. **Query String Parsing Quirks**: If a cache treats every `?` or other delimiter differently than the server, parameters may be excluded from the cache key but still processed by the server. For example:  
+   ```
+   GET /?example=123?excluded_param=bad-stuff
+   ```
+   The cache ignores `excluded_param`, but the server processes it, allowing payload injection.
+
+2. **Semicolon Delimiters**: Some back-ends (e.g., Ruby on Rails) treat both `&` and `;` as parameter delimiters, while caches may not. For example:  
+   ```
+   GET /?keyed_param=abc&excluded_param=123;keyed_param=bad-stuff
+   ```
+   The cache only includes `keyed_param=abc` in its key, but the server processes the last `keyed_param=bad-stuff`, overriding the value and enabling payload injection.
+
+3. **Exploiting Gadgets**: Using this method, you can inject and execute malicious payloads, such as overriding callback functions in JSONP requests to execute arbitrary JavaScript.
+
+This allows for cache poisoning or XSS by taking advantage of parsing inconsistencies.
