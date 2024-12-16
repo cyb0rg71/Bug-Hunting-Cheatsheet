@@ -298,9 +298,6 @@ As long as the ```X-HTTP-Method-Override``` header is unkeyed, you could submit 
  
 Some CSS files reflect user input (query parameters) into their content dynamically. If improperly handled, this can allow attackers to inject malicious content into these CSS files. By combining this with **web cache poisoning**, the attacker can make others load and execute the malicious content.
 
-**Step-by-Step Breakdown:**
-
-1. **Dynamic CSS Import**:  
    A CSS file dynamically includes user-provided data in its content, for example:  
    ```
    GET /style.css?excluded_param=123);@import…
@@ -309,8 +306,6 @@ Some CSS files reflect user input (query parameters) into their content dynamica
    ```css
    @import url(/site/home/index.part1.css?excluded_param=123);@import…
    ```
-
-2. **Attack Vector**:  
    An attacker injects malicious content into the query parameter to alter the CSS:  
    ```
    GET /style.css?excluded_param=alert(1)%0A{}*{color:red;} HTTP/1.1
