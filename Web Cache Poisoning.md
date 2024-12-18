@@ -320,3 +320,5 @@ If this CSS is imported into other pages, it can potentially execute **malicious
 ## Normalized cache keys
 
 Details+Lab: [URL normalization](https://portswigger.net/web-security/web-cache-poisoning/exploiting-implementation-flaws#normalized-cache-keys)
+
+## Cache key injection
